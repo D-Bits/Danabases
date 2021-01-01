@@ -12,7 +12,7 @@ paginate = 5
   defaultTheme = "dark"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 4
 
   # Show reading time in minutes for posts
   showReadingTime = false
@@ -28,7 +28,6 @@ paginate = 5
 [languages]
   [languages.en]
     title = "Danabases"
-    subtitle = "A simple theme for Hugo"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
@@ -44,7 +43,7 @@ paginate = 5
     # lastModDisplay = ""
 
     [languages.en.params.logo]
-      logoText = "hello friend"
+      logoText = "Danabases"
       logoHomeLink = "/"
     # or
     #
@@ -61,10 +60,10 @@ paginate = 5
         name = "Contact"
         url = "/contact"
       [[languages.en.menu.main]]
-        identifier = "about"
-        name = "Project"
-        url = "/about"
+        identifier = "project"
+        name = "Projects"
+        url = "/projects"
       [[languages.en.menu.main]]
-        identifier = "showcase"
+        identifier = "skills"
         name = "Skills"
         url = "/skills"
