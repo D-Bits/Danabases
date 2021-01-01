@@ -28,6 +28,7 @@ paginate = 5
 [languages]
   [languages.en]
     title = "Danabases"
+    subtitle = ""
     keywords = ""
     copyright = ""
     menuMore = "Show more"
@@ -43,7 +44,7 @@ paginate = 5
     # lastModDisplay = ""
 
     [languages.en.params.logo]
-      logoText = "Danabases"
+      logoText = "hello friend"
       logoHomeLink = "/"
     # or
     #
@@ -56,14 +57,15 @@ paginate = 5
         name = "About"
         url = "/about"
       [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Contact"
-        url = "/contact"
-      [[languages.en.menu.main]]
-        identifier = "project"
-        name = "Projects"
-        url = "/projects"
-      [[languages.en.menu.main]]
         identifier = "skills"
         name = "Skills"
         url = "/skills"
+      [[languages.en.menu.main]]
+        identifier = "projects"
+        name = "Projects"
+        url = "/projects"
+      [[languages.en.menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "/contact"
+
