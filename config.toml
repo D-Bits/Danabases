@@ -30,7 +30,7 @@ paginate = 5
     title = "Danabases"
     subtitle = ""
     keywords = ""
-    copyright = "© 2021 Danabases"
+    copyright = ""
     menuMore = "Show more"
     writtenBy = "Written by"
     readMore = "Read more"
@@ -68,4 +68,3 @@ paginate = 5
         identifier = "contact"
         name = "Contact"
         url = "/contact"
-
