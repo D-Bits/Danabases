@@ -15,10 +15,5 @@ I am an enthusiastic, outgoing person who is also delighted to share ideas and c
 
 At any rate, I hope that you have enjoyed my website. The contact me directly, feel free to head over to the contact page. For more information on my work and skills, please see the links below.
 
-## Elsewhere on the Web
 
-#### [GitHub](https://github.com/d-bits)
-** **
-#### [LinkedIn](https://linkedin.com/in/danabases)
-** **
-#### [Resume](/assets/dlockwood-resume.pdf)
+{{< links >}}
