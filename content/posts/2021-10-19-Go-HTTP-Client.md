@@ -1,6 +1,6 @@
 ---
 title: Writing an HTTP Client in Go
-publishdate: 2021-10-19
+publishdate: 2021-10-25
 tags:
   - go
 draft: false
