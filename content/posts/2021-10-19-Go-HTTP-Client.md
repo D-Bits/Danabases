@@ -10,7 +10,7 @@ One of my new years resolutions was to learn new programming languages. Conseque
 
 ## Project Setup
 
-The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user's choosing, and saves it as a `.json` file to the local file system. I won't go into how to setup a development environment for Go (*I just used Docker, and VS Code integrations*) here. However, we do need to create some files and directories first. To begin with, we need to create a `bin/` directory for executables, and a `data/` directory to save our data dumps in. To implement the actual program, we need two source files: `main.go` and `fetch.go`, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a `Makefile` to simplfy program compilation and execution, with the following rules:
+The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user's choosing, and saves it as a `.json` file to the local file system. I won't go into how to setup a development environment for Go (*I just used Docker, and VS Code integrations*) here. However, we do need to create some files and directories first. To begin with, we need to create a `bin/` directory for executables, and a `data/` directory to save our data dumps in. To implement the actual program, we need two source files: `main.go` and `fetch.go`, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a `Makefile` to simplify program compilation and execution, with the following rules:
 
 ```makefile
 SHELL := /bin/bash
