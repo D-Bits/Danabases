@@ -112,7 +112,7 @@ This will allow a user to pass in necessary values for the parameters in `fetch.
 
 To run the program, we run either `go run main.go fetch.go` or `make run` from the terminal.
 
-### Conclusions
+## Conclusions
 
 Although this is a rather simple program, it was a pleasant introduction to Go nonetheless, and has compelled me to explore the language so more. I'm already working on a different console program in Golang. At some point in the near future, I also hope to implement something more sophisticated, like a REST API.
 
