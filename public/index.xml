@@ -16,5 +16,19 @@
       <guid>//localhost:1313/posts/06_18_25_test/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; text, and this is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;&#xA;&lt;p&gt;Visit the &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; website!&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Contact</title>
+      <link>//localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/contact/</guid>
+      <description>&lt;style&gt;&#xA;    .contact-div {&#xA;        width: 100%;&#xA;        max-width: 600px;&#xA;        margin: 0 auto;&#xA;        padding: 20px;&#xA;        background-color: #f9f9f9;&#xA;        border-radius: 8px;&#xA;        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);&#xA;    }&#xA;&#xA;    #contact {&#xA;        display: flex;&#xA;        flex-direction: column;&#xA;        margin: 1em;&#xA;    }&#xA;&#xA;    .fields {&#xA;        width: 100%;&#xA;        padding: 10px;&#xA;        margin: 5px 0;&#xA;        border: 1px solid #ccc;&#xA;        border-radius: 4px;&#xA;        font-size: 16px;&#xA;    }&#xA;&#xA;    #message {&#xA;        height: 150px;&#xA;        resize: vertical;&#xA;        border-bottom: 1em;&#xA;    }&#xA;&#xA;    .reach-me-send {&#xA;        background-color: #31799b;&#xA;        color: white;&#xA;        padding: 10px 15px;&#xA;        border: none;&#xA;        border-radius: 4px;&#xA;        cursor: pointer;&#xA;        font-size: 16px;&#xA;        margin-top: 1em;&#xA;    }&#xA;&#xA;&lt;/style&gt;&#xA;&#xA;&lt;div id=&#34;contact-div&#34;&gt;&#xA;&#xA;    &lt;p class=&#34;gpg&#34;&gt;&lt;strong&gt;&lt;a href=&#34;//localhost:1313/assets/dana-gpg-public-key.asc&#34;&gt;GPG Public Key &amp;#128272;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Skills</title>
+      <link>//localhost:1313/skills/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/skills/</guid>
+      <description>&lt;p&gt;A non-exhaustive list of the skills I use in my workflows.&lt;/p&gt;&#xA;&lt;h3 id=&#34;workflows&#34;&gt;Workflows&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Database Development&lt;/li&gt;&#xA;&lt;li&gt;ETL&lt;/li&gt;&#xA;&lt;li&gt;REST APIs&lt;/li&gt;&#xA;&lt;li&gt;Data Analysis&lt;/li&gt;&#xA;&lt;li&gt;Automation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;primary-tools&#34;&gt;Primary Tools&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Python 3&lt;/li&gt;&#xA;&lt;li&gt;PostgreSQL&lt;/li&gt;&#xA;&lt;li&gt;Apache Spark&lt;/li&gt;&#xA;&lt;li&gt;Databricks&lt;/li&gt;&#xA;&lt;li&gt;AWS&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;other-tools&#34;&gt;Other Tools&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Apache Airflow&lt;/li&gt;&#xA;&lt;li&gt;T-SQL&lt;/li&gt;&#xA;&lt;li&gt;HTML 5&lt;/li&gt;&#xA;&lt;li&gt;CSS 3&lt;/li&gt;&#xA;&lt;li&gt;Docker&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
   </channel>
 </rss>
