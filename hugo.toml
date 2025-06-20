@@ -55,9 +55,9 @@ theme        = "hello-friend-ng"
     name       = "Blog"
     url        = "/posts"
   [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about"
+    identifier = "skills"
+    name       = "Skills"
+    url        = "/skills"
 
 [pagination]
   pagerSize = 5
