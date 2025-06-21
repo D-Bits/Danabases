@@ -1,5 +1,5 @@
 baseurl      = "localhost"
-title        = "My Blog"
+title        = "Danabases"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 
@@ -42,7 +42,7 @@ theme        = "hello-friend-ng"
 #    subtitle  = "A simple theme for Hugo"
 
     [languages.en.params.logo]
-      logoText = "hello friend ng"
+      logoText = "Danabases"
       logoHomeLink = "/"
     # or
     #
