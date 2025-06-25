@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Danabases</title>
+    <link>//localhost:1313/tags/automation/</link>
+    <description>Recent content in Automation on Danabases</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
+      <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>
+      <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
+      <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;&#xA;&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

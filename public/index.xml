@@ -17,6 +17,13 @@
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; text, and this is &lt;em&gt;emphasized&lt;/em&gt; text.&lt;/p&gt;&#xA;&lt;p&gt;Visit the &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; website!&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Welcome!</title>
+      <link>//localhost:1313/posts/2020-1-10-welcome-everyone/</link>
+      <pubDate>Fri, 10 Jan 2020 07:07:07 +0100</pubDate>
+      <guid>//localhost:1313/posts/2020-1-10-welcome-everyone/</guid>
+      <description>&lt;p&gt;Welcome to my new new blog and website! This is a pilot post for my&#xA;new blogging website, build with Hugo and Netlify. My posts will&#xA;primarily revolve around technology, science, society, and the connections&#xA;between them.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;At any rate, I hope you enjoy my posts. Feel free to check out the &amp;ldquo;About&amp;rdquo;,&#xA;and &amp;ldquo;Skills&amp;rdquo; pages for more information about me. Thank you again for visiting&#xA;my blog, and feel free to contact via the email link below, if you care to.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Contact</title>
       <link>//localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

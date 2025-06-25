@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on Danabases</title>
+    <link>//localhost:1313/tags/other/</link>
+    <description>Recent content in Other on Danabases</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
+      <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>
+      <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
+      <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;&#xA;&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>One Year On</title>
+      <link>//localhost:1313/posts/2021-04-08-one-year-on/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2021-04-08-one-year-on/</guid>
+      <description>&lt;p&gt;After recently going over some of my earliest blog &lt;a href=&#34;https://danabases.net/posts/2020-1-10-welcome-everyone/&#34;&gt;posts&lt;/a&gt;, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&amp;rsquo;s happened since, as well as what the future might entail.&lt;/p&gt;&#xA;&lt;h2 id=&#34;in-the-beginning&#34;&gt;In the Beginning&amp;hellip;.&lt;/h2&gt;&#xA;&lt;p&gt;The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

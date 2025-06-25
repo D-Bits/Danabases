@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Json on Danabases</title>
+    <link>//localhost:1313/tags/json/</link>
+    <description>Recent content in Json on Danabases</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storing and Querying JSON Data in PostgreSQL</title>
+      <link>//localhost:1313/posts/2020-1-22-postgres-json/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-1-22-postgres-json/</guid>
+      <description>&lt;p&gt;I recently started exploring how to store JSON data in a traditional relational&#xA;database management system (RDBMS), rather than a dedicated form of JSON/document&#xA;storage, like MongoDB. While I could write a lot more about the problems with&#xA;MongoDB, that&amp;rsquo;s not what I want to do here. Instead, I want to&#xA;focus primarily on how to store and query JSON in PostgreSQL. However, I&#xA;should note that PostgreSQL is not the only RDBMS that supports JSON storage.&#xA;I know that MariaDB also does, as of v10.2, and possibly other RDBMS as well. However,&#xA;since I have been mostly using and enjoying Postgres for awhile now,&#xA;I decided to focus on that, specifically.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
