@@ -18,6 +18,8 @@
   </url><url>
     <loc>//localhost:1313/contact/</loc>
   </url><url>
+    <loc>//localhost:1313/projects/</loc>
+  </url><url>
     <loc>//localhost:1313/series/</loc>
   </url><url>
     <loc>//localhost:1313/skills/</loc>
