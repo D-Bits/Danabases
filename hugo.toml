@@ -22,9 +22,23 @@ theme        = "hello-friend-ng"
   enableGlobalLanguageMenu = true
 
   # Metadata mostly used in document's head
-  description = "My new homepage or blog"
+  description = "Danabases blog"
   keywords = "homepage, blog"
   images = [""]
+
+  # Custom footer
+  [params.footer]
+    trademark = 2025
+    rss = false
+    copyright = false
+
+  [[params.social]]
+    url  = "https://github.com/d-bits"
+    icon = "/assets/pics/svgs/github.svg"
+
+  [[params.social]]
+      url   = "https://linkedin.com/danabases"
+      icon  = "/assets/pics/svgs/linkedin.svg"
 
 [taxonomies]
     category = "blog"
@@ -62,6 +76,10 @@ theme        = "hello-friend-ng"
     identifier = "contact"
     name       = "Contact"
     url        = "/contact"
+  [[menu.main]]
+    identifier = "projects"
+    name       = "Projects"
+    url        = "/projects"    
 
 [pagination]
   pagerSize = 5
