@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.
+" />
+<meta name="keywords" content="homepage, blog, python" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="//localhost:1313/posts/2020-4-9-tracking-covid19/" />
+
+
+    <title>
+        
+            Tracking COVID19 | Danabases 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.07ea7ac7da67e2e153a7dfa2457bc6a19cca824288d175e223fadc579041bc51.css" integrity="sha256-B&#43;p6x9pn4uFTp9&#43;iRXvGoZzKgkKI0XXiI/rcV5BBvFE=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Tracking COVID19">
+  <meta itemprop="description" content="In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.">
+  <meta itemprop="datePublished" content="2020-04-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2020-04-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1146">
+  <meta itemprop="image" content="//localhost:1313/">
+  <meta itemprop="keywords" content="Python">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="//localhost:1313/">
+  <meta name="twitter:title" content="Tracking COVID19">
+  <meta name="twitter:description" content="In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.">
+
+
+
+    <meta property="og:url" content="//localhost:1313/posts/2020-4-9-tracking-covid19/">
+  <meta property="og:site_name" content="Danabases">
+  <meta property="og:title" content="Tracking COVID19">
+  <meta property="og:description" content="In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-04-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-04-09T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="og:image" content="//localhost:1313/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-04-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Danabases</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts">Blog</a></li><li><a href="/contact">Contact</a></li><li><a href="/projects">Projects</a></li><li><a href="/skills">Skills</a></li>
+        <ul class="submenu">
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">en</a>
+                <div class="dropdown-content">
+                </div>
+            </li>
+        </ul>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        6 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="//localhost:1313/posts/2020-4-9-tracking-covid19/">Tracking COVID19</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.</p>
+<p>Following a little research, I found out that Postman had built an <a href="https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest">REST API</a>, in collaboration with John Hopkins, to track developments with the pandemic. All the data that I worked with for this project comes from that API.</p>
+<p>So, on that note, let the games begin.</p>
+<h2 id="obtaining-the-data">Obtaining the Data</h2>
+<p>Although the API that were are using provides a variety of endpoints, for this blog post, we will just be using one. The &ldquo;summary&rdquo; endpoint will give basic data for all the world&rsquo;s countries: total confirmed cases, total confirmed fatalities, etc. All this can be accessed from the <a href="https://api.covid19api.com/summary">endpoint</a>. To extract the JSON data from the endpoint, we use the following Python code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> requests <span style="color:#f92672">import</span> get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>summary <span style="color:#f92672">=</span> get(<span style="color:#e6db74">&#34;https://api.covid19api.com/summary&#34;</span>)
+</span></span><span style="display:flex;"><span>summary_json <span style="color:#f92672">=</span> summary<span style="color:#f92672">.</span>json()
+</span></span></code></pre></div><p>Now that we have extracted our data, we can load it into a Pandas <code>DataFrame</code>. In this case, I will just using the data stored in the <code>countrires</code> variable. We would load that into a <code>DataFrame</code> like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Universally used aliasing convention for importing Pandas</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(summary_json[<span style="color:#e6db74">&#39;Countries&#39;</span>])
+</span></span></code></pre></div><p>If we output our data to a console, then it should display it in a nicely ordered, rows-and-columns format. Now that we have that done, we can carry on to cleaning up the data in our <code>DataFrame</code>.</p>
+<h2 id="preparing-the-data">Preparing the Data</h2>
+<p>As useful as all this data is, we do not quite need all of it. Also, after pouring through it, I noticed that there was some duplicate data. If you look over the JSON data from the endpoint, you will notice that some countries appear more than once, and with the exact same data. For example, Vietnam appears twice as both &ldquo;Vietnam&rdquo; and &ldquo;Viet Nam&rdquo;, each with the same statistics. Fortunately, for our needs, each record (associative array) in the JSON data has an <code>id</code> integer identifying it. Therefore, we can drop redundant records from the <code>DataFrame</code> by using the <code>DataFrame.drop()</code> method. Specifically, in this case, we will pass in a list of integers, corresponding to the IDs of the records that we want to eliminate from our <code>DataFrame</code>, with the code for it looking like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cleaned_data <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">93</span>, <span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">125</span>, <span style="color:#ae81ff">168</span>, <span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">170</span>, <span style="color:#ae81ff">171</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">175</span>, <span style="color:#ae81ff">194</span>, <span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">205</span>, <span style="color:#ae81ff">224</span>])
+</span></span></code></pre></div><p>So, now that we have eliminated redundant records from the <code>DataFrame</code>, we can now focus on how we want our remaining data to be organized. For this particular <code>DataFrame</code>, we want it to be organized by country, in alphabetical (ascending) order. To do this, we would use the <code>DataFrame.sort_values()</code> method in the following manner:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ordered_df <span style="color:#f92672">=</span> cleaned_data<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;Country&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>In addition to sorting records in alphabetical order, we also want total values for each column, so we can see the global amount of confirmed cases, new cases, confirmed deaths, etc. To do so, we would use <code>Dataframe.sum(axis=0)</code>. So, in our case, we would use <code>cleaned_data.sum(axis=0)</code>. Now that our data is organized, its on to displaying it in our Jinja2 template.</p>
+<h2 id="displaying-the-data">Displaying the Data</h2>
+<p>With our data neatly organized, its time for us to render it in HTML templates. For this project, I used the Flask web framework to build the web client, which is also built on Python, as I knew it would be easy to integrate my <code>DataFrames</code> with it, and it would afford me greater flexibility that Django, which is what I usually use for building web applications. Jinja2 is that templating engine that Flask comes bundled with. Ultimately, to display our data, we will be specifying our DataFrames in our Flask routes, and from there, directly rendering them into HTML tables in our Jinja2 templates. For example, a Flask route for our summary data, that we defined and cleaned above, would look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/home&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Load the data into DataFrame</span>
+</span></span><span style="display:flex;"><span>        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(summary_json[<span style="color:#e6db74">&#39;Countries&#39;</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Drop redundant records</span>
+</span></span><span style="display:flex;"><span>        cleaned_data <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">93</span>, <span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">125</span>, <span style="color:#ae81ff">168</span>, <span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">170</span>, <span style="color:#ae81ff">171</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">175</span>, <span style="color:#ae81ff">194</span>, <span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">205</span>, <span style="color:#ae81ff">224</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Order countries in alphabetical order</span>
+</span></span><span style="display:flex;"><span>        ordered_df <span style="color:#f92672">=</span> cleaned_data<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;Country&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Aggregate data</span>
+</span></span><span style="display:flex;"><span>        totals <span style="color:#f92672">=</span> cleaned_data<span style="color:#f92672">.</span>sum(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Convert the DataFrame to a dictionary, so its values can be iterated over in a template</span>
+</span></span><span style="display:flex;"><span>        df_dict <span style="color:#f92672">=</span> ordered_df<span style="color:#f92672">.</span>to_dict(orient<span style="color:#f92672">=</span>columns)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Render the template, with DataFrame values</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#39;index.html&#39;</span>, data<span style="color:#f92672">=</span>df_dict, total<span style="color:#f92672">=</span>total)
+</span></span></code></pre></div><p>We would iterate over those values in an HTML table with the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Country&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;New Confirmed&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Total Confirmed&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;New Deaths&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Total Deaths&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;New Recovered&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Total Recovered&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;  
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>    {% for nation in data %}
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--Table for summary data--&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;country_cases&#39;, country=nation.Country)}}&#34;</span>&gt;{{nation.Country}}&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.NewConfirmed}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.TotalConfirmed}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.NewDeaths}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.TotalDeaths}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.NewRecovered}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.TotalRecovered}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>    {% endfor %}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;   
+</span></span></code></pre></div><h2 id="testing-and-quality-assurance">Testing and Quality Assurance</h2>
+<p>Before we deploying to production, we should write some unit tests to help ensure the functionality of our code base. A good place to start, would be to test that all of our routes return a 200 status code response.
+Using the <code>unittest</code> module, that is built into the Python standard library, we would create unit tests to ensure the route that looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> unittest <span style="color:#f92672">import</span> TestCase
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> app <span style="color:#f92672">import</span> app
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Unit testing for routes
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RoutesTests</span>(TestCase):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Test index route(s) returns a 200 response</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_index_route</span>(self):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> app<span style="color:#f92672">.</span>test_client() <span style="color:#66d9ef">as</span> tc:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> tc<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>            redirect_response <span style="color:#f92672">=</span> tc<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/home&#39;</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>assertEqual(response<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>assertEqual(redirect_response<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">200</span>)
+</span></span></code></pre></div><h2 id="final-thoughts-and-going-forward">Final Thoughts and Going Forward</h2>
+<p>What I have outlined here is certainly not the full extent of the work that I have put into this project thus far, and there are other features I have on the road map, as well. To view the entire code base for the project, please refer to the GitHub <a href="https://github.com/D-Bits/COVID-19-Tracker">repo</a> for it. In the near future, I would definitely like to do additional analysis, and using data from some of the other endpoints that the API provides. Furthermore, I also hope to add functionality that allows the user to download the data, and save it to their device(s).</p>
+<p>So far, I have found this to be a very rewarding project to work on. At a minimum, it has definitely helped improve my skills with both Flask and Pandas. This is actually the first Flask project that I have deployed to a production environment of some kind. While I did not go into the details of deployment in this article, I hope to go over that in a future post. Until then, there is always more work to be done.</p>
+<p>Sincerely,</p>
+<p>Dana</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="//localhost:1313/tags/python/">python</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1146 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2020-04-08 17:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Tracking%20COVID19&amp;caption=Tracking%20COVID19&amp;canonicalUrl=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Tracking%20COVID19&amp;body=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f&amp;media=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f;description=Tracking%20COVID19" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f&amp;title=Tracking%20COVID19&amp;summary=Tracking%20COVID19&amp;source=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f&amp;resubmit=true&amp;title=Tracking%20COVID19" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f;title=Tracking%20COVID19" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Tracking%20COVID19%20%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f&amp;t=Tracking%20COVID19" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Tracking%20COVID19&amp;url=%2f%2flocalhost%3a1313%2fposts%2f2020-4-9-tracking-covid19%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="//localhost:1313/posts/2020-4-26-pandas-primer/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">A Primer on DataFrames</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="//localhost:1313/posts/2020-2-27-automating-win-updates/">
+                    <span class="button__text">Automating Software Updates on Windows</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <style>
+    .social-img {
+        margin-right: 25px;
+         
+        text-align: center;
+        display: inline-block;
+    }
+
+    .social-footer {
+        display: inline-block;
+        justify-content: center;
+        flex-direction: row;
+         
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        text-align: center;
+    }
+</style>
+
+
+<footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Danabases &copy; 2025</span>
+            
+            
+            
+            
+            
+        </div>
+    </div>
+    
+
+    
+
+    <div class="social-footer">
+        <div class="">
+                <a href="https://github.com/d-bits"><img src="/assets/pics/svgs/github.svg" class="social-img" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/danabases/"><img src="/assets/pics/svgs/linkedin.svg" class="social-img" alt="LinkedIn"></a>
+        </div>
+    </div>
+
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

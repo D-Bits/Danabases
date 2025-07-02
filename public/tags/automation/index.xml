@@ -6,6 +6,7 @@
     <description>Recent content in Automation on Danabases</description>
     <generator>Hugo</generator>
     <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 23 Jul 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,6 +15,34 @@
       <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
       <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;&#xA;&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unlocking the Power of Apache Airflow</title>
+      <link>//localhost:1313/posts/2020-11-08-unlocking-airflow/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-11-08-unlocking-airflow/</guid>
+      <description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-airflow&#34;&gt;What is Airflow?&lt;/h2&gt;&#xA;&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Generating Mock Data with Faker</title>
+      <link>//localhost:1313/posts/2020-5-03-mock-data/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-5-03-mock-data/</guid>
+      <description>&lt;p&gt;Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automating Software Updates on Windows</title>
+      <link>//localhost:1313/posts/2020-2-27-automating-win-updates/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-2-27-automating-win-updates/</guid>
+      <description>&lt;p&gt;Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.&lt;/p&gt;&#xA;&lt;p&gt;In a &lt;a href=&#34;https://danabases.net/posts/2020-2-15-postgres-chocolatey/&#34;&gt;previous post&lt;/a&gt;, I wrote about how to easily install and update a Postgres instance on Windows. This post will ultimately build on that, as it uses the same package manager, Chocolatey. There is, of course, a little bit of setup to be done to automating this, but nothing too labor-intensive, and definitely worth the amount of time it will save.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Easy Postgres Installation and Setup on Windows with Chocolatey</title>
+      <link>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</guid>
+      <description>&lt;p&gt;This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt; package manager. Yes, you can always take the old school route by going to the &lt;a href=&#34;https://www.postgresql.org/download/&#34;&gt;official Postgres website&lt;/a&gt;, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installing-chocolatey&#34;&gt;Installing Chocolatey&lt;/h2&gt;&#xA;&lt;p&gt;To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run &lt;code&gt;Get-ExecutionPolicy&lt;/code&gt;. If it says &amp;ldquo;restricted&amp;rdquo;, then you will need to run either &lt;code&gt;Set-ExecutionPolicy AllSigned&lt;/code&gt; or &lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

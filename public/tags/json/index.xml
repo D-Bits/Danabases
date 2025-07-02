@@ -6,8 +6,30 @@
     <description>Recent content in Json on Danabases</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improving Developer Productivity with VS Code Tasks</title>
+      <link>//localhost:1313/posts/2020-12-17-vscode-tasks/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-12-17-vscode-tasks/</guid>
+      <description>&lt;p&gt;Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of &lt;em&gt;task runners&lt;/em&gt; to at least partially automate execution of these kinds of tedious and repetitive tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unlocking the Power of Apache Airflow</title>
+      <link>//localhost:1313/posts/2020-11-08-unlocking-airflow/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-11-08-unlocking-airflow/</guid>
+      <description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-airflow&#34;&gt;What is Airflow?&lt;/h2&gt;&#xA;&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrating JSONB Data into Django Projects</title>
+      <link>//localhost:1313/posts/2020-2-13-jsonb-django/</link>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-2-13-jsonb-django/</guid>
+      <description>&lt;p&gt;This post follows up on my earlier post about &lt;a href=&#34;https://danabases.net/posts/2020-1-22-postgres-json/&#34;&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;&#xA;&lt;h2 id=&#34;modeling-the-data&#34;&gt;Modeling the Data&lt;/h2&gt;&#xA;&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Storing and Querying JSON Data in PostgreSQL</title>
       <link>//localhost:1313/posts/2020-1-22-postgres-json/</link>
