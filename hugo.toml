@@ -82,6 +82,6 @@ theme        = "hello-friend-ng"
     url        = "/projects"    
 
 [pagination]
-  pagerSize = 5
+  pagerSize = 15
   path = "page"
   disableAliases = false
