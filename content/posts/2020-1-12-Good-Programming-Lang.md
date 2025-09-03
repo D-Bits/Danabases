@@ -1,10 +1,9 @@
----
-layout: post
-title: What Makes a Good Programming Language? 
-publishdate: 2020-01-12
-updated: January 16, 2020
-tags: ["other"] 
----
++++
+title = 'What Makes a Good Programming Language? '
+date = 2020-01-12
+draft = false
+tags = ["other"] 
++++
 
 First, I should note that the is perhaps a somewhat loaded question, as 
 different people will inevitably have different criteria, and priorities 

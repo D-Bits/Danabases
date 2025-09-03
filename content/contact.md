@@ -1,5 +1,5 @@
----
-title: Contact Dana
----
++++
+title = 'Contact'
++++
 
 {{< contact >}}

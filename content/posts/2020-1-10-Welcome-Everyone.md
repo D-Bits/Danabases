@@ -1,10 +1,8 @@
----
-layout: post
-title: Welcome!
-publishdate: 2020-01-10
-updated: January 11, 2020
-tags: ["other"] 
----
++++
+title = 'Welcome!'
+date = 2020-01-10T07:07:07+01:00
+draft = false
++++
 
 Welcome to my new new blog and website! This is a pilot post for my
 new blogging website, build with Hugo and Netlify. My posts will 

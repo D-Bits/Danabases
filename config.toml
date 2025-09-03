@@ -1,47 +1,59 @@
-baseurl = "/"
+baseurl      = "localhost"
+title        = "Danabases"
 languageCode = "en-us"
-theme = "hello-friend"
-paginate = 4
+theme        = "hello-friend-ng"
 
 [params]
-  # dir name of your blog content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "posts"
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
 
-  # "light" or "dark"
-  defaultTheme = "dark"
+  # Subtitle for home
+  homeSubtitle = "A simple and beautiful blog"
 
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 6
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
 
-  # Show reading time in minutes for posts
-  showReadingTime = false
+  # Enable sharing buttons, if you like
+  enableSharingButtons = true
+  
+  # Show a global language switcher in the navigation bar
+  enableGlobalLanguageMenu = true
 
-  # Show table of contents at the top of your posts (defaults to false)
-  # Alternatively, add this param to post front matter for specific posts
-  toc = true
+  # Metadata mostly used in document's head
+  description = "Danabases blog"
+  keywords = "homepage, blog"
+  images = [""]
 
-  # Show full page content in RSS feed items
-  #(default is Description or Summary metadata in the front matter)
-  # rssFullText = true
+  # Custom footer
+  [params.footer]
+    trademark = 2025
+    rss = false
+    copyright = false
+
+  [[params.social]]
+    url  = "https://github.com/d-bits"
+    icon = "/assets/pics/svgs/github.svg"
+
+  [[params.social]]
+      url   = "https://linkedin.com/danabases"
+      icon  = "/assets/pics/svgs/linkedin.svg"
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
 
 [languages]
   [languages.en]
     title = "Danabases"
-    subtitle = ""
     keywords = ""
-    copyright = ""
-    menuMore = "Show more"
-    writtenBy = "Written by"
-    readMore = "Read more"
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    minuteReadingTime = "min read"
-    dateFormatSingle = "2006-01-02"
-    dateFormatList = "2006-01-02"
-    # leave empty to disable, enter display text to enable
-    # lastModDisplay = ""
+
+#  [languages.en.params]
+#    subtitle  = "A simple theme for Hugo"
 
     [languages.en.params.logo]
       logoText = "Danabases"
@@ -51,21 +63,29 @@ paginate = 4
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
 
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-      [[languages.en.menu.main]]
-        identifier = "skills"
-        name = "Skills"
-        url = "/skills"
-      [[languages.en.menu.main]]
-        identifier = "projects"
-        name = "Projects"
-        url = "/projects"
-      [[languages.en.menu.main]]
-        identifier = "contact"
-        name = "Contact"
-        url = "/contact"
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+  [[menu.main]]
+    identifier = "skills"
+    name       = "Skills"
+    url        = "/skills"
+  [[menu.main]]
+    identifier = "contact"
+    name       = "Contact"
+    url        = "/contact"
+  [[menu.main]]
+    identifier = "projects"
+    name       = "Projects"
+    url        = "/projects"
+  [[menu.main]]
+    identifier = "data"
+    name       = "Data"
+    url        = "/data"    
 
+[pagination]
+  pagerSize = 15
+  path = "page"
+  disableAliases = false
