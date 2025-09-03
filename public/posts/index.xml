@@ -6,8 +6,27 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
         <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>A Long Overdue Reboot</title>
+            <link>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</link>
+            <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</guid>
+            <description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;
+&lt;h3 id=&#34;a-quick-update&#34;&gt;A Quick Update&lt;/h3&gt;
+&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.</p>
+<h3 id="a-quick-update">A Quick Update</h3>
+<p>Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well</p>
+<h3 id="updating-the-site">Updating the Site</h3>
+<p>In addition to not writing any new blog posts for the past four years, I also had not updated the code base for the website itself. Furthermore, updating to a current version of the static site generator (Hugo) that was used to build this site entailed a whole bunch of backwards compatibility issues. First among these, the settings file had to be updated to be compatible with the current version of Hugo. Second, the 3rd party theme I was using had no been updated in years. Fortunately, I was able to find a fork of said theme that is compatible and regularly updated. So, the next task was to integrate that new theme into the website, as well as re-familiarize myself with a static site generator that I had not used in years.</p>
+<h3 id="the-future-and-final-thoughts">The Future and Final Thoughts</h3>
+<p>I don&rsquo;t know just how much I&rsquo;m going to be writing new blog posts in the coming months and years. However, I will try to keep at it, and in addition to coding topics, I will also occasionally be uploading recipes for food, and not just software. I also enjoy cooking, and like my source code here, the recipes are free for others to use as they please.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Writing an HTTP Client in Go</title>

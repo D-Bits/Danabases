@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 23 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Long Overdue Reboot</title>
+      <link>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</guid>
+      <description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;&#xA;&lt;h3 id=&#34;a-quick-update&#34;&gt;A Quick Update&lt;/h3&gt;&#xA;&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
       <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>

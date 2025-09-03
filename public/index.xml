@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Long Overdue Reboot</title>
+      <link>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</guid>
+      <description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;&#xA;&lt;h3 id=&#34;a-quick-update&#34;&gt;A Quick Update&lt;/h3&gt;&#xA;&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Writing an HTTP Client in Go</title>
       <link>//localhost:1313/posts/2021-10-19-go-http-client/</link>
@@ -155,6 +162,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/contact/</guid>
       <description>&lt;style&gt;&#xA;    .contact-div {&#xA;        width: 100%;&#xA;        max-width: 600px;&#xA;        margin: 0 auto;&#xA;        padding: 20px;&#xA;        background-color: #f9f9f9;&#xA;        border-radius: 8px;&#xA;        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);&#xA;    }&#xA;&#xA;    #contact {&#xA;        display: flex;&#xA;        flex-direction: column;&#xA;        margin: 1em;&#xA;    }&#xA;&#xA;    .fields {&#xA;        width: 100%;&#xA;        padding: 10px;&#xA;        margin: 5px 0;&#xA;        border: 1px solid #ccc;&#xA;        border-radius: 4px;&#xA;        font-size: 16px;&#xA;    }&#xA;&#xA;    #message {&#xA;        height: 150px;&#xA;        resize: vertical;&#xA;        border-bottom: 1em;&#xA;    }&#xA;&#xA;    .reach-me-send {&#xA;        background-color: #31799b;&#xA;        color: white;&#xA;        padding: 10px 15px;&#xA;        border: none;&#xA;        border-radius: 4px;&#xA;        cursor: pointer;&#xA;        font-size: 16px;&#xA;        margin-top: 1em;&#xA;    }&#xA;&#xA;&lt;/style&gt;&#xA;&#xA;&lt;div id=&#34;contact-div&#34;&gt;&#xA;&#xA;    &lt;p class=&#34;gpg&#34;&gt;&lt;strong&gt;&lt;a href=&#34;https://keybase.io/dbits/pgp_keys.asc&#34; target=&#34;_blank&#34;&gt;GPG Public Key &amp;#128272;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Data Bank</title>
+      <link>//localhost:1313/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/data/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Here&amp;rsquo;s a personal repository of data sets that are free to use.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;sample-people&#34;&gt;Sample People&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://danabases.net/data/people.json&#34;&gt;&lt;strong&gt;JSON Data&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; A sample JSON file of characters from The Simpson&amp;rsquo;s and characteristics about them.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Total Records&lt;/strong&gt;: 6&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;File Size&lt;/strong&gt;: 1KB&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Projects</title>
