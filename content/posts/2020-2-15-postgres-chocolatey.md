@@ -1,10 +1,8 @@
----
-layout: post
-title: Easy Postgres Installation and Setup on Windows with Chocolatey
-publishdate: 2020-02-15
-updated: February 16, 2020
-tags: ["sql", "automation"] 
----
++++
+title = 'Easy Postgres Installation and Setup on Windows with Chocolatey'
+date = 2020-02-15
+tags = ["sql", "automation"] 
++++
 
 This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the [Chocolatey](https://chocolatey.org/) package manager. Yes, you can always take the old school route by going to the [official Postgres website](https://www.postgresql.org/download/), and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly. 
 

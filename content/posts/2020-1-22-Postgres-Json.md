@@ -1,10 +1,8 @@
----
-layout: post
-title: Storing and Querying JSON Data in PostgreSQL
-publishdate: 2020-01-22
-updated: February 15th, 2020
-tags: ["sql", "json"] 
----
++++
+title = 'Storing and Querying JSON Data in PostgreSQL'
+date = 2020-01-22
+tags= ["sql", "json"] 
++++
 
 I recently started exploring how to store JSON data in a traditional relational
 database management system (RDBMS), rather than a dedicated form of JSON/document 

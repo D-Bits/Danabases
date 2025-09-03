@@ -1,0 +1,12 @@
+{
+    "name": "Homer Simpson",
+    "age": 39,
+    "occupation": "Safety Officer",
+    "hobbies": ["donuts", "watching TV", "fishing"],
+    "address": {
+        "street": "742 Evergreen Terrace",
+        "city": "Springfield",
+        "state": "Illinois",
+        "zip": "62704"
+    }
+}

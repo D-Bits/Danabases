@@ -1,10 +1,8 @@
----
-layout: post
-title: Invoking Shell Commands in C# Programs
-publishdate: 2020-01-19
-updated: January 19, 2020
-tags: ["c-sharp"] 
----
++++
+title = 'Invoking Shell Commands in C# Programs'
+date = 2020-01-19
+tags = ["c-sharp"] 
++++
 
 After extensive wrangling and experimentation, I finally have managed to
 successfully invoke external commands in C# programs, which I hope will make

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Danabases</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Danabases</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Long Overdue Reboot</title>
+      <link>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</guid>
+      <description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;&#xA;&lt;h3 id=&#34;a-quick-update&#34;&gt;A Quick Update&lt;/h3&gt;&#xA;&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Writing an HTTP Client in Go</title>
+      <link>//localhost:1313/posts/2021-10-19-go-http-client/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2021-10-19-go-http-client/</guid>
+      <description>&lt;p&gt;One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&amp;rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.&lt;/p&gt;&#xA;&lt;h2 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h2&gt;&#xA;&lt;p&gt;The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user&amp;rsquo;s choosing, and saves it as a &lt;code&gt;.json&lt;/code&gt; file to the local file system. I won&amp;rsquo;t go into how to setup a development environment for Go (&lt;em&gt;I just used Docker, and VS Code integrations&lt;/em&gt;) here. However, we do need to create some files and directories first. To begin with, we need to create a &lt;code&gt;bin/&lt;/code&gt; directory for executables, and a &lt;code&gt;data/&lt;/code&gt; directory to save our data dumps in. To implement the actual program, we need two source files: &lt;code&gt;main.go&lt;/code&gt; and &lt;code&gt;fetch.go&lt;/code&gt;, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a &lt;code&gt;Makefile&lt;/code&gt; to simplify program compilation and execution, with the following rules:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
+      <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>
+      <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
+      <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;&#xA;&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>One Year On</title>
+      <link>//localhost:1313/posts/2021-04-08-one-year-on/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2021-04-08-one-year-on/</guid>
+      <description>&lt;p&gt;After recently going over some of my earliest blog &lt;a href=&#34;https://danabases.net/posts/2020-1-10-welcome-everyone/&#34;&gt;posts&lt;/a&gt;, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&amp;rsquo;s happened since, as well as what the future might entail.&lt;/p&gt;&#xA;&lt;h2 id=&#34;in-the-beginning&#34;&gt;In the Beginning&amp;hellip;.&lt;/h2&gt;&#xA;&lt;p&gt;The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Improving Developer Productivity with VS Code Tasks</title>
+      <link>//localhost:1313/posts/2020-12-17-vscode-tasks/</link>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-12-17-vscode-tasks/</guid>
+      <description>&lt;p&gt;Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of &lt;em&gt;task runners&lt;/em&gt; to at least partially automate execution of these kinds of tedious and repetitive tasks.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unlocking the Power of Apache Airflow</title>
+      <link>//localhost:1313/posts/2020-11-08-unlocking-airflow/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-11-08-unlocking-airflow/</guid>
+      <description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-airflow&#34;&gt;What is Airflow?&lt;/h2&gt;&#xA;&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visualizing COVID-19 Data</title>
+      <link>//localhost:1313/posts/2020-8-31-covid-data-visualization/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-8-31-covid-data-visualization/</guid>
+      <description>&lt;p&gt;Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-data&#34;&gt;The Data&lt;/h2&gt;&#xA;&lt;p&gt;Naturally, you can&amp;rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Overhauling This Website</title>
+      <link>//localhost:1313/posts/2020-05-10-overhauling-this-website/</link>
+      <pubDate>Sun, 10 May 2020 06:50:43 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-05-10-overhauling-this-website/</guid>
+      <description>&lt;p&gt;For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;&#xA;&lt;p&gt;In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&amp;rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Generating Mock Data with Faker</title>
+      <link>//localhost:1313/posts/2020-5-03-mock-data/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-5-03-mock-data/</guid>
+      <description>&lt;p&gt;Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Primer on DataFrames</title>
+      <link>//localhost:1313/posts/2020-4-26-pandas-primer/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-4-26-pandas-primer/</guid>
+      <description>&lt;p&gt;Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-dataframes&#34;&gt;What Are DataFrames?&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;code&gt;DataFrame&lt;/code&gt; is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a &lt;code&gt;venv&lt;/code&gt; and run &lt;code&gt;pip install pandas&lt;/code&gt;. To use Pandas, we use the following universal aliasing for our import:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tracking COVID19</title>
+      <link>//localhost:1313/posts/2020-4-9-tracking-covid19/</link>
+      <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-4-9-tracking-covid19/</guid>
+      <description>&lt;p&gt;In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Automating Software Updates on Windows</title>
+      <link>//localhost:1313/posts/2020-2-27-automating-win-updates/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-2-27-automating-win-updates/</guid>
+      <description>&lt;p&gt;Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.&lt;/p&gt;&#xA;&lt;p&gt;In a &lt;a href=&#34;https://danabases.net/posts/2020-2-15-postgres-chocolatey/&#34;&gt;previous post&lt;/a&gt;, I wrote about how to easily install and update a Postgres instance on Windows. This post will ultimately build on that, as it uses the same package manager, Chocolatey. There is, of course, a little bit of setup to be done to automating this, but nothing too labor-intensive, and definitely worth the amount of time it will save.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Easy Postgres Installation and Setup on Windows with Chocolatey</title>
+      <link>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</link>
+      <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</guid>
+      <description>&lt;p&gt;This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt; package manager. Yes, you can always take the old school route by going to the &lt;a href=&#34;https://www.postgresql.org/download/&#34;&gt;official Postgres website&lt;/a&gt;, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installing-chocolatey&#34;&gt;Installing Chocolatey&lt;/h2&gt;&#xA;&lt;p&gt;To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run &lt;code&gt;Get-ExecutionPolicy&lt;/code&gt;. If it says &amp;ldquo;restricted&amp;rdquo;, then you will need to run either &lt;code&gt;Set-ExecutionPolicy AllSigned&lt;/code&gt; or &lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrating JSONB Data into Django Projects</title>
+      <link>//localhost:1313/posts/2020-2-13-jsonb-django/</link>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-2-13-jsonb-django/</guid>
+      <description>&lt;p&gt;This post follows up on my earlier post about &lt;a href=&#34;https://danabases.net/posts/2020-1-22-postgres-json/&#34;&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;&#xA;&lt;h2 id=&#34;modeling-the-data&#34;&gt;Modeling the Data&lt;/h2&gt;&#xA;&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fun with Gravitational Physics and Python</title>
+      <link>//localhost:1313/posts/2020-2-3-gravity-python/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-2-3-gravity-python/</guid>
+      <description>&lt;p&gt;While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adventures in Containerizing Databases</title>
+      <link>//localhost:1313/posts/2020-1-28-containerizing-databases/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-1-28-containerizing-databases/</guid>
+      <description>&lt;p&gt;I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&amp;rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://zdnet2.cbsistatic.com/hub/i/r/2016/12/14/411ea5c5-dae7-4756-8cd3-d506a0675333/resize/770xauto/b90dbe53b50ee955f5b322262444bcea/docker-whale-1.jpg&#34; alt=&#34;docker-whale&#34;&gt;&#xA;&lt;em&gt;I was making a similar face when I got this all worked out&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Storing and Querying JSON Data in PostgreSQL</title>
+      <link>//localhost:1313/posts/2020-1-22-postgres-json/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-1-22-postgres-json/</guid>
+      <description>&lt;p&gt;I recently started exploring how to store JSON data in a traditional relational&#xA;database management system (RDBMS), rather than a dedicated form of JSON/document&#xA;storage, like MongoDB. While I could write a lot more about the problems with&#xA;MongoDB, that&amp;rsquo;s not what I want to do here. Instead, I want to&#xA;focus primarily on how to store and query JSON in PostgreSQL. However, I&#xA;should note that PostgreSQL is not the only RDBMS that supports JSON storage.&#xA;I know that MariaDB also does, as of v10.2, and possibly other RDBMS as well. However,&#xA;since I have been mostly using and enjoying Postgres for awhile now,&#xA;I decided to focus on that, specifically.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Invoking Shell Commands in C# Programs</title>
+      <link>//localhost:1313/posts/2020-1-19-shell-cmds-csharp/</link>
+      <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-1-19-shell-cmds-csharp/</guid>
+      <description>&lt;p&gt;After extensive wrangling and experimentation, I finally have managed to&#xA;successfully invoke external commands in C# programs, which I hope will make&#xA;me a considerably more productive C# programmer. So without further ado, let&amp;rsquo;s&#xA;dive into the nitty gritty details.&lt;/p&gt;&#xA;&lt;h3 id=&#34;purpose&#34;&gt;Purpose&lt;/h3&gt;&#xA;&lt;p&gt;First, you might ask: why would one need to do this? Ultimately, the potential&#xA;to automate all sorts of things by invoking external commands inside a program&#xA;are nearly limitless. I have already been relying heavily on &lt;code&gt;subprocess.run()&lt;/code&gt;&#xA;in Python&amp;rsquo;s standard library to do exactly that for a while now. Yet, as much&#xA;as I have been utilizing that, I recently started to explore if I could implement&#xA;the same, or at least similar, functionality in other languages. C# has long been&#xA;my designated language to fall back on, when Python isn&amp;rsquo;t ideal for the task&#xA;at hand, such as when I need to easily cross-compile binaries. Therefore, I&#xA;started looking for whatever documentation and guides I could find on the&#xA;topic.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Migrating Data to the Cloud with Python</title>
+      <link>//localhost:1313/posts/2020-1-16-migratingdatapython/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-1-16-migratingdatapython/</guid>
+      <description>&lt;p&gt;In the past year, or so, I have been experimenting with writing my own custom&#xA;ETL programs in Python. Among the functionality that I included was extracting&#xA;data from a local Postgres database, and migrating to a Postgres database in&#xA;the cloud.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-reasoning&#34;&gt;The Reasoning&lt;/h2&gt;&#xA;&lt;p&gt;While I&amp;rsquo;m aware that platforms-as-a service (PaaS) like AWS, and&#xA;Azure provide their own services for this. Nevertheless, I opted to implement&#xA;my own solution for data migration(s). I decided on this course of action for&#xA;a couple reasons: 1) I saw it as a valuable learning experience for, and 2)&#xA;I also found it be a practical solution as well.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What Makes a Good Programming Language? </title>
+      <link>//localhost:1313/posts/2020-1-12-good-programming-lang/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2020-1-12-good-programming-lang/</guid>
+      <description>&lt;p&gt;First, I should note that the is perhaps a somewhat loaded question, as&#xA;different people will inevitably have different criteria, and priorities&#xA;for the languages they choose to use. Therefore, you will get many different&#xA;answers to this question, depending on who you ask. It is also equally&#xA;important to ask: what makes a good programming language for a specific use&#xA;case? A language that is ideal for say, building web applications is likely&#xA;not going to be equally ideal for writing drivers and operating system&#xA;kernels. Nevertheless, I that there are some core criteria that almost all&#xA;developers will value in a given language to at least some degree. Among&#xA;these are: performance, simplicity, versatility, and cross-platform support.&#xA;With that in mind, I would like to break down what each of these criteria&#xA;entail.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Welcome!</title>
+      <link>//localhost:1313/posts/2020-1-10-welcome-everyone/</link>
+      <pubDate>Fri, 10 Jan 2020 07:07:07 +0100</pubDate>
+      <guid>//localhost:1313/posts/2020-1-10-welcome-everyone/</guid>
+      <description>&lt;p&gt;Welcome to my new new blog and website! This is a pilot post for my&#xA;new blogging website, build with Hugo and Netlify. My posts will&#xA;primarily revolve around technology, science, society, and the connections&#xA;between them.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;At any rate, I hope you enjoy my posts. Feel free to check out the &amp;ldquo;About&amp;rdquo;,&#xA;and &amp;ldquo;Skills&amp;rdquo; pages for more information about me. Thank you again for visiting&#xA;my blog, and feel free to contact via the email link below, if you care to.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>//localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/contact/</guid>
+      <description>&lt;style&gt;&#xA;    .contact-div {&#xA;        width: 100%;&#xA;        max-width: 600px;&#xA;        margin: 0 auto;&#xA;        padding: 20px;&#xA;        background-color: #f9f9f9;&#xA;        border-radius: 8px;&#xA;        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);&#xA;    }&#xA;&#xA;    #contact {&#xA;        display: flex;&#xA;        flex-direction: column;&#xA;        margin: 1em;&#xA;    }&#xA;&#xA;    .fields {&#xA;        width: 100%;&#xA;        padding: 10px;&#xA;        margin: 5px 0;&#xA;        border: 1px solid #ccc;&#xA;        border-radius: 4px;&#xA;        font-size: 16px;&#xA;    }&#xA;&#xA;    #message {&#xA;        height: 150px;&#xA;        resize: vertical;&#xA;        border-bottom: 1em;&#xA;    }&#xA;&#xA;    .reach-me-send {&#xA;        background-color: #31799b;&#xA;        color: white;&#xA;        padding: 10px 15px;&#xA;        border: none;&#xA;        border-radius: 4px;&#xA;        cursor: pointer;&#xA;        font-size: 16px;&#xA;        margin-top: 1em;&#xA;    }&#xA;&#xA;&lt;/style&gt;&#xA;&#xA;&lt;div id=&#34;contact-div&#34;&gt;&#xA;&#xA;    &lt;p class=&#34;gpg&#34;&gt;&lt;strong&gt;&lt;a href=&#34;https://keybase.io/dbits/pgp_keys.asc&#34; target=&#34;_blank&#34;&gt;GPG Public Key &amp;#128272;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Data Bank</title>
+      <link>//localhost:1313/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/data/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Here&amp;rsquo;s a personal repository of data sets that are free to use.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;sample-people&#34;&gt;Sample People&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://danabases.net/data/people.json&#34;&gt;&lt;strong&gt;JSON Data&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; A sample JSON file of characters from The Simpson&amp;rsquo;s and characteristics about them.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Total Records&lt;/strong&gt;: 6&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;File Size&lt;/strong&gt;: 1KB&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>//localhost:1313/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/projects/</guid>
+      <description>&lt;p&gt;Here is a collection of some of the projects that I have worked on. A more complete portfolio of my work can be found on my &lt;a href=&#34;https://github.com/D-Bits&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;covid-19-reports&#34;&gt;&lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Reports&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/assets/pics/covid19-tracker.jpg&#34; alt=&#34;covid19-tracker&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;A web client used to track, and provide global and U.S. data for the COVID-19 pandemic. Built primarily with Flask and Pandas.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;dev-roast&#34;&gt;&lt;a href=&#34;https://github.com/D-Bits/devroastproject&#34;&gt;Dev Roast&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;//localhost:1313/assets/pics/devroast.jpg&#34; alt=&#34;system-central&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;An ongoing collaboration with members of the Puget Sound Python Programming (PuPPy) community to create web service where developers can upload links to websites they have published, and get feedback. Built with Python3, PostgreSQL, Docker, and React.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Skills</title>
+      <link>//localhost:1313/skills/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/skills/</guid>
+      <description>&lt;p&gt;A non-exhaustive list of the skills I use in my workflows.&lt;/p&gt;&#xA;&lt;h3 id=&#34;workflows&#34;&gt;Workflows&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Database Development&lt;/li&gt;&#xA;&lt;li&gt;ETL&lt;/li&gt;&#xA;&lt;li&gt;REST APIs&lt;/li&gt;&#xA;&lt;li&gt;Data Analysis&lt;/li&gt;&#xA;&lt;li&gt;Automation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;primary-tools&#34;&gt;Primary Tools&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Python 3&lt;/li&gt;&#xA;&lt;li&gt;PostgreSQL&lt;/li&gt;&#xA;&lt;li&gt;Apache Spark&lt;/li&gt;&#xA;&lt;li&gt;Databricks&lt;/li&gt;&#xA;&lt;li&gt;AWS&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;other-tools&#34;&gt;Other Tools&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Apache Airflow&lt;/li&gt;&#xA;&lt;li&gt;T-SQL&lt;/li&gt;&#xA;&lt;li&gt;HTML 5&lt;/li&gt;&#xA;&lt;li&gt;CSS 3&lt;/li&gt;&#xA;&lt;li&gt;Docker&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

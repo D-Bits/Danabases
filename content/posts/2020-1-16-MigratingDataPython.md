@@ -1,10 +1,8 @@
----
-layout: post
-title: Migrating Data to the Cloud with Python
-publishdate: 2020-01-16
-updated: January 17, 2020
-tags: ["python", "sql"] 
----
++++
+title = 'Migrating Data to the Cloud with Python'
+date = 2020-01-16
+tags = ["python", "sql"] 
++++
 
 In the past year, or so, I have been experimenting with writing my own custom 
 ETL programs in Python. Among the functionality that I included was extracting

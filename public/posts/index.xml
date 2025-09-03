@@ -1,0 +1,1374 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Danabases</title>
+        <link>//localhost:1313/posts/</link>
+        <description>Recent content in Posts on Danabases</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
+        <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>A Long Overdue Reboot</title>
+            <link>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</link>
+            <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</guid>
+            <description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;
+&lt;h3 id=&#34;a-quick-update&#34;&gt;A Quick Update&lt;/h3&gt;
+&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.</p>
+<h3 id="a-quick-update">A Quick Update</h3>
+<p>Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well</p>
+<h3 id="updating-the-site">Updating the Site</h3>
+<p>In addition to not writing any new blog posts for the past four years, I also had not updated the code base for the website itself. Furthermore, updating to a current version of the static site generator (Hugo) that was used to build this site entailed a whole bunch of backwards compatibility issues. First among these, the settings file had to be updated to be compatible with the current version of Hugo. Second, the 3rd party theme I was using had no been updated in years. Fortunately, I was able to find a fork of said theme that is compatible and regularly updated. So, the next task was to integrate that new theme into the website, as well as re-familiarize myself with a static site generator that I had not used in years.</p>
+<h3 id="the-future-and-final-thoughts">The Future and Final Thoughts</h3>
+<p>I don&rsquo;t know just how much I&rsquo;m going to be writing new blog posts in the coming months and years. However, I will try to keep at it, and in addition to coding topics, I will also occasionally be uploading recipes for food, and not just software. I also enjoy cooking, and like my source code here, the recipes are free for others to use as they please.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Writing an HTTP Client in Go</title>
+            <link>//localhost:1313/posts/2021-10-19-go-http-client/</link>
+            <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2021-10-19-go-http-client/</guid>
+            <description>&lt;p&gt;One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&amp;rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.&lt;/p&gt;
+&lt;h2 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h2&gt;
+&lt;p&gt;The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user&amp;rsquo;s choosing, and saves it as a &lt;code&gt;.json&lt;/code&gt; file to the local file system. I won&amp;rsquo;t go into how to setup a development environment for Go (&lt;em&gt;I just used Docker, and VS Code integrations&lt;/em&gt;) here. However, we do need to create some files and directories first. To begin with, we need to create a &lt;code&gt;bin/&lt;/code&gt; directory for executables, and a &lt;code&gt;data/&lt;/code&gt; directory to save our data dumps in. To implement the actual program, we need two source files: &lt;code&gt;main.go&lt;/code&gt; and &lt;code&gt;fetch.go&lt;/code&gt;, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a &lt;code&gt;Makefile&lt;/code&gt; to simplify program compilation and execution, with the following rules:&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.</p>
+<h2 id="project-setup">Project Setup</h2>
+<p>The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user&rsquo;s choosing, and saves it as a <code>.json</code> file to the local file system. I won&rsquo;t go into how to setup a development environment for Go (<em>I just used Docker, and VS Code integrations</em>) here. However, we do need to create some files and directories first. To begin with, we need to create a <code>bin/</code> directory for executables, and a <code>data/</code> directory to save our data dumps in. To implement the actual program, we need two source files: <code>main.go</code> and <code>fetch.go</code>, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a <code>Makefile</code> to simplify program compilation and execution, with the following rules:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span>SHELL <span style="color:#f92672">:=</span> /bin/bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">run</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    go run main.go fetch.go
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">compile</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    go build -o bin/
+</span></span><span style="display:flex;"><span>    GOOS<span style="color:#f92672">=</span>windows GOARCH<span style="color:#f92672">=</span>amd64 go build -o bin/
+</span></span><span style="display:flex;"><span>    GOOS<span style="color:#f92672">=</span>darwin GOARCH<span style="color:#f92672">=</span>amd64 go build -o bin/ 
+</span></span></code></pre></div><h2 id="the-logic">The Logic</h2>
+<p>The function we will be using to both extract and dump our data will be in the <code>fetch.go</code> file. The code is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;io/ioutil&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getData</span>(<span style="color:#a6e22e">endpoint</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">filename</span> <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// make a GET request to fetch the JSON data</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">endpoint</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Log any errors</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// store the response body in a variable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">body</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadAll</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">Body</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Create a file to write to</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">file</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Create</span>(<span style="color:#e6db74">&#34;./data/&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">filename</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.json&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Write the JSON to an external file</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">WriteString</span>(string(<span style="color:#a6e22e">body</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Download complete. Check the &#39;data&#39; directory.&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you can see, the code is actually pretty straightforward. Not necessarily Python simple, but still quite intuitive.</p>
+<h2 id="main">Main</h2>
+<p>Our main file will actually need to include a little bit of logic as well.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;bufio&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Create a reader</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reader</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">bufio</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stdin</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;Enter a URL: &#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">ReadString</span>(<span style="color:#e6db74">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Remove the newline before passing into getData() function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">formattedUrl</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimSuffix</span>(<span style="color:#a6e22e">url</span>, <span style="color:#e6db74">&#34;\n&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;Enter a file name (without a file extension): &#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">filename</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">ReadString</span>(<span style="color:#e6db74">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">formattedFilename</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">TrimSuffix</span>(<span style="color:#a6e22e">filename</span>, <span style="color:#e6db74">&#34;\n&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getData</span>(<span style="color:#a6e22e">formattedUrl</span>, <span style="color:#a6e22e">formattedFilename</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Prompt the user to press enter to exit</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;Press enter to exit.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">ReadString</span>(<span style="color:#e6db74">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This will allow a user to pass in necessary values for the parameters in <code>fetch.go</code> via standard input. After our program has fulfilled its purpose, we then prompt the user to press enter to exit the program.</p>
+<p>To run the program, we run either <code>go run main.go fetch.go</code> or <code>make run</code> from the terminal.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>Although this is a rather simple program, it was a pleasant introduction to Go nonetheless, and has compelled me to explore the language so more. I&rsquo;m already working on a different console program in Golang. At some point in the near future, I also hope to implement something more sophisticated, like a REST API.</p>
+<p>You can find the code for the project <a href="https://github.com/D-Bits/GoSys">here</a>.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
+            <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>
+            <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
+            <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;
+&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>It has been more than a year now since I originally deployed my <a href="https://covid19-reporting.herokuapp.com/">COVID-19 Tracker</a> to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.</p>
+<p>At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&rsquo;ve learned from this experience.</p>
+<h2 id="simplify-and-automate-deployments-as-much-as-possible">Simplify and Automate Deployments as Much as Possible</h2>
+<p>This was a key objective of mine from the moment I decided to deploy this project to a live environment. Regardless of what technologies or production environment one is using, deployments should be as simple, intuitive, and easily reproducible as possible. Fortunately, Heroku makes deploying from a remote Git repository via pipeline very easy to set up. I did my very first deployment using this setup, and have stuck with it ever since.</p>
+<h2 id="prioritize-good-code-organization-from-the-beginning">Prioritize Good Code Organization from the Beginning</h2>
+<p>This is definitely a lesson that I wish I kept in mind from the beginning, but I guess hindsight is 20/20. When I first converted this project from a simple command line program to a web application, I ended up dumping pretty much all my routing/controller logic into a single <code>app.py</code> file. At first, this worked out well enough and, given that Flask doesn&rsquo;t box one into structuring their application in a specific manner like Django does, I could get away with this. However, a soon as I started to look into integrating U.S.-specific data into my application, I realized how much of a mistake I had made, as well as how much I needed to re-organize my code base. So, I cleaned things up, and organized the codebase in Flask &ldquo;blueprints&rdquo;, which has removed a lot of headache. That said, I have no illusions how much time I may have saved, if I had organized my project this way from the beginning, but again, hindsight is 20/20.</p>
+<h2 id="unit-testing-is-essential-but-not-infallible">Unit Testing is Essential, but Not Infallible</h2>
+<p>While I have pretty consistently prioritized comprehensive test coverage for this projects, and it certainly has served me well, there are still a number of problems I have encountered that unit tests alone could not catch. For problems with the app&rsquo;s logic, I have sometimes had to dive into the environment&rsquo;s logs to find out what was wrong. For example, a page might load, but not display any data. In other cases, such as CSS-related stuff, it was pure trial-and-error, with no breadcrumbs to follow. None of this is to suggest that I couldn&rsquo;t solve these problems, only that unit testing is not a silver bullet, but essential nonetheless.</p>
+<h2 id="certain-problems-dont-become-apparent-until-its-been-in-production-for-a-bit">Certain Problems Don&rsquo;t Become Apparent, Until Its Been in Production For a Bit</h2>
+<p>For better, or for worse, things work differently in production than they do in one&rsquo;s strictly local dev environment. Consequently, things you may not have even considered as potential problems might gradually emerge over time as your project has been live for a bit. It could be something like a missing, or outdated, dependency in your production environment. It could also be something like scalability issues that only become apparent as your user base grows. Also, you might find out (as detailed above) that you haven&rsquo;t organized your codebase in a manner that is easily maintainable in the long run, and that one must revisit a lot of early design choices.</p>
+<h2 id="conclusions-and-the-future">Conclusions, and the Future</h2>
+<p>Ultimately, the process of setting up deployments was not nearly as painfully as I was originally expecting it to be. I&rsquo;m very much grateful for that. Also, it has been quite interesting, albeit frustrating at times, to see the miscellaneous problems that have popped up over the time this web app has been in production. At the moment, I am undertaking the daunting task of re-writing a lot of application logic (again) to accommodate new data sources, since both of the REST APIs that I have been depending on for data have become unreliable. The amount of code I&rsquo;m going to have to refactor as a result of this is admittedly a little bit daunting, but I will press on nonetheless.</p>
+<h4 id="sincerely">Sincerely,</h4>
+<p>Dana</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>One Year On</title>
+            <link>//localhost:1313/posts/2021-04-08-one-year-on/</link>
+            <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2021-04-08-one-year-on/</guid>
+            <description>&lt;p&gt;After recently going over some of my earliest blog &lt;a href=&#34;https://danabases.net/posts/2020-1-10-welcome-everyone/&#34;&gt;posts&lt;/a&gt;, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&amp;rsquo;s happened since, as well as what the future might entail.&lt;/p&gt;
+&lt;h2 id=&#34;in-the-beginning&#34;&gt;In the Beginning&amp;hellip;.&lt;/h2&gt;
+&lt;p&gt;The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>After recently going over some of my earliest blog <a href="https://danabases.net/posts/2020-1-10-welcome-everyone/">posts</a>, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&rsquo;s happened since, as well as what the future might entail.</p>
+<h2 id="in-the-beginning">In the Beginning&hellip;.</h2>
+<p>The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:</p>
+<p><img src="/assets/pics/posting_pics/danabases-original.jpg" alt="danabases original"></p>
+<p><em>This original UI of Jekyll-based Danabases. It can still be accessed <a href="https://danabases.netlify.app/">here</a></em>.</p>
+<p>At first, this setup actually worked reasonably well: I got throw together a decent enough blog, and host it on GitHub Pages for free with seemingly minimal hassle. The minimalist UI didn&rsquo;t bother me. I prefer a more basic UI to one that obsesses over purely cosmetic details,  plus it was easy enough to make minor modifications to the layout of the website. However, after about a couple months, certain serious problems began to emerge.</p>
+<p>First, is a disturbing tendency by Jekyll to try execute snippets of Jinja2 and/or Django template code that I tried to include in some of my blog posts. That kind of template code is actually very syntactically similar to the templating language that Jekyll uses. The other problem I faced was simply the fact that Jekyll is Ruby-based, which I have very little expertise in. Also, given that Ruby is rapidly becoming somewhat of a legacy language, I couldn&rsquo;t really see myself investing a lot of time and energy into learning the language, and its related technologies.</p>
+<h2 id="the-next-iteration">The Next Iteration</h2>
+<p>With these challenges in mind, I set out to overhaul Danabases. I won&rsquo;t go into a whole lot technical details about that process, as I have already done so in a <a href="/posts/2020-05-10-overhauling-this-website/">previous post</a>. The TL;DR is that I opted for re-building the blog using the Hugo static site generator, and deploying to Netlify. This setup has served me pretty well, and I continue to use it to this day. However, I didn&rsquo;t recently switch to new theme for the new year, on account of seemingly random problems in how the previous theme was rendering text to HTML.</p>
+<h2 id="what-ive-learned-and-struggles-along-the-way">What I&rsquo;ve Learned, and Struggles Along the Way</h2>
+<blockquote>
+<p><em>Writing is easy. All you have to do is cross out the wrong words.</em></p></blockquote>
+<p><strong>-Mark Twain</strong></p>
+<p>Ok, writing may have been easy enough for a brilliant and career writer like Twain, but for a technologist like myself, its not so easy. While I certainly don&rsquo;t detest blogging, it&rsquo;s also not exactly something I love doing enough to author a new post every week. Nevertheless, it is something I intend to keep up with on at least some level.</p>
+<p>That&rsquo;s blogging. As for the technological skills I&rsquo;ve learned over the past year, I&rsquo;ve learned a lot. Part of it came from a summer internship, some came from an open source community project I&rsquo;m still working on, and a lot of what I&rsquo;ve learned has come from working on my own personal projects, including this blog. One of the most important lessons I&rsquo;ve learned is: never underestimate the knowledge you can teach yourself.</p>
+<h2 id="going-forward-and-the-future">Going Forward and the Future</h2>
+<p>All of this brings us today. So far, I&rsquo;m pretty content with the current design and layout of the website, with no plans to extensively modify it. That said, I am looking at adding search functionality to the website, so one can easily look up past posts. As for my personal learning road map, I&rsquo;m about to do a deep dive into the realm of &ldquo;big data&rdquo; by way of Apache Spark, and related technologies. While it will certainly be a challenge, I have no doubts that it will be well worth it. Also, I&rsquo;m hoping to improve my C#/ASP.NET Core game this year, as well. Of course, I&rsquo;m also hoping to find more gainful employment as a developer this year too. Hopefully, that will also provide me with some interesting experiences to write about.</p>
+<p>As for future blog posts, I&rsquo;m hoping to keep with publishing at least one new post a month. Stay tuned ;)</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Improving Developer Productivity with VS Code Tasks</title>
+            <link>//localhost:1313/posts/2020-12-17-vscode-tasks/</link>
+            <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-12-17-vscode-tasks/</guid>
+            <description>&lt;p&gt;Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of &lt;em&gt;task runners&lt;/em&gt; to at least partially automate execution of these kinds of tedious and repetitive tasks.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of <em>task runners</em> to at least partially automate execution of these kinds of tedious and repetitive tasks.</p>
+<p>Effectively doing so can save you a lot of time. I will be showing you how can use one such task runner to do just that.</p>
+<h2 id="tasksjson">Tasks.json</h2>
+<p>The specific task runner I will be using here is Visual Studio Code&rsquo;s built-in task runner. Why? First, because VS Code is my go to editor for almost every kind of development I do. Second, because it is a popular editor that many developers are already at least somewhat familiar with. Finally, I also wanted a task runner that entailed minimal configuration.</p>
+<h2 id="the-project">The Project</h2>
+<p>Of course, we cannot automate project tasks without a project. To demonstrate, we will be creating tasks for a Django project. Anyone who has used Django will know that you will quite frequently be running various <code>manage.py</code> commands from a terminal. This includes running things such as migrations, unit tests, and more. Therefore, rather than manually type them out every time we need to run such commands, we can configure a <code>tasks.json</code> to run them for us.</p>
+<h2 id="setting-things-up">Setting Things Up</h2>
+<p>First, open the VS Code command palette (Ctrl+Shift+P on Windows and Linux, Cmd+Shift+P on Mac), and run the <code>&quot;Tasks: Configure Task&quot;</code> , then select <code>&quot;Configure tasks.json from template&quot;</code> , and choose <code>&quot;Others&quot;</code> from the list of templates. This will create a directory in your project called <code>.vscode</code> with a basic <code>tasks.json</code> files, featuring a &ldquo;hello world&rdquo; task.</p>
+<p><img src="/assets/pics/posting_pics/vscode-command-palette.jpg" alt="command-palette"></p>
+<p><em>The VS Code Command Palette menu</em></p>
+<p>Now that we have our template, we can move on to adding our own tasks.</p>
+<h2 id="the-actual-tasks">The Actual Tasks</h2>
+<p>Time to get to the meat and bones of the matter. To add a task to our <code>tasks.json</code>, we add another JSON object to the <code>&quot;tasks&quot;</code> list in the file. Suppose that we want to bootstrap the development server for the above mentioned Django project? To create a tasks for that, we would add a JSON object that looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Bootstrap Django Dev Server&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;docker-compose exec django python manage.py runserver&#34;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>&quot;label&quot;</code> field describes the name of the task, <code>&quot;type&quot;</code> defines what type of task we are running (in this case, a shell command), and the value for <code>&quot;command&quot;</code> is the command we want to run.</p>
+<p>To actually run our new task, we would again open the command palette, select <code>&quot;Tasks: Run Tasks&quot;</code>, and then select the name of the task we want to run, based on the value specified in the <code>&quot;label&quot;</code>.</p>
+<p>There a certainly more Django tasks that you can add to the file. For a more complete example, I have published a <a href="https://gist.github.com/D-Bits/769706795cf918bd4c838abdc186c7ba">gist</a> on the topic.</p>
+<h2 id="handling-user-input">Handling User Input</h2>
+<p>What if we want or need to make our tasks more dynamic by passing in different values, based on user input? We can do this by adding an <code>&quot;inputs&quot;</code> variable to our task JSON object. For example, if we wanted to create a simple task that prints &ldquo;hello &lt;user_name&gt;&rdquo; to stdout, we could configure it like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;tasks&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Hello Person&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;shell&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;echo Hello ${input:yourName}&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    ]<span style="color:#960050;background-color:#1e0010">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;inputs&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;yourName&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;promptString&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Enter your name:&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span></code></pre></div><p>This, of course, is a very simple example of parameterizing tasks. However, we can easily use the same functionality to do more complicated things.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>Simplifying common and tedious development tasks like this can save a whole bunch of time and trouble for many different kinds of projects. Even though I have been using VS Code for close to three years now, I&rsquo;m only just starting to really appreciate how useful its task runner can be. While I have used similar set-ups via Python scripts in the past, I will probably be primarily using the VS Code task runner going forward. Also, I should note that even though this post revolved around a very specific task runner, I think using a task runner, in general, saves one a decent amount of time, be it Make, a Python script, or something else.</p>
+<p>You can read more about running tasks in VS Code <a href="https://code.visualstudio.com/docs/editor/tasks">here</a>.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Unlocking the Power of Apache Airflow</title>
+            <link>//localhost:1313/posts/2020-11-08-unlocking-airflow/</link>
+            <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-11-08-unlocking-airflow/</guid>
+            <description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-airflow&#34;&gt;What is Airflow?&lt;/h2&gt;
+&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.</p>
+<h2 id="what-is-airflow">What is Airflow?</h2>
+<p>Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.</p>
+<p>Since its creation in 2015, Airflow has become an industry standard tool for data engineering.</p>
+<p>The central concept in Airflow is the Directed Acyclic Graph, or <code>DAG</code>. That may sound really abstract, but a DAG is essentially just a collection of related tasks to be executed in a specific order. Using DAGs, we can schedule and automate just about kind of workflow, from ETL and machine learning pipelines to sending automated emails.</p>
+<p>Also essential to Airflow is the concept of <em>Executors</em>. Executors are basically what Airflow uses to actually schedule execution of the DAGs that you create. There are multiple different executors that Airflow supports, but in this demo, we will be using the <code>LocalExecutor</code>.</p>
+<h2 id="the-project">The Project</h2>
+<p>For this demonstration, we will be building an ETL pipeline to update a database of global exchange rates, against USD. Although the project I worked on featured two DAGs, I will only be showcasing one of them in this demonstration, as the logic for both pipelines is rather similar.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>For awhile, this was probably what I had the most trouble with: simply setting up an adequate development environment. Manually installing and setting up Airflow can be notoriously difficult. Also, it does not work on Windows altogether, which is the operating system I use. Fortunately, this is where Docker comes in handy.</p>
+<p>A fellow named <code>puckel</code> on GitHub has an open-source <a href="https://github.com/puckel/docker-airflow">repository</a> on GitHub of a pre-configured Airflow development environment that uses a custom built Docker image, along with Docker Compose, and other configurations. This massively simplifies things. The repository has the following structure:</p>
+<p><img src="/assets/pics/posting_pics/airflow-dirs.jpg" alt="airflow-admin"></p>
+<p>Once the repository has been cloned, we need to create a <code>.env</code> file to store environment variables for our containers. Put the following environment variables in the file:</p>
+<pre tabindex="0"><code>POSTGRES_USER=airflow
+POSTGRES_PASSWORD=airflow
+POSTGRES_DB=airflow
+LOAD_EX=n
+EXECUTOR=Local
+SQL_ALCHEMY_CONN=(SQL Alchemy connection string)
+AIRFLOW__CORE__FERNET_KEY=(a pseudo-random string generated for database encryption)
+</code></pre><p>For this article, we will just be concerning ourselves with the <code>dags</code> directory, as that is where we will be storing the logic for our pipelines.</p>
+<p>Now, that we have that sorted out, we can move on to actually writing a DAG.</p>
+<h2 id="authoring-a-dag">Authoring a DAG</h2>
+<p>This project will consist of two DAGs: One for an initial seeding of the database, and another to update the database. Let&rsquo;s start with the DAG to seed the database. This DAG will consist of three tasks, defined as Python functions, and appropriately named &ldquo;extract&rdquo;, &ldquo;transform&rdquo;, and &ldquo;load&rdquo;. In order to create a DAG, and assign tasks to it, we my first instantiate the <code>DAG</code> class, and pass in some arguments. For our <code>seed_rates</code> DAG, the logic will look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow <span style="color:#f92672">import</span> DAG 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> airflow.operators.python_operator <span style="color:#f92672">import</span> PythonOperator
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime, date
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> requests <span style="color:#f92672">import</span> get
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> os <span style="color:#f92672">import</span> getenv
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">DAG for initial seeding of the db, or overriding of existing table. 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">You should only need to run this once.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>default_args <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;owner&#34;</span>: <span style="color:#e6db74">&#34;airflow&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;start_date&#34;</span>: datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;retries&#34;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dag <span style="color:#f92672">=</span> DAG(<span style="color:#e6db74">&#34;seed_rates&#34;</span>, schedule_interval<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>, default_args<span style="color:#f92672">=</span>default_args)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract</span>(<span style="color:#f92672">**</span>context):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://api.exchangeratesapi.io/history?start_at=1999-01-01&amp;end_at=</span><span style="color:#e6db74">{</span>date<span style="color:#f92672">.</span>today()<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;base=USD&#34;</span>)<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Create an XCOM for this task to be used in transform()</span>
+</span></span><span style="display:flex;"><span>    context[<span style="color:#e6db74">&#39;ti&#39;</span>]<span style="color:#f92672">.</span>xcom_push(key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data&#34;</span>, value<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transform</span>(<span style="color:#f92672">**</span>context):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Fetch the JSON data from the above XCOM</span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> context[<span style="color:#e6db74">&#34;ti&#34;</span>]<span style="color:#f92672">.</span>xcom_pull(key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Load relevant JSON in DataFrame for processing</span>
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(
+</span></span><span style="display:flex;"><span>        data[<span style="color:#e6db74">&#39;rates&#39;</span>])<span style="color:#f92672">.</span>transpose(
+</span></span><span style="display:flex;"><span>        )<span style="color:#f92672">.</span>reset_index(
+</span></span><span style="display:flex;"><span>        )<span style="color:#f92672">.</span>rename(columns<span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;index&#34;</span>: <span style="color:#e6db74">&#34;dates&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    )<span style="color:#f92672">.</span>drop([<span style="color:#e6db74">&#39;USD&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    context[<span style="color:#e6db74">&#39;ti&#39;</span>]<span style="color:#f92672">.</span>xcom_push(key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;df&#34;</span>, value<span style="color:#f92672">=</span>df)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load</span>(<span style="color:#f92672">**</span>context):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> context[<span style="color:#e6db74">&#34;ti&#34;</span>]<span style="color:#f92672">.</span>xcom_pull(key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;df&#34;</span>)
+</span></span><span style="display:flex;"><span>    db_conn <span style="color:#f92672">=</span> getenv(<span style="color:#e6db74">&#34;SQL_ALCHEMY_CONN&#34;</span>)
+</span></span><span style="display:flex;"><span>    df<span style="color:#f92672">.</span>to_sql(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;rates_history&#39;</span>, 
+</span></span><span style="display:flex;"><span>        db_conn, 
+</span></span><span style="display:flex;"><span>        index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, 
+</span></span><span style="display:flex;"><span>        method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;multi&#39;</span>, 
+</span></span><span style="display:flex;"><span>        if_exists<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;replace&#39;</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> dag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">=</span> PythonOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;extract&#34;</span>, python_callable<span style="color:#f92672">=</span>extract, provide_context<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t2 <span style="color:#f92672">=</span> PythonOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;transform&#34;</span>, python_callable<span style="color:#f92672">=</span>transform, provide_context<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t3 <span style="color:#f92672">=</span> PythonOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;load&#34;</span>, python_callable<span style="color:#f92672">=</span>load, provide_context<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">&gt;&gt;</span> t2 <span style="color:#f92672">&gt;&gt;</span> t3 
+</span></span></code></pre></div><p>Ok, I realize that is a whole bunch of logic that probably looks rather confusing, so let&rsquo;s break it down piece by piece. First, following our imports, we define some default arguments as a dictionary to pass in when we instantiate our <code>DAG</code> class. When we instantiate the class, we pass in a string (<code>&quot;seed_rates&quot;</code>) for our DAG id, followed by how frequently we want the DAG to be executed, as well as the <code>default_args</code> defined earlier.</p>
+<p>Next, we define the Python functions for the <code>extract</code>, <code>transform</code>, and <code>load</code> tasks. In this case, I relied primarily on <code>pandas</code> for manipulating the data. You may notice that the terms <code>xcom</code> and <code>context</code> are frequently used throughout the code base. In Airflow, cross-communications, or &ldquo;<em>XComs</em>&rdquo; essentially allow data to be shared between different tasks in a DAG. These is essential for our ETL pipeline, as the data in question needs to be manipulated in different ways by each of our respective tasks.</p>
+<p>Now that we have the logic for all our DAG&rsquo;s tasks defined, we can actually instantiate our tasks. We do this by instantiating Airflow&rsquo;s various <code>operator</code> classes. In this example, we will be using the <code>PythonOperator</code> like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> dag:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">=</span> PythonOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;extract&#34;</span>, python_callable<span style="color:#f92672">=</span>extract, provide_context<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t2 <span style="color:#f92672">=</span> PythonOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;transform&#34;</span>, python_callable<span style="color:#f92672">=</span>transform, provide_context<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t3 <span style="color:#f92672">=</span> PythonOperator(task_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;load&#34;</span>, python_callable<span style="color:#f92672">=</span>load, provide_context<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">&gt;&gt;</span> t2 <span style="color:#f92672">&gt;&gt;</span> t3 
+</span></span></code></pre></div><p>After instantiating our tasks in the <code>with dag</code> block, we can then use the bitwise <code>&gt;&gt;</code> operators to define the order in which we want our tasks to be executed. In the above code, we have scheduled things so that our <code>extract</code> task is run first, followed by <code>transform</code>, and ending with <code>load</code>. With that, we finally have all the logic for our <code>DAG</code> sorted out. Now, we can run our ETL pipeline.</p>
+<h2 id="the-admin-interface">The Admin Interface</h2>
+<p>Among it&rsquo;s many awesome features, Airflow also comes with a handy web admin interface for running and debugging DAGs. Once you run <code>docker-compose up</code>, you can navigate to <code>localhost:8080/admin</code> in your browser, and you will see an interface that looks like this:</p>
+<p><img src="/assets/pics/posting_pics/airflow-admin.jpg" alt="airflow-admin"></p>
+<p>Because our <code>seed_rates</code> DAG does not run on a schedule, it has to be executed manually. While Airflow also features a CLI for running DAGs, we will be using the admin web UI to run the <code>seed_rates</code> DAG. If we click on the &ldquo;Trigger DAG&rdquo; button on the left-hand side of the Links section in the above image, that will manually execute the DAG and it&rsquo;s tasks. After running the DAG, we can view the logs for it. If we select the logs for the most recent DAG run, we can go to the graph view to if our tasks ran successfully.</p>
+<p><img src="/assets/pics/posting_pics/airflow-graph.jpg" alt="airflow-admin"></p>
+<p>The green outlines of the tasks in the graph view indicate that the tasks ran without a hitch. If we were to click on one of the task icons, we could view the standard output for the tasks.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Having an at least decent comprehension of Airflow is going to me allow to implement all sorts of interesting data engineering solutions going forward. However, the work we did here barely scratches the surface of what Airflow is capable. Airflow can, at least in principle, be used to schedule and automate almost any kind of workflow. The entire codebase for this project can be found <a href="https://github.com/D-Bits/Exchange-Rates-Pipeline">here</a>.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Visualizing COVID-19 Data</title>
+            <link>//localhost:1313/posts/2020-8-31-covid-data-visualization/</link>
+            <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-8-31-covid-data-visualization/</guid>
+            <description>&lt;p&gt;Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.&lt;/p&gt;
+&lt;h2 id=&#34;the-data&#34;&gt;The Data&lt;/h2&gt;
+&lt;p&gt;Naturally, you can&amp;rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.</p>
+<h2 id="the-data">The Data</h2>
+<p>Naturally, you can&rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:</p>
+<p><code>https://api.covid19api.com/total/country/&lt;country_name&gt;</code></p>
+<p>This endpoint will show the total amount of confirmed cases, deaths, recoveries, and other data, starting on the date of the first confirmed case. The raw JSON data extracted from that endpoint will look like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Country&#34;</span>: <span style="color:#e6db74">&#34;&lt;country_name&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;CountryCode&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Province&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;City&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;CityCode&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Lat&#34;</span>: <span style="color:#e6db74">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Lon&#34;</span>: <span style="color:#e6db74">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Confirmed&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Deaths&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Recovered&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Active&#34;</span>: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Date&#34;</span>: <span style="color:#e6db74">&#34;2020-01-22T00:00:00Z&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">....</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>Because the JSON data is neatly organized as a list of associative arrays, we can easily load the data into a Pandas <code>DataFrame</code>, and apply the necessary manipulations to generate our graphs.</p>
+<h2 id="creating-the-visualizations">Creating the Visualizations</h2>
+<p>To generate multiple different visualizations, or &ldquo;plots&rdquo;, we will create a nested function inside our Flask route. The result route and graph generating function will look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/graphs/&lt;string:country&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">country_graphs</span>(country):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Method to generate plots</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># &#34;field&#34; param can be equal to: &#34;Confirmed&#34;, &#34;Recovered&#34;, or &#34;Deaths&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_plot</span>(country, field):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Define API endpoint, and fetch data</span>
+</span></span><span style="display:flex;"><span>        endpoint <span style="color:#f92672">=</span> get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;https://api.covid19api.com/total/country/</span><span style="color:#e6db74">{</span>country<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> endpoint<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data)
+</span></span><span style="display:flex;"><span>        dates <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#34;Date&#34;</span>]
+</span></span><span style="display:flex;"><span>        case_type <span style="color:#f92672">=</span> df[field]
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Merge the &#34;Date&#34; and &#34;Confirmed&#34; fields into one df</span>
+</span></span><span style="display:flex;"><span>        merged_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([dates, case_type], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        graph_data <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>line(data_frame<span style="color:#f92672">=</span>df, x<span style="color:#f92672">=</span>df[<span style="color:#e6db74">&#34;Date&#34;</span>], y<span style="color:#f92672">=</span>df[field])
+</span></span><span style="display:flex;"><span>        graph_JSON <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(graph_data, cls<span style="color:#f92672">=</span>PlotlyJSONEncoder)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> graph_JSON
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> render_template(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;country_graphs.html&#34;</span>,
+</span></span><span style="display:flex;"><span>        nation<span style="color:#f92672">=</span>country,
+</span></span><span style="display:flex;"><span>        cases<span style="color:#f92672">=</span>gen_plot(country, <span style="color:#e6db74">&#34;Confirmed&#34;</span>),
+</span></span><span style="display:flex;"><span>        deaths<span style="color:#f92672">=</span>gen_plot(country, <span style="color:#e6db74">&#34;Deaths&#34;</span>),
+</span></span><span style="display:flex;"><span>        recoveries<span style="color:#f92672">=</span>gen_plot(country, <span style="color:#e6db74">&#34;Recovered&#34;</span>)
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><p>The above <code>gen_plot()</code> function extracts data from the appropriate endpoint, loads it into a <code>DataFrame</code>, merges the <code>Date</code> field with <code>Confirmed</code>, <code>Recovered</code>, or <code>Deaths</code> into a new <code>DataFrame</code>. By adding the <code>field</code> parameter to <code>gen_plot()</code>, we can consolidate what would have been three different functions for generating graphs into just one. The function also encodes and returns a JSON object that can be embed in HTML.</p>
+<p>Now that we have our server-side logic sorted out, we can move on to our client-side code.</p>
+<h2 id="rendering-the-visualizations">Rendering the Visualizations</h2>
+<p>In this project, I needed to do more than just create plots. I also needed to render them in HTML templates. To assist in this, Plotly also provides a client-side JavaScript library.</p>
+<p>As an example, here is what a plot for the total case history of Taiwan looks like:
+<!-- raw HTML omitted -->
+<img src="/assets/pics/posting_pics/taiwan-covid-history-graph.jpg" alt="taiwan-covid-history">
+<!-- raw HTML omitted -->
+<em>Now, that&rsquo;s flattening the curve.</em></p>
+<p>And here is what the code for the relevant Jinja2 template looks like to render four different charts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{% extends &#34;layout.html&#34; %}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{% block title %}{{nation}} Case History Graph {% endblock %}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{% block content %}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;country_name&#34;</span>&gt;{{nation}} Data Visualizations&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt;Cases History Chart&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chart&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cases&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">graphs</span> <span style="color:#f92672">=</span> {{ <span style="color:#a6e22e">cases</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">safe</span> }};
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Plotly</span>.<span style="color:#a6e22e">plot</span>(<span style="color:#e6db74">&#39;cases&#39;</span>, <span style="color:#a6e22e">graphs</span>, {});
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt;Deaths History Chart&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chart&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;deaths&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">graphs</span> <span style="color:#f92672">=</span> {{ <span style="color:#a6e22e">deaths</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">safe</span> }};
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Plotly</span>.<span style="color:#a6e22e">plot</span>(<span style="color:#e6db74">&#39;deaths&#39;</span>, <span style="color:#a6e22e">graphs</span>, {});
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt;Recoveries History Chart&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chart&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;recoveries&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">graphs</span> <span style="color:#f92672">=</span> {{ <span style="color:#a6e22e">recoveries</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">safe</span> }};
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Plotly</span>.<span style="color:#a6e22e">plot</span>(<span style="color:#e6db74">&#39;recoveries&#39;</span>, <span style="color:#a6e22e">graphs</span>, {});
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{% endblock %}
+</span></span></code></pre></div><h2 id="final-thoughts">Final Thoughts</h2>
+<p>Adding these plots to my COVID-19 Tracker has been my first serious foray into the world of data visualization, and I must say, it has been quite rewarding. Currently, I have only done some rather basic, cumulative visualizations, but I definitely look forward to doing more, in the future.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Overhauling This Website</title>
+            <link>//localhost:1313/posts/2020-05-10-overhauling-this-website/</link>
+            <pubDate>Sun, 10 May 2020 06:50:43 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-05-10-overhauling-this-website/</guid>
+            <description>&lt;p&gt;For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.&lt;/p&gt;
+&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
+&lt;p&gt;In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&amp;rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.</p>
+<h2 id="why">Why?</h2>
+<p>In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.</p>
+<h2 id="choosing-a-static-site-generator">Choosing a Static Site Generator</h2>
+<p>With this in mind, I set out on finding a new static site generator. The two main alternatives to Jekyll that I looked at were Pelican and Hugo. While Pelican certainly appealed to me, being a Pythonista and all, I ultimately decided to opt for Hugo, due to the fact that did not require any setup or configuration (other than downloading and installing a binary), the extensive selection of quality themes, as well as its incredibly fast, and auto-reloading, development server.  In addition to that, even though Hugo is written in Go, it is not a package for the language that requires Go to already be installed. Instead, to install Hugo, one simply either downloads an installer from the Hugo website, or installs it through a package manager. I opted for the later of the two.</p>
+<h2 id="building-the-website">Building the Website</h2>
+<p>With a choice of a new static site generator made, I set out to start redeveloping my website. I will not detail every aspect of re-building the website, since that is far too much territory to cover in a single blog post. Therefore, I will just give a very high-level overview here. Once Hugo is installed, creating a new Hugo website is a simple as using the handy SDK that Hugo comes with by running <code>hugo new site &lt;site_name&gt;</code>.</p>
+<p><img src="/assets/pics/hugo-file-structure.jpg" alt="file-structure"></p>
+<p><em>The project structure generating by Hugo</em></p>
+<p>Ultimately, I do not consider myself a front-end web developer, or any kind of expert on CSS. Therefore, rather than code the entire website from scratch, I made to choose to use one of Hugo&rsquo;s pre-built themes from their <a href="https://themes.gohugo.io/tags/gallery/">gallery</a>. Eventually, I settled on a rather nice theme called <a href="https://themes.gohugo.io/hugo-notepadium/">Notepadium</a>. To apply this theme, you would first clone the git repo for the theme into your project&rsquo;s <code>theme</code> directory with <code>git submodule add &lt;theme_url&gt;</code>. Then, open your <code>config.toml</code> file.</p>
+<p>In the top of that file, you would then modify the <code>theme</code> variable to be equal to <code>hugo-notepadium</code>, and (optionally) set <code>style</code> to &ldquo;dark&rdquo;, if you want a dark version of the theme. At this point, you can start adding Markdown files to the <code>content</code> directory, such an <code>about.md</code>, or some blog posts to a directory called <code>blog</code>, <code>posts</code>, or something to that effect.</p>
+<h2 id="hosting">Hosting</h2>
+<p>Since GitHub Pages is powered by Jekyll, which I am no longer using, I found myself in need of a new hosting service. For static websites, I found the most ideal option to be Netlify. Netlify not only allows you to host static sites for free, but also allows you to easily add a lot of functionality to them, that would normally be associated with web applications that have server-side code. Netlify also makes it very easy to automate deployments by connecting a git repository to your Netlify project, so that any commits that are pushed to a specific branch of your remote repository are automatically deployed to Netlify.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Currently, I am quite satisfied with the new setup. Although I still have a lot to learn about Hugo, and everything I can do with it, I found it pretty easy to get started with. Furthermore, while the theme I chose was pretty nice as well, I should note that even though I used a pre-built theme for this site, I did add at least of some of my own, custom styles to it. I am also highly satisfied with Netlify thus far, as it really does enable one to push the boundaries of what can be accomplished with a simple, static website.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Generating Mock Data with Faker</title>
+            <link>//localhost:1313/posts/2020-5-03-mock-data/</link>
+            <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-5-03-mock-data/</guid>
+            <description>&lt;p&gt;Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.</p>
+<h2 id="what-is-faker">What is Faker?</h2>
+<p><em>Faker</em> is a library designed to simplify generating mock data for testing. There are actually a number of libraries across different languages called Faker, that serve this purpose. However, this post will be specifically about using the Python library. Faker comes with a variety of different types for different kinds of information, such as <code>first_name</code>, <code>country</code>, <code>ipv4</code>, etc. To install it, we simply run <code>pip install faker</code> in a <code>venv</code>.</p>
+<h2 id="generating-the-data">Generating the Data</h2>
+<p>Once installed, the first step to generate mock data with Faker is instantiation the <code>Faker</code> class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fake <span style="color:#f92672">=</span> Faker()
+</span></span></code></pre></div><p>Now that we have instantiated the class, we can use the various attributes of the <code>Faker</code> class to generate data. In the following example, we will be generating some random data for an <code>employees</code> table, and writing it to a CSV file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_employees_csv</span>(filename, records_num):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    emp <span style="color:#f92672">=</span> open(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;data/</span><span style="color:#e6db74">{</span>filename<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>, newline<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    fields <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;last_name&#39;</span>,<span style="color:#e6db74">&#39;first_name&#39;</span>,<span style="color:#e6db74">&#39;job&#39;</span>,<span style="color:#e6db74">&#39;email&#39;</span>,<span style="color:#e6db74">&#39;password_hash&#39;</span>,<span style="color:#e6db74">&#39;phone&#39;</span>,<span style="color:#e6db74">&#39;home_address&#39;</span>,<span style="color:#e6db74">&#39;city&#39;</span>,<span style="color:#e6db74">&#39;state&#39;</span>,<span style="color:#e6db74">&#39;zip&#39;</span>]
+</span></span><span style="display:flex;"><span>    writer <span style="color:#f92672">=</span> DictWriter(emp, fieldnames<span style="color:#f92672">=</span>fields)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Write the columns to file</span>
+</span></span><span style="display:flex;"><span>    writer<span style="color:#f92672">.</span>writeheader()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    fake <span style="color:#f92672">=</span> Faker()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(records_num):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        writer<span style="color:#f92672">.</span>writerow(
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;last_name&#39;</span>: fake<span style="color:#f92672">.</span>last_name(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;first_name&#39;</span>: fake<span style="color:#f92672">.</span>first_name(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;job&#39;</span>: fake<span style="color:#f92672">.</span>job(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;email&#39;</span>: fake<span style="color:#f92672">.</span>email(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;password_hash&#39;</span>: fake<span style="color:#f92672">.</span>sha256()<span style="color:#f92672">.</span>upper(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;phone&#39;</span>: fake<span style="color:#f92672">.</span>phone_number(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;home_address&#39;</span>: fake<span style="color:#f92672">.</span>street_address(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;city&#39;</span>: fake<span style="color:#f92672">.</span>city(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;state&#39;</span>: fake<span style="color:#f92672">.</span>state(),
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;zip&#39;</span>: fake<span style="color:#f92672">.</span>random_int(<span style="color:#ae81ff">11111</span>, <span style="color:#ae81ff">99999</span>),
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        )
+</span></span></code></pre></div><p>Each time we call <code>fake.&lt;attribute()&gt;</code>, it creates a random piece of data for that field, and writes it to a CSV file. For example, <code>fake.job()</code> might generate &ldquo;Neurosurgeon&rdquo; for a value. If we want to generate values in bulk, and write them to a CSV file, then we simply call <code>writer.writerow()</code> in a for loop, with a range of however many records we want to create. Even though the example above is very context-specific, Faker ultimately provides a variety of different types to generate mock data from.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>With this new tool in my toolbox, I will be able to generate arbitrarily large data sets for testing programs going forward. While I would ideally prefer something a little faster (<em>the above function took about 6.5 minutes to generate 500,000 records worth of data on my home machine</em>), it still has performed at least reasonably well so far. For more information about Faker, check out their <a href="https://faker.readthedocs.io/en/master/index.html">documentation</a>. Thank you for reading.</p>
+<p>Sincerely,</p>
+<p>Dana</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>A Primer on DataFrames</title>
+            <link>//localhost:1313/posts/2020-4-26-pandas-primer/</link>
+            <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-4-26-pandas-primer/</guid>
+            <description>&lt;p&gt;Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-dataframes&#34;&gt;What Are DataFrames?&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;DataFrame&lt;/code&gt; is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a &lt;code&gt;venv&lt;/code&gt; and run &lt;code&gt;pip install pandas&lt;/code&gt;. To use Pandas, we use the following universal aliasing for our import:&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.</p>
+<h2 id="what-are-dataframes">What Are DataFrames?</h2>
+<p>A <code>DataFrame</code> is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a <code>venv</code> and run <code>pip install pandas</code>. To use Pandas, we use the following universal aliasing for our import:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span></code></pre></div><p>Now that we have installed and imported Pandas, we can start manipulating data.</p>
+<h2 id="loading-data-into-dataframes">Loading Data into DataFrames</h2>
+<p>For the purposes of demonstration, I will be using a CSV file containing 1,000 records worth of information about individual, fictitious people. The data includes the following columns: <code>id</code>, <code>last_name</code>, <code>first_name</code>, <code>email</code>, <code>gender</code>, <code>job</code>, and <code>language</code>. To load this data into our <code>DataFrame</code>, we would simply use the following code, assuming the .csv file is located in the same directory as our Python file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># DataFrames are often stored in a variable called &#34;df&#34;</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;people-data.csv&#39;</span>)
+</span></span></code></pre></div><p>This will load all the values from that CSV file into the <code>DataFrame</code>, and will look like this when printed to the standard output:</p>
+<p><img src="/assets/pics/posting_pics/df_print.jpg" alt="df"></p>
+<p>If we needed to load our data from sources in different formats, like JSON or Excel workbooks, then we would use the following implementations:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># JSON</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_json(<span style="color:#e6db74">&#39;people-data.json&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Excel</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_json(<span style="color:#e6db74">&#39;people-data.xlsx&#39;</span>, sheet_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;data&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># SQL Table</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_sql_table(table_name, sqlalchemy_engine, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;id&#39;</span>)
+</span></span></code></pre></div><p>Any of the above methods will load data into a <code>DataFrame</code>. Perhaps one of the best things about Pandas, is that it provides an easy way to &ldquo;flatten&rdquo; JSON data, into a rows-and-columns format, assuming the JSON data in question is organized neatly as a list of associative arrays. Now that our data has been loaded into our <code>DataFrame</code>, we can start analyzing and manipulating data.</p>
+<h2 id="sorting-data">Sorting Data</h2>
+<p>Pandas is designed to make data analysis easy. Suppose we want to find out which people in our data set speak English. To do that, we just to specify a column, and value for it, like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;people-data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>english_speakers <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;language&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;English&#39;</span>]
+</span></span></code></pre></div><p>If we run this code, it will show all rows in the DataFrame where <code>language</code> is equal to <code>English</code>. In this case, that ended up being six people. There are also any number of other manipulations we can apply to our <code>DataFrame</code>. For rexample, to find everyone in our data set over the age of 40, we would apply similar logic:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>over_40 <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#39;age&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">40</span>]
+</span></span></code></pre></div><p>Now, time to move on to aggregating data.</p>
+<h2 id="aggregates">Aggregates</h2>
+<p>Suppose we want to find values in our data like highest values for a column, the lowest, averages, and so on. Fortunately, DataFrames have a variety of methods for doing all these kinds of calculations. For example, here is how we would find the average age of the people in our data source:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;people-data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>avg_age <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;age&#39;</span>]<span style="color:#f92672">.</span>mean()
+</span></span></code></pre></div><p>In this case, the mean age turns out to be 44.38 years old. If we want to sum a column, we would use similar logic:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;people-data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>avg_age <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;age&#39;</span>]<span style="color:#f92672">.</span>sum()
+</span></span></code></pre></div><h2 id="exporting-dataframes-to-other-sources">Exporting DataFrames to Other Sources</h2>
+<p>Once, we have done our various data manipulations, we can then export our data to a variety of other sources. This is also quite easy, as Pandas DataFrames has methods for exporting data to a variety of sources:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Export to CSV</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;data.csv&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export to JSON</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_json(<span style="color:#e6db74">&#39;data.json&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export to Excel</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_excel(<span style="color:#e6db74">&#39;data.xlsx&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Export to a SQL db</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">.</span>to_sql(table_name, sqlalchemy_engine, index_label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;id&#39;</span>, method<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;multi&#39;</span>)
+</span></span></code></pre></div><p>Note: You should always pass in <code>method='multi'</code>, other Pandas will automatically create a separate transaction for each record it inserts, which is painfully (and needlessly) slow.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Remember that we are just barely scratching the surface of what one can do with Pandas here. Pandas is an incredibly robust and versatile library, that is adaptable to a variety of situations. If you want to learn more about Pandas, please refer to their <a href="https://pandas.pydata.org/pandas-docs/stable/index.html">documentation</a>.</p>
+<p>Sincerely,</p>
+<p>Dana</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Tracking COVID19</title>
+            <link>//localhost:1313/posts/2020-4-9-tracking-covid19/</link>
+            <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-4-9-tracking-covid19/</guid>
+            <description>&lt;p&gt;In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.</p>
+<p>Following a little research, I found out that Postman had built an <a href="https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest">REST API</a>, in collaboration with John Hopkins, to track developments with the pandemic. All the data that I worked with for this project comes from that API.</p>
+<p>So, on that note, let the games begin.</p>
+<h2 id="obtaining-the-data">Obtaining the Data</h2>
+<p>Although the API that were are using provides a variety of endpoints, for this blog post, we will just be using one. The &ldquo;summary&rdquo; endpoint will give basic data for all the world&rsquo;s countries: total confirmed cases, total confirmed fatalities, etc. All this can be accessed from the <a href="https://api.covid19api.com/summary">endpoint</a>. To extract the JSON data from the endpoint, we use the following Python code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> requests <span style="color:#f92672">import</span> get
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>summary <span style="color:#f92672">=</span> get(<span style="color:#e6db74">&#34;https://api.covid19api.com/summary&#34;</span>)
+</span></span><span style="display:flex;"><span>summary_json <span style="color:#f92672">=</span> summary<span style="color:#f92672">.</span>json()
+</span></span></code></pre></div><p>Now that we have extracted our data, we can load it into a Pandas <code>DataFrame</code>. In this case, I will just using the data stored in the <code>countrires</code> variable. We would load that into a <code>DataFrame</code> like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Universally used aliasing convention for importing Pandas</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(summary_json[<span style="color:#e6db74">&#39;Countries&#39;</span>])
+</span></span></code></pre></div><p>If we output our data to a console, then it should display it in a nicely ordered, rows-and-columns format. Now that we have that done, we can carry on to cleaning up the data in our <code>DataFrame</code>.</p>
+<h2 id="preparing-the-data">Preparing the Data</h2>
+<p>As useful as all this data is, we do not quite need all of it. Also, after pouring through it, I noticed that there was some duplicate data. If you look over the JSON data from the endpoint, you will notice that some countries appear more than once, and with the exact same data. For example, Vietnam appears twice as both &ldquo;Vietnam&rdquo; and &ldquo;Viet Nam&rdquo;, each with the same statistics. Fortunately, for our needs, each record (associative array) in the JSON data has an <code>id</code> integer identifying it. Therefore, we can drop redundant records from the <code>DataFrame</code> by using the <code>DataFrame.drop()</code> method. Specifically, in this case, we will pass in a list of integers, corresponding to the IDs of the records that we want to eliminate from our <code>DataFrame</code>, with the code for it looking like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cleaned_data <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">93</span>, <span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">125</span>, <span style="color:#ae81ff">168</span>, <span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">170</span>, <span style="color:#ae81ff">171</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">175</span>, <span style="color:#ae81ff">194</span>, <span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">205</span>, <span style="color:#ae81ff">224</span>])
+</span></span></code></pre></div><p>So, now that we have eliminated redundant records from the <code>DataFrame</code>, we can now focus on how we want our remaining data to be organized. For this particular <code>DataFrame</code>, we want it to be organized by country, in alphabetical (ascending) order. To do this, we would use the <code>DataFrame.sort_values()</code> method in the following manner:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ordered_df <span style="color:#f92672">=</span> cleaned_data<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;Country&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><p>In addition to sorting records in alphabetical order, we also want total values for each column, so we can see the global amount of confirmed cases, new cases, confirmed deaths, etc. To do so, we would use <code>Dataframe.sum(axis=0)</code>. So, in our case, we would use <code>cleaned_data.sum(axis=0)</code>. Now that our data is organized, its on to displaying it in our Jinja2 template.</p>
+<h2 id="displaying-the-data">Displaying the Data</h2>
+<p>With our data neatly organized, its time for us to render it in HTML templates. For this project, I used the Flask web framework to build the web client, which is also built on Python, as I knew it would be easy to integrate my <code>DataFrames</code> with it, and it would afford me greater flexibility that Django, which is what I usually use for building web applications. Jinja2 is that templating engine that Flask comes bundled with. Ultimately, to display our data, we will be specifying our DataFrames in our Flask routes, and from there, directly rendering them into HTML tables in our Jinja2 templates. For example, a Flask route for our summary data, that we defined and cleaned above, would look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#39;/home&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Load the data into DataFrame</span>
+</span></span><span style="display:flex;"><span>        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(summary_json[<span style="color:#e6db74">&#39;Countries&#39;</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Drop redundant records</span>
+</span></span><span style="display:flex;"><span>        cleaned_data <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">93</span>, <span style="color:#ae81ff">101</span>, <span style="color:#ae81ff">125</span>, <span style="color:#ae81ff">168</span>, <span style="color:#ae81ff">169</span>, <span style="color:#ae81ff">170</span>, <span style="color:#ae81ff">171</span>, <span style="color:#ae81ff">172</span>, <span style="color:#ae81ff">175</span>, <span style="color:#ae81ff">194</span>, <span style="color:#ae81ff">199</span>, <span style="color:#ae81ff">205</span>, <span style="color:#ae81ff">224</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Order countries in alphabetical order</span>
+</span></span><span style="display:flex;"><span>        ordered_df <span style="color:#f92672">=</span> cleaned_data<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#39;Country&#39;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Aggregate data</span>
+</span></span><span style="display:flex;"><span>        totals <span style="color:#f92672">=</span> cleaned_data<span style="color:#f92672">.</span>sum(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Convert the DataFrame to a dictionary, so its values can be iterated over in a template</span>
+</span></span><span style="display:flex;"><span>        df_dict <span style="color:#f92672">=</span> ordered_df<span style="color:#f92672">.</span>to_dict(orient<span style="color:#f92672">=</span>columns)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Render the template, with DataFrame values</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#39;index.html&#39;</span>, data<span style="color:#f92672">=</span>df_dict, total<span style="color:#f92672">=</span>total)
+</span></span></code></pre></div><p>We would iterate over those values in an HTML table with the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Country&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;New Confirmed&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Total Confirmed&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;New Deaths&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Total Deaths&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;New Recovered&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header-row&#34;</span>&gt;Total Recovered&lt;/<span style="color:#f92672">th</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;  
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">thead</span>&gt;
+</span></span><span style="display:flex;"><span>    {% for nation in data %}
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!--Table for summary data--&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ url_for(&#39;country_cases&#39;, country=nation.Country)}}&#34;</span>&gt;{{nation.Country}}&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.NewConfirmed}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.TotalConfirmed}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.NewDeaths}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.TotalDeaths}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.NewRecovered}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">td</span>&gt;{{nation.TotalRecovered}}&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tbody</span>&gt;
+</span></span><span style="display:flex;"><span>    {% endfor %}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;   
+</span></span></code></pre></div><h2 id="testing-and-quality-assurance">Testing and Quality Assurance</h2>
+<p>Before we deploying to production, we should write some unit tests to help ensure the functionality of our code base. A good place to start, would be to test that all of our routes return a 200 status code response.
+Using the <code>unittest</code> module, that is built into the Python standard library, we would create unit tests to ensure the route that looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> unittest <span style="color:#f92672">import</span> TestCase
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> app <span style="color:#f92672">import</span> app
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Unit testing for routes
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RoutesTests</span>(TestCase):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Test index route(s) returns a 200 response</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_index_route</span>(self):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> app<span style="color:#f92672">.</span>test_client() <span style="color:#66d9ef">as</span> tc:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            response <span style="color:#f92672">=</span> tc<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span>            redirect_response <span style="color:#f92672">=</span> tc<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/home&#39;</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>assertEqual(response<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>            self<span style="color:#f92672">.</span>assertEqual(redirect_response<span style="color:#f92672">.</span>status_code, <span style="color:#ae81ff">200</span>)
+</span></span></code></pre></div><h2 id="final-thoughts-and-going-forward">Final Thoughts and Going Forward</h2>
+<p>What I have outlined here is certainly not the full extent of the work that I have put into this project thus far, and there are other features I have on the road map, as well. To view the entire code base for the project, please refer to the GitHub <a href="https://github.com/D-Bits/COVID-19-Tracker">repo</a> for it. In the near future, I would definitely like to do additional analysis, and using data from some of the other endpoints that the API provides. Furthermore, I also hope to add functionality that allows the user to download the data, and save it to their device(s).</p>
+<p>So far, I have found this to be a very rewarding project to work on. At a minimum, it has definitely helped improve my skills with both Flask and Pandas. This is actually the first Flask project that I have deployed to a production environment of some kind. While I did not go into the details of deployment in this article, I hope to go over that in a future post. Until then, there is always more work to be done.</p>
+<p>Sincerely,</p>
+<p>Dana</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Automating Software Updates on Windows</title>
+            <link>//localhost:1313/posts/2020-2-27-automating-win-updates/</link>
+            <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-2-27-automating-win-updates/</guid>
+            <description>&lt;p&gt;Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.&lt;/p&gt;
+&lt;p&gt;In a &lt;a href=&#34;https://danabases.net/posts/2020-2-15-postgres-chocolatey/&#34;&gt;previous post&lt;/a&gt;, I wrote about how to easily install and update a Postgres instance on Windows. This post will ultimately build on that, as it uses the same package manager, Chocolatey. There is, of course, a little bit of setup to be done to automating this, but nothing too labor-intensive, and definitely worth the amount of time it will save.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.</p>
+<p>In a <a href="https://danabases.net/posts/2020-2-15-postgres-chocolatey/">previous post</a>, I wrote about how to easily install and update a Postgres instance on Windows. This post will ultimately build on that, as it uses the same package manager, Chocolatey. There is, of course, a little bit of setup to be done to automating this, but nothing too labor-intensive, and definitely worth the amount of time it will save.</p>
+<h2 id="chocolatey">Chocolatey</h2>
+<p>First, we need to ensure Chocolatey is installed, and working properly. Open a PowerShell terminal, and run the following command:</p>
+<pre tabindex="0"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))
+</code></pre><p>Then, run the command <code>choco</code>. If it returns a listing of possible arguments, then Chocolatey has been installed successfully.</p>
+<h2 id="a-wee-bit-of-python">A Wee Bit of Python</h2>
+<p>To write the necessary code to execute Chocolatey updates, we will be using the <code>subprocess</code> module in Python&rsquo;s standard library. Methods in this module will allow use to spawn external processes (like shell commands) inside Python programs. In particular, we will use the <code>subprocess.run()</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> subprocess <span style="color:#f92672">import</span> run
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    run([<span style="color:#e6db74">&#39;choco&#39;</span>, <span style="color:#e6db74">&#39;upgrade&#39;</span>, <span style="color:#e6db74">&#39;all&#39;</span>], check<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    input(<span style="color:#e6db74">&#34;Error has occured. Press enter to exit.&#34;</span>)
+</span></span></code></pre></div><p>That&rsquo;s all the Python code we need. Now, we just need a way to run it on a specific schedule.</p>
+<h2 id="automating-script-execution">Automating Script Execution</h2>
+<p>First, we need to create a batch file, with the <code>.bat</code> extension. In that batch file, we need to include the following line of code:</p>
+<p><code>&quot;C:\Python38\python.exe&quot; &quot;C:\Users\YourUsername\Documents\Path\To\PythonScript\updates.py&quot;</code></p>
+<p>Once we had that added, and the file saved, we can create a task in the Windows Task Scheduler. This will allow us to run the Python script on a specific schedule, thus automating the whole process.</p>
+<p>Next, we need to use the Windows Task Scheduler. To open it, press <code>windows key + s</code>, then search for &ldquo;task scheduler&rdquo;. Once you find it, click it to open it, then click &ldquo;Create Task&rdquo;. Under the &ldquo;General&rdquo; tab, name the task &ldquo;updates&rdquo;, or something to that effect, and (very important) be sure check the box that says &ldquo;<em>Run with highest privileges</em>&rdquo;. Chocolatey needs admin privileges to install and update packages. Under &ldquo;Triggers&rdquo;, create a new trigger to run the task on a daily basis, at a time of your choosing.</p>
+<p>Then, go to the &ldquo;Actions&rdquo; tab, and click new. Keep &ldquo;Start Program&rdquo; as the action, and set your batch file as the program/script to execute. By this point, you should be more-or-less ready to go. You can test whether or not it works by selecting your newly created task in the Task Scheduler, and clicking the run button.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Even though this specific case focused entirely on automating Windows updates, a similar methodology could easily be applied to Unix-like systems via Cron, and some minor code tweaks. Either way, automating software updates will surely relieve a lot of headache, even for people who aren&rsquo;t total geeks. I know it sure will for me.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Easy Postgres Installation and Setup on Windows with Chocolatey</title>
+            <link>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</link>
+            <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</guid>
+            <description>&lt;p&gt;This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt; package manager. Yes, you can always take the old school route by going to the &lt;a href=&#34;https://www.postgresql.org/download/&#34;&gt;official Postgres website&lt;/a&gt;, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.&lt;/p&gt;
+&lt;h2 id=&#34;installing-chocolatey&#34;&gt;Installing Chocolatey&lt;/h2&gt;
+&lt;p&gt;To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run &lt;code&gt;Get-ExecutionPolicy&lt;/code&gt;. If it says &amp;ldquo;restricted&amp;rdquo;, then you will need to run either &lt;code&gt;Set-ExecutionPolicy AllSigned&lt;/code&gt; or &lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process&lt;/code&gt;.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the <a href="https://chocolatey.org/">Chocolatey</a> package manager. Yes, you can always take the old school route by going to the <a href="https://www.postgresql.org/download/">official Postgres website</a>, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.</p>
+<h2 id="installing-chocolatey">Installing Chocolatey</h2>
+<p>To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run <code>Get-ExecutionPolicy</code>. If it says &ldquo;restricted&rdquo;, then you will need to run either <code>Set-ExecutionPolicy AllSigned</code> or <code>Set-ExecutionPolicy Bypass -Scope Process</code>.</p>
+<p>Then, copy and paste the following into your terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-ExecutionPolicy Bypass -Scope <span style="color:#66d9ef">Process</span> -Force; [<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::SecurityProtocol = [<span style="color:#66d9ef">System.Net.ServicePointManager</span>]::SecurityProtocol <span style="color:#f92672">-bor</span> <span style="color:#ae81ff">3072</span>; iex ((New-Object System.Net.WebClient).DownloadString(<span style="color:#e6db74">&#39;https://chocolatey.org/install.ps1&#39;</span>))
+</span></span></code></pre></div><p>This will install Chocolatey on your system. Once its done, run the command <code>choco -v</code>. If it outputs a version number (0.10.15, at the time of this writing), then we know that Chocolatey was installed successfully.</p>
+<h2 id="installing-postgres">Installing Postgres</h2>
+<p>With that sorted out, we can now quickly install Postgres by running <code>choco install postgresql</code>. Enter <code>y</code> when prompted to. You will see that it sets a default (random hex value) password for the <code>postgres</code> user. <strong>IMPORTANT:</strong> Quickly copy and paste this default password from your terminal into a safe place, like a password manager, as you will need it to connect to the server. I highly recommend changing it to something more secure at your earliest convenience with an <code>ALTER USER</code> query. The installation will also default to listening on port 5432. This is installation should also include the &ldquo;stack builder&rdquo; tool for adding extensions. Once that&rsquo;s done, you should be more-or-less ready to go!</p>
+<h2 id="additional-configurations">Additional Configurations</h2>
+<p>In addition to changing the default password, we should also add <code>psql.exe</code> to <code>$PATH</code>, so we can connect to and query databases on our server by running <code>psql</code> from Powershell, or the command prompt. <code>psql.exe</code> should be located in <code>C:\Program Files\PostgreSQL\12\bin</code>. Once you successfully add <code>psql</code> to <code>$PATH</code>, then try running <code>psql</code> from a terminal. If it doesn&rsquo;t throw any errors, then you succeeded. While there are certainly any number of other configs that you can do, that should be all that&rsquo;s needed for now. Happy querying!</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Going forward, it is going to be at lot easier to update my Postgres instance, along with other software that I have installed on my Windows machine. I don&rsquo;t think I will be able to easily go back to the whole <em>download an installer and click through wizard setup</em>. That now just seems crude and primitive. Therefore, don&rsquo;t always assume that installing and setting up a database server (or other software, for that matter) has to be super complicated.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Integrating JSONB Data into Django Projects</title>
+            <link>//localhost:1313/posts/2020-2-13-jsonb-django/</link>
+            <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-2-13-jsonb-django/</guid>
+            <description>&lt;p&gt;This post follows up on my earlier post about &lt;a href=&#34;https://danabases.net/posts/2020-1-22-postgres-json/&#34;&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;
+&lt;h2 id=&#34;modeling-the-data&#34;&gt;Modeling the Data&lt;/h2&gt;
+&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>This post follows up on my earlier post about <a href="https://danabases.net/posts/2020-1-22-postgres-json/">storing json data in Postgres</a>. In this article, I will be going over how to integrate the same <code>JSONB</code> data I used in that post with a Django web application.</p>
+<h2 id="modeling-the-data">Modeling the Data</h2>
+<p>Modeling <code>JSONB</code> data with Django&rsquo;s ORM tool is rather easy, as the framework has built in support for this in the <code>django.contrib</code> module. Therefore, we would model our data like this in our <code>models.py</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> django.contrib.postgres.fields <span style="color:#f92672">import</span> JSONField
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create your models here.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Textbook</span>(models<span style="color:#f92672">.</span>Model):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    title <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>)
+</span></span><span style="display:flex;"><span>    properties <span style="color:#f92672">=</span> JSONField()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__str__</span>(self):
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>title
+</span></span></code></pre></div><h2 id="creating-a-view">Creating a View</h2>
+<p>In this example, I will be using Django&rsquo;s class-based <code>ListView</code> to simplify our view logic. As such, the view will simply look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.views.generic <span style="color:#f92672">import</span> ListView
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .models <span style="color:#f92672">import</span> Textbook
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List all textbooks</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IndexView</span>(ListView):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    model <span style="color:#f92672">=</span> Textbook
+</span></span><span style="display:flex;"><span>    template_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;books/index.html&#39;</span>
+</span></span><span style="display:flex;"><span>    context_object_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;books&#39;</span>
+</span></span><span style="display:flex;"><span>    ordering <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;-title&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_queryset</span>(self):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Textbook<span style="color:#f92672">.</span>objects<span style="color:#f92672">.</span>all()
+</span></span></code></pre></div><h2 id="templating">Templating</h2>
+<p>Templating <code>JSONB</code> data in Django works very much like templating non-JSON data. If you have worked with Django templates (or similar templating languages) in the past, this will look quite familiar:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {% for book in books %}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h3</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Title: &lt;/<span style="color:#f92672">strong</span>&gt;{{book.title}}&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Author(s): &lt;/<span style="color:#f92672">strong</span>&gt;{{book.properties.authors}}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;ISBN: &lt;/<span style="color:#f92672">strong</span>&gt;{{book.properties.ISBN}}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Price: &lt;/<span style="color:#f92672">strong</span>&gt;${{book.properties.price}}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Condition: &lt;/<span style="color:#f92672">strong</span>&gt;{{book.properties.condition}}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Hardcover?: &lt;/<span style="color:#f92672">strong</span>&gt;{{book.properties.hardcover}}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    {% endfor %}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><h2 id="final-thoughts">Final Thoughts</h2>
+<p>This would certainly be considerably more difficult to implement without Django&rsquo;s built-in support for Postgres&rsquo; <code>JSONB</code> type. However, given that Django does have built in support for this, it was about as easy as working with SQL data. Going forward, I would like to implement more complete CRUD functionality. Stay tuned.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Fun with Gravitational Physics and Python</title>
+            <link>//localhost:1313/posts/2020-2-3-gravity-python/</link>
+            <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-2-3-gravity-python/</guid>
+            <description>&lt;p&gt;While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&rsquo;s get to it.</p>
+<p>In this post, we will be exploring using Python to do calculations pertaining to both Newtonian gravitational physics, and even a little general relativity.</p>
+<p><img src="https://cdn.eso.org/images/screen/eso1907a.jpg" alt="M87-black-hole">
+<em>Python was a big part of this. Photo credit: ESO.</em></p>
+<h2 id="calculating-gravitational-attraction">Calculating Gravitational Attraction</h2>
+<p>First, we will be creating a Pythonic implementation of the equation that Sir Isaac Newton developed to describe the gravitational forces (in Newtons) between two massive bodies. The equation is:
+<em>F = Gm1m2/r^2</em>, where <em>G</em> is Newton&rsquo;s gravitational constant, <em>m1</em> is the mass of the first body, <em>m2</em> is the mass of the second body, and <em>r</em> is the distance (in meters) between them.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Calculate the gravitational force between 2 objects</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grav_force</span>(m1, m2, r):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Newtons constant</span>
+</span></span><span style="display:flex;"><span>    G <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.674</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">10</span><span style="color:#f92672">**-</span><span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    formula <span style="color:#f92672">=</span> G <span style="color:#f92672">*</span> (m1 <span style="color:#f92672">*</span> m2 <span style="color:#f92672">/</span> r)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> round(formula, <span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>To test this function, I tried to calculate the gravitational force between the Earth and the Moon, which when calling the function looks like: <code>grav_force(5.98*(10**24), 7.34*(10**22), 385000000)</code>
+Where our first parameter is Earth&rsquo;s mass, the second is the Moon&rsquo;s mass, and the third is the distance between them, in meters. The result it calculated was about 1.98x10^20 Newtons, rounded.</p>
+<h2 id="escape-velocity">Escape Velocity</h2>
+<p>Another calculation we can easily do with a Python function is escape velocity, or the velocity needed to escape a massive object&rsquo;s gravity. This is calculated by taken the square root of two times Newton&rsquo;s constant, times the mass of the body being escaped, divided by the distance from the center of mass. In Python, we would write this something like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">escape_velocity</span>(m, r):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Newtons constant</span>
+</span></span><span style="display:flex;"><span>    G <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.674</span><span style="color:#f92672">*</span>(<span style="color:#ae81ff">10</span><span style="color:#f92672">**-</span><span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    formula <span style="color:#f92672">=</span> sqrt(<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>G<span style="color:#f92672">*</span>m<span style="color:#f92672">/</span>r)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> round(formula, <span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>Using Earth as a test case, we would pass in 5.98*(10**24) for Earth&rsquo;s mass, and 6378000 (meters) for its radius when calling the function. This will return <code>11187.07</code>, or about 11 kilometers per second, which is the correct escape velocity for Earth. However, enough classical mechanics. Let&rsquo;s move on to some general relativity.</p>
+<h2 id="finding-the-schwarzchild-radius">Finding the Schwarzchild Radius</h2>
+<p>No, I am not going to be doing exact solutions to the Einstein Field Equations, or anything that is well beyond the scope of my personal math and physics knowledge. Instead, we are going to write a function to calculate an object&rsquo;s <em>Schwarzchild radius</em>. A Schwarzchild radius is a prediction made by German physicist Karl Schwarzchild (hence the name), who found the first exact solution to Einstein&rsquo;s field equations, and in the process, mathematically predicted the existence of black holes. In the context of black holes, the Schwarzchild radius can be described as the distance between the <em>event horizon</em> and the <em>singularity</em> at the center. Remember, that due to the extremely warped spacetime geometry of a black hole, we cannot not simply use the rules of conventional Euclidean geometry to find its radius, so instead we calculate its Schwarzchild radius by multiplying two times Newton&rsquo;s constant, times the mass of the black hole, and divide that by the square of the speed of light, or <em>rs=2GM/c^2</em>. Written as a Python function, this would look something like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_schwarzschild_radius</span>(mass):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Convert solar mass to kgs</span>
+</span></span><span style="display:flex;"><span>    kgs <span style="color:#f92672">=</span> mass <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1.989</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># The speed of light in a vacuum</span>
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> <span style="color:#ae81ff">299792458</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Newton&#39;s constant</span>
+</span></span><span style="display:flex;"><span>    G <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.674</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">**-</span><span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Define the Schwarzschild radius</span>
+</span></span><span style="display:flex;"><span>    rs <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> G <span style="color:#f92672">*</span> kgs <span style="color:#f92672">/</span> c<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> round(rs, <span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>Where the <em>mass</em> parameter is the mass of the black hole in solar masses, not kilograms. I used Cygnus X-1 (weighing in at about 14.8 solar masses), the first discovered and closest known black hole to Earth, as a test case for the function. This yielded a Schwarzchild radius of about 43.7 km, which seems to be accurate, according to sources. I should also note that Karl Schwarzchild developed his solution on the battlefields of World War I, in between calculating artillery bombardments. Yeah, that&rsquo;s pretty metal.</p>
+<h2 id="summary">Summary</h2>
+<p>While the math we are doing here is ultimately pretty simple, as far as physics goes,it nonetheless shows how one can easily do at least certain physics equations with only a little bit of code. Hope you enjoyed it, and don&rsquo;t use it to cheat on your physics homework haha.</p>
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
+        
+        <item>
+            <title>Adventures in Containerizing Databases</title>
+            <link>//localhost:1313/posts/2020-1-28-containerizing-databases/</link>
+            <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-1-28-containerizing-databases/</guid>
+            <description>&lt;p&gt;I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&amp;rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zdnet2.cbsistatic.com/hub/i/r/2016/12/14/411ea5c5-dae7-4756-8cd3-d506a0675333/resize/770xauto/b90dbe53b50ee955f5b322262444bcea/docker-whale-1.jpg&#34; alt=&#34;docker-whale&#34;&gt;
+&lt;em&gt;I was making a similar face when I got this all worked out&lt;/em&gt;&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.</p>
+<p><img src="https://zdnet2.cbsistatic.com/hub/i/r/2016/12/14/411ea5c5-dae7-4756-8cd3-d506a0675333/resize/770xauto/b90dbe53b50ee955f5b322262444bcea/docker-whale-1.jpg" alt="docker-whale">
+<em>I was making a similar face when I got this all worked out</em></p>
+<p>However, I won&rsquo;t get into a whole lot of technical details about Docker. For that, I&rsquo;ve published a gist that you can read <a href="https://gist.github.com/D-Bits/275a7ce6666590717da619c43f11d8df">here</a>. Instead, I want to talk about how containerizing databases can be useful, as well as some of the challenges I encountered in my own learning process regarding the topic.</p>
+<h2 id="why-docker">Why Docker?</h2>
+<p>You may be asking: &ldquo;why use Docker?&rdquo; That is, why use Docker when one can simply download an installer, or install a DBMS via a package manager? Well, the fact of the matter is, installing and configuring database servers can be quite a bit of work, depending on one&rsquo;s level of familiarity with doing so. Therefore, if you&rsquo;re not very comfortable with installing and configuring server software, you might want to look into using Docker. The main reason I have been trying to master Docker is not because I hate installing and setting up database servers, but rather because I wanted to simplify setting up development environments for a variety of different technology stacks, pretty much all of which include a database.</p>
+<h2 id="challenges">Challenges</h2>
+<p>I cannot really speak for the challenges that others have faced in containerizing databases, therefore, I will only talk about the challenges that I personally have faced with setting up Docker databases here.
+My main challenge by far, was simply trying to get data stored in my containerized database(s) to persist, so that I would not loose everything when I shut a container down. Beyond that, <code>docker-compose</code> mostly simplified things pretty nicely.</p>
+<h2 id="going-forward">Going Forward</h2>
+<p>Now that I can easily setup containerize databases, and persist the data their holding, I can easily setup entire development environments without spending a bunch of time manually installing and configuring a bunch of dependencies. As a result, I plan on moving fully ahead with plans to stockpile various pre-configured Dockerfiles and <code>docker-compose</code> files for various different development environments. The repo for this project can be found <a href="https://github.com/D-Bits/Docker-Configs">here</a>.</p>
+<h2 id="summary">Summary</h2>
+<p>In spite of the struggles I faced, I am very glad that I have managed to successfully containerize databases, as no being able to has pretty much been the main barrier that has been preventing me from almost exclusively relying on Docker to setup development environments going forward. With that more-or-less behind me, I hope that configuring dev environments going forward will be a whole lot more simple for me.</p>
+<p>Again, if you want the technical details of how I figured this out, I referring you to this <a href="https://gist.github.com/D-Bits/275a7ce6666590717da619c43f11d8df">gist</a>.</p>
+<!-- raw HTML omitted -->
+<p>Sincerely,</p>
+<p>Dana</p>
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
+        
+        <item>
+            <title>Storing and Querying JSON Data in PostgreSQL</title>
+            <link>//localhost:1313/posts/2020-1-22-postgres-json/</link>
+            <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-1-22-postgres-json/</guid>
+            <description>&lt;p&gt;I recently started exploring how to store JSON data in a traditional relational
+database management system (RDBMS), rather than a dedicated form of JSON/document
+storage, like MongoDB. While I could write a lot more about the problems with
+MongoDB, that&amp;rsquo;s not what I want to do here. Instead, I want to
+focus primarily on how to store and query JSON in PostgreSQL. However, I
+should note that PostgreSQL is not the only RDBMS that supports JSON storage.
+I know that MariaDB also does, as of v10.2, and possibly other RDBMS as well. However,
+since I have been mostly using and enjoying Postgres for awhile now,
+I decided to focus on that, specifically.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>I recently started exploring how to store JSON data in a traditional relational
+database management system (RDBMS), rather than a dedicated form of JSON/document
+storage, like MongoDB. While I could write a lot more about the problems with
+MongoDB, that&rsquo;s not what I want to do here. Instead, I want to
+focus primarily on how to store and query JSON in PostgreSQL. However, I
+should note that PostgreSQL is not the only RDBMS that supports JSON storage.
+I know that MariaDB also does, as of v10.2, and possibly other RDBMS as well. However,
+since I have been mostly using and enjoying Postgres for awhile now,
+I decided to focus on that, specifically.</p>
+<h2 id="the-test-case">The Test Case</h2>
+<p>As a sort of test case to experiment with storing JSON in a relational database,
+I decided create a table to store miscellaneous textbooks, and various information
+for them. While this is a somewhat simple example, it nonetheless illustrates at
+least the basics of how to store and query JSON in Postgres.</p>
+<h2 id="creating-a-table-for-json-data-and-seeding-it">Creating a Table for JSON Data and Seeding It</h2>
+<p>First, I should note that while Postgres has both a <code>JSON</code> data type, and a JSON bytes (<code>JSONB</code>)
+data type, we will be using <code>JSONB</code>, as that data type supports indexing, while the <code>JSON</code>
+type does not.</p>
+<p>Here is the sample table I created to store data in:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Create table for textbooks
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> textbooks
+</span></span><span style="display:flex;"><span>(
+</span></span><span style="display:flex;"><span>    id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    book_info JSONB
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>And here is how to insert JSON data into a <code>JSONB</code> field.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Populate textbooks table
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> textbooks(book_info)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">VALUES</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;title&#34;: &#34;Python Crash Course, 2nd Edition: A Hands-On, Project-Based Introduction to Programming&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;ISBN&#34;: 1593279280,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;condition&#34;: &#34;new&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;price&#34;: 22.99,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;hardcover&#34;: false,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;authors&#34;: [&#34;Eric Matthes&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;title&#34;: &#34;Applied Cryptography: Protocols, Algorithms and Source Code in C 20th Anniversary Edition&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;ISBN&#34;: 1119096723,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;condition&#34;: &#34;new&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;price&#34;: 55.00,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;hardcover&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;authors&#34;: [&#34;Bruce Schneier&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;title&#34;: &#34;Gravitation&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;ISBN&#34;: 9780691177793,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;condition&#34;: &#34;used&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;price&#34;: 45.40,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;hardcover&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;authors&#34;: [&#34;Charles W. Misner&#34;, &#34;Kip S. Thorne&#34;, &#34;John A. Wheeler&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;title&#34;: &#34;Programming C# 8.0: Build Cloud, Web, and Desktop Applications&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;ISBN&#34;: 1492056812,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;condition&#34;: &#34;new&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;price&#34;: 54.82,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;hardcover&#34;: false,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;authors&#34;: [&#34;Ian Griffiths&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;title&#34;: &#34;Mastering PostgreSQL 11: Expert techniques to build scalable, reliable, and fault-tolerant database applications, 2nd Edition&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;ISBN&#34;: 1789537819,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;condition&#34;: &#34;used&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;price&#34;: 39.99,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;hardcover&#34;: false,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;authors&#34;: [&#34;Hans-Jürgen Schönig&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>);
+</span></span></code></pre></div><h2 id="querying-the-data">Querying the Data</h2>
+<p>If we simply wanted to get all the data in the table, then we would just do your
+basic <code>SELECT * FROM textbooks;</code>, but if only want to select specific elements
+from our <code>JSONB</code> field, then we have to use syntax that might look somewhat
+unfamiliar. Let&rsquo;s say we only wanted to select <code>title</code> values from our JSON
+data. Then, we would use: <code>select book_info -&gt;&gt; 'title' as title from textbooks;</code>.
+However, what if we need to do a more complicated <code>SELECT</code> query? For example,
+what if I&rsquo;m on a budget, and only want to see textbooks that cost less than $50.00?
+In that case, we would have to do a little type casting with the following query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Select books that cost less than $50.00
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> book_info <span style="color:#f92672">-&gt;&gt;</span> <span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#66d9ef">AS</span> title, book_info <span style="color:#f92672">-&gt;&gt;</span> <span style="color:#e6db74">&#39;price&#39;</span> <span style="color:#66d9ef">AS</span> price
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> textbooks
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">cast</span>
+</span></span><span style="display:flex;"><span>(
+</span></span><span style="display:flex;"><span>    book_info <span style="color:#f92672">-&gt;&gt;</span> <span style="color:#e6db74">&#39;price&#39;</span> <span style="color:#66d9ef">AS</span> DECIMAL
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">50</span>.<span style="color:#ae81ff">00</span>;
+</span></span></code></pre></div><p>For another example, let&rsquo;s say we just want hardcover books. Then, we would use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Select only hardcover books
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> book_info <span style="color:#f92672">-&gt;&gt;</span> <span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#66d9ef">AS</span> title, book_info <span style="color:#f92672">-&gt;&gt;</span> <span style="color:#e6db74">&#39;hardcover&#39;</span> <span style="color:#66d9ef">AS</span> is_hardcover
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> textbooks
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">cast</span>
+</span></span><span style="display:flex;"><span>(
+</span></span><span style="display:flex;"><span>    book_info <span style="color:#f92672">-&gt;&gt;</span> <span style="color:#e6db74">&#39;hardcover&#39;</span> <span style="color:#66d9ef">AS</span> BOOLEAN
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span></code></pre></div><h2 id="conclusions">Conclusions</h2>
+<p>Storing, and querying JSON data in a traditional, relational database like Postgres, is
+not only possible, but also practical. So, the next time you find yourself in one
+of those niche use-cases where you actually need to persistently store data in JSON,
+don&rsquo;t simply assume that you need to use a NoSQL DBMS, like MongoDB. At least look
+into using Postgres, and its <code>JSONB</code> data type. I have also authored a <a href="https://gist.github.com/D-Bits/d0f5ef2f79839d6e814a235e14e9e418">gist</a>
+on the topic.</p>
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
+        
+        <item>
+            <title>Invoking Shell Commands in C# Programs</title>
+            <link>//localhost:1313/posts/2020-1-19-shell-cmds-csharp/</link>
+            <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-1-19-shell-cmds-csharp/</guid>
+            <description>&lt;p&gt;After extensive wrangling and experimentation, I finally have managed to
+successfully invoke external commands in C# programs, which I hope will make
+me a considerably more productive C# programmer. So without further ado, let&amp;rsquo;s
+dive into the nitty gritty details.&lt;/p&gt;
+&lt;h3 id=&#34;purpose&#34;&gt;Purpose&lt;/h3&gt;
+&lt;p&gt;First, you might ask: why would one need to do this? Ultimately, the potential
+to automate all sorts of things by invoking external commands inside a program
+are nearly limitless. I have already been relying heavily on &lt;code&gt;subprocess.run()&lt;/code&gt;
+in Python&amp;rsquo;s standard library to do exactly that for a while now. Yet, as much
+as I have been utilizing that, I recently started to explore if I could implement
+the same, or at least similar, functionality in other languages. C# has long been
+my designated language to fall back on, when Python isn&amp;rsquo;t ideal for the task
+at hand, such as when I need to easily cross-compile binaries. Therefore, I
+started looking for whatever documentation and guides I could find on the
+topic.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>After extensive wrangling and experimentation, I finally have managed to
+successfully invoke external commands in C# programs, which I hope will make
+me a considerably more productive C# programmer. So without further ado, let&rsquo;s
+dive into the nitty gritty details.</p>
+<h3 id="purpose">Purpose</h3>
+<p>First, you might ask: why would one need to do this? Ultimately, the potential
+to automate all sorts of things by invoking external commands inside a program
+are nearly limitless. I have already been relying heavily on <code>subprocess.run()</code>
+in Python&rsquo;s standard library to do exactly that for a while now. Yet, as much
+as I have been utilizing that, I recently started to explore if I could implement
+the same, or at least similar, functionality in other languages. C# has long been
+my designated language to fall back on, when Python isn&rsquo;t ideal for the task
+at hand, such as when I need to easily cross-compile binaries. Therefore, I
+started looking for whatever documentation and guides I could find on the
+topic.</p>
+<h2 id="implementation">Implementation</h2>
+<p>In the following example, we will be executing a command to update currently
+installed software on Windows, via the Chocolatey package manager.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Diagnostics;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> WindowsUpdates()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Update all packages install via Chocolatey</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> ChocoUpdates = Process.Start(<span style="color:#e6db74">&#34;CMD.exe&#34;</span>, <span style="color:#e6db74">&#34;/K choco upgrade all&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">catch</span> (Exception ex)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// If there is an exception, output the error message</span>
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;ERROR: &#34;</span> + ex.Message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This next example (part of the same class) will update MacOS software, via
+Homebrew.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Diagnostics;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Automate updates on MacOS via Homebrew</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> HomebrewUpdates()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Ensure downloadable packages are up-to-date</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> HomebrewUpdate = Process.Start(<span style="color:#e6db74">&#34;/bin/bash&#34;</span>, <span style="color:#e6db74">&#34;-c brew update&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Update all installed packages</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> HomebrewUpgrade = Process.Start(<span style="color:#e6db74">&#34;/bin/bash&#34;</span>, <span style="color:#e6db74">&#34;-c brew upgrade&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">catch</span> (Exception ex)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;ERROR: &#34;</span> + ex.Message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Notice how we have to do things a little differently when working with Bash
+commands. Instead of starting our string that contains our command (and arguments)
+with <em>-K</em>, like we did with Command Prompt commands, we now begin them with a
+<em>-c</em>. We also have to pass in <em>&quot;/bin/bash&quot;</em>, rather than <em>&ldquo;CMD.exe&rdquo;</em>. Otherwise,
+the basic idea is the same.</p>
+<p>You can view the rest of the source code for this project
+<!-- raw HTML omitted -->here<!-- raw HTML omitted -->.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>While invoking shell commands in C# with <code>Process.Start()</code> has not been quite
+as intuitive as Python&rsquo;s <code>subprocess.run()</code>, and it was rather difficult to
+find accurate documentation, being able to now do so effectively will be very
+helpfully in reimplementing certain past projects in C#.  In addition to that,
+I will also look into what other things I can automate with <code>Process.Start()</code>.</p>
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
+        
+        <item>
+            <title>Migrating Data to the Cloud with Python</title>
+            <link>//localhost:1313/posts/2020-1-16-migratingdatapython/</link>
+            <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-1-16-migratingdatapython/</guid>
+            <description>&lt;p&gt;In the past year, or so, I have been experimenting with writing my own custom
+ETL programs in Python. Among the functionality that I included was extracting
+data from a local Postgres database, and migrating to a Postgres database in
+the cloud.&lt;/p&gt;
+&lt;h2 id=&#34;the-reasoning&#34;&gt;The Reasoning&lt;/h2&gt;
+&lt;p&gt;While I&amp;rsquo;m aware that platforms-as-a service (PaaS) like AWS, and
+Azure provide their own services for this. Nevertheless, I opted to implement
+my own solution for data migration(s). I decided on this course of action for
+a couple reasons: 1) I saw it as a valuable learning experience for, and 2)
+I also found it be a practical solution as well.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>In the past year, or so, I have been experimenting with writing my own custom
+ETL programs in Python. Among the functionality that I included was extracting
+data from a local Postgres database, and migrating to a Postgres database in
+the cloud.</p>
+<h2 id="the-reasoning">The Reasoning</h2>
+<p>While I&rsquo;m aware that platforms-as-a service (PaaS) like AWS, and
+Azure provide their own services for this. Nevertheless, I opted to implement
+my own solution for data migration(s). I decided on this course of action for
+a couple reasons: 1) I saw it as a valuable learning experience for, and 2)
+I also found it be a practical solution as well.</p>
+<h2 id="the-goal">The Goal</h2>
+<p>The ultimate goal of this was to create a simple, interactive way of extracting
+data from individual tables on my local instance of PostgreSQL, and loading
+them into an AWS RDS Postgres instance. Ideally, I wanted to implement a
+solution that provided the best possible balance between simplicity and
+performance. Ultimately, the packages that I relied on the most for this task
+were <em>psycopg2</em>, and <em>Pandas</em>.</p>
+<h2 id="implementation">Implementation</h2>
+<p>The function I wrote to perform this task consisted of the following key steps:</p>
+<ol>
+<li>Extract the data from a table, and load it into a <code>DataFrame</code>.</li>
+<li>Dump the contents of the <code>DataFrame</code> to a (temporary) CSV file.</li>
+<li>Create a <em>psycopg2</em> <code>cursor</code> based on AWS connection parameters to execute operations.</li>
+<li>Use <code>cursor.copy_from()</code> to load data from the CSV into the AWS database.</li>
+<li>Commit the transaction to the database, and close the connection.</li>
+<li>Delete the temporary CSV file, as it is no longer needed.</li>
+</ol>
+<!-- raw HTML omitted -->
+<p>If you are familiar with Pandas DataFrames, you might be wondering &ldquo;why dump
+the DataFrame to a CSV file? Why not just directly write to the target database
+using <code>DataFrame.to_sql()</code>? I actually did originally use this technique.
+However, I found that even with using the optional <code>index=multi</code> parameter,
+was still prohibitively slow. Don&rsquo;t get me wrong: <code>DataFrame.to_sql()</code> is a
+totally viable option, if you are just working with small datasets of under
+10,000 records. However, beyond that, things will start to slow down noticeably.</p>
+<p>I had the hypothesis that it although it would require an extra step, it would
+actually be far faster to dump the data to a CSV file so I could use
+<code>cursor.copy_from()</code>, and therefore, load all the records into the database as
+a single ACID transaction. This proved to be correct, as it took about a
+quarter of the time to complete as <code>DataFrame.to_sql()</code> did, even using
+<code>index=multi</code> to speed things up. Also, after the data was successfully loaded
+into the database, I could easily just delete the CSV file that I was staging
+my data in.</p>
+<p>Here is the exact implementation I used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">aws_pg_migration</span>(src_table, target_table):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Extract the data, and dump it to a temporary CSV file</span>
+</span></span><span style="display:flex;"><span>        df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_sql_table(src_table, local_pg_engine, index_col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;id&#39;</span>)
+</span></span><span style="display:flex;"><span>        df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;data/temp/sql_dump.csv&#39;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Create a cursor</span>
+</span></span><span style="display:flex;"><span>        curs <span style="color:#f92672">=</span> aws_pg_conn<span style="color:#f92672">.</span>cursor()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;data/temp/sql_dump.csv&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf8&#34;</span>) <span style="color:#66d9ef">as</span> data_src:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Skip header row </span>
+</span></span><span style="display:flex;"><span>            next(data_src)
+</span></span><span style="display:flex;"><span>                        
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Load data from CSV into db</span>
+</span></span><span style="display:flex;"><span>            curs<span style="color:#f92672">.</span>copy_from(data_src, target_table, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Commit the transaction to the database, and close the connection</span>
+</span></span><span style="display:flex;"><span>            aws_pg_conn<span style="color:#f92672">.</span>commit()
+</span></span><span style="display:flex;"><span>            aws_pg_conn<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Delete the CSV file, as it is no long necessary</span>
+</span></span><span style="display:flex;"><span>            remove(<span style="color:#e6db74">&#39;data/temp/sql_dump.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Show the user how many records were migrated, and terminate program.</span>
+</span></span><span style="display:flex;"><span>            input(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>len(df)<span style="color:#e6db74">}</span><span style="color:#e6db74"> record(s) successfully loaded into the &#34;</span><span style="color:#e6db74">{</span>target_table<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; table in &#34;</span><span style="color:#e6db74">{</span>aws_pg_creds[<span style="color:#e6db74">&#34;database&#34;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; on &#34;</span><span style="color:#e6db74">{</span>aws_pg_creds[<span style="color:#e6db74">&#34;host&#34;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;. Press enter to exit.&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Throw exception if data source is empty           </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> EmptyDataError:
+</span></span><span style="display:flex;"><span>        input(<span style="color:#e6db74">&#39;Error: No data in data source! Press enter to exit.&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Throw exception if data types are not compatible </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> DtypeWarning:
+</span></span><span style="display:flex;"><span>        input(<span style="color:#e6db74">&#39;Error: Incompatible data type! Press enter to exit.&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Throw exception if table does not exist in DB.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> UndefinedTable:
+</span></span><span style="display:flex;"><span>        input(<span style="color:#e6db74">&#39;Error: Table does not exist in database! Press enter to exit.&#39;</span>)
+</span></span></code></pre></div><h2 id="conclusions">Conclusions</h2>
+<p>This particular methodology has worked well enough that I am now considering
+implementing in other functions in the same project where I am currently
+using <code>DataFrame.to_sql()</code>. After all, I have thus far only tested those functions
+will data sets of no more than 5,000 records so far. More information about
+the project can be found <!-- raw HTML omitted -->here<!-- raw HTML omitted -->.</p>
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
+        
+        <item>
+            <title>What Makes a Good Programming Language? </title>
+            <link>//localhost:1313/posts/2020-1-12-good-programming-lang/</link>
+            <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-1-12-good-programming-lang/</guid>
+            <description>&lt;p&gt;First, I should note that the is perhaps a somewhat loaded question, as
+different people will inevitably have different criteria, and priorities
+for the languages they choose to use. Therefore, you will get many different
+answers to this question, depending on who you ask. It is also equally
+important to ask: what makes a good programming language for a specific use
+case? A language that is ideal for say, building web applications is likely
+not going to be equally ideal for writing drivers and operating system
+kernels. Nevertheless, I that there are some core criteria that almost all
+developers will value in a given language to at least some degree. Among
+these are: performance, simplicity, versatility, and cross-platform support.
+With that in mind, I would like to break down what each of these criteria
+entail.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>First, I should note that the is perhaps a somewhat loaded question, as
+different people will inevitably have different criteria, and priorities
+for the languages they choose to use. Therefore, you will get many different
+answers to this question, depending on who you ask. It is also equally
+important to ask: what makes a good programming language for a specific use
+case? A language that is ideal for say, building web applications is likely
+not going to be equally ideal for writing drivers and operating system
+kernels. Nevertheless, I that there are some core criteria that almost all
+developers will value in a given language to at least some degree. Among
+these are: performance, simplicity, versatility, and cross-platform support.
+With that in mind, I would like to break down what each of these criteria
+entail.</p>
+<h2 id="performance">Performance</h2>
+<p>Performance generally refers to how efficiently a language and its runtime
+utilize system resources such as RAM. Even though we generally do not need
+to worry quite as much about conserving memory as we did 40-50 years ago,
+this is still a significant factor. We certainly want our programs to run
+fast and efficiently for the sake of our users, and ourselves. It is also
+on account of performance that certain languages are ill suited to certain
+use-cases. For example, wile some interpreted languages like Ruby and
+Python may be awesome for building web applications, they are not exactly
+what one would use for implementing something that requires super efficient
+usage of memory, like a physics engine. However, it is important to recognize
+that at least some languages try to strike a balance between performance and
+abstraction/simplicity. I would argue that languages like C# and Golang do
+an at least decent job of this.</p>
+<h2 id="simplicity">Simplicity</h2>
+<p>In addition to performance, we also largely want to minimize the barrier to
+entry for the language we use. That is, we want to make it easier to learn
+new languages, rather than more difficult. There are a multitude of factors
+that can contribute to this, such as the specific syntax that the language
+uses, as well as the amount of setup involved in installing the runtime, and
+development environment. To quote Tim Peters&rsquo; <em>The Zen of Python</em>: &ldquo;Readability
+counts.&rdquo; Programmers generally spend more time reading existing source code
+than they do writing new code. Therefore, how easy it is to read code written
+in a given language is often an important factor in people&rsquo;s decision to use
+said language. Syntax can have a major effect on how easy or difficult it is
+to learn and use a programming language.</p>
+<h2 id="versatility">Versatility</h2>
+<p>Another major factor in the popularity of programming languages is the variety
+of different use-cases that they can be applied to. Indeed, many languages
+(such as JavaScript and Python) have seen their popularity skyrocket due to
+being easily portable to a variety of different contexts, while others, like
+PHP and Ruby, have experienced a significant drop in popularity largely on
+account of not being ideal for use outside of a specific context.</p>
+<h2 id="cross-platform-support">Cross-Platform Support</h2>
+<p>This brings me to my final priority for a programming language: cross-platform
+support, which ties into the previous point about versatility. It is also not
+necessarily a priority for every developer. For example, a career iOS developer
+will not necessarily be bothered by the lack of cross-platform support for
+Swift, or Objective C. Similarly, veteran C# programmers are probably content
+with the fact that .NET Framework (not including the Mono project) is only
+supported on Windows. Nevertheless, there is something to be said for a
+language that is not bound to a specific operating system, or domain. Indeed,
+many programmers specifically seek out platform-independent languages, and
+they are not wrong to do so.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>I am sure that there are any number of people who at least partially disagree
+with some of my assessments in this post. This is completely understandable.
+Again, everyone has their own priorities that are deciding factors in the
+tools they use. I welcome feedback on this. After all, different strokes for
+different folks.</p>
+<!-- raw HTML omitted -->
+<p>Sincerely,</p>
+<p>Dana</p>
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
+        
+        <item>
+            <title>Welcome!</title>
+            <link>//localhost:1313/posts/2020-1-10-welcome-everyone/</link>
+            <pubDate>Fri, 10 Jan 2020 07:07:07 +0100</pubDate>
+            
+            <guid>//localhost:1313/posts/2020-1-10-welcome-everyone/</guid>
+            <description>&lt;p&gt;Welcome to my new new blog and website! This is a pilot post for my
+new blogging website, build with Hugo and Netlify. My posts will
+primarily revolve around technology, science, society, and the connections
+between them.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;At any rate, I hope you enjoy my posts. Feel free to check out the &amp;ldquo;About&amp;rdquo;,
+and &amp;ldquo;Skills&amp;rdquo; pages for more information about me. Thank you again for visiting
+my blog, and feel free to contact via the email link below, if you care to.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Welcome to my new new blog and website! This is a pilot post for my
+new blogging website, build with Hugo and Netlify. My posts will
+primarily revolve around technology, science, society, and the connections
+between them.</p>
+<!-- raw HTML omitted -->
+<p>At any rate, I hope you enjoy my posts. Feel free to check out the &ldquo;About&rdquo;,
+and &ldquo;Skills&rdquo; pages for more information about me. Thank you again for visiting
+my blog, and feel free to contact via the email link below, if you care to.</p>
+<p>Sincerely,</p>
+<p>Dana</p>
+<!-- raw HTML omitted -->
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
