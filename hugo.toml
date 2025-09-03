@@ -79,7 +79,11 @@ theme        = "hello-friend-ng"
   [[menu.main]]
     identifier = "projects"
     name       = "Projects"
-    url        = "/projects"    
+    url        = "/projects"
+  [[menu.main]]
+    identifier = "data"
+    name       = "Data"
+    url        = "/data"    
 
 [pagination]
   pagerSize = 15
