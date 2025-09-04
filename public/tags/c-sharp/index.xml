@@ -1,15 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C-Sharp on Danabases</title><link>localhost/tags/c-sharp/</link><description>Recent content in C-Sharp on Danabases</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><lastBuildDate>Wed, 02 Jul 2025 14:46:21 -0700</lastBuildDate><atom:link href="localhost/tags/c-sharp/index.xml" rel="self" type="application/rss+xml"/><item><title>Invoking Shell Commands in C# Programs</title><link>localhost/posts/2020-1-19-shell-cmds-csharp/</link><pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-19-shell-cmds-csharp/</guid><description>&lt;p&gt;After extensive wrangling and experimentation, I finally have managed to
-successfully invoke external commands in C# programs, which I hope will make
-me a considerably more productive C# programmer. So without further ado, let&amp;rsquo;s
-dive into the nitty gritty details.&lt;/p&gt;
-&lt;h3 id="purpose"&gt;Purpose&lt;/h3&gt;
-&lt;p&gt;First, you might ask: why would one need to do this? Ultimately, the potential
-to automate all sorts of things by invoking external commands inside a program
-are nearly limitless. I have already been relying heavily on &lt;code&gt;subprocess.run()&lt;/code&gt;
-in Python&amp;rsquo;s standard library to do exactly that for a while now. Yet, as much
-as I have been utilizing that, I recently started to explore if I could implement
-the same, or at least similar, functionality in other languages. C# has long been
-my designated language to fall back on, when Python isn&amp;rsquo;t ideal for the task
-at hand, such as when I need to easily cross-compile binaries. Therefore, I
-started looking for whatever documentation and guides I could find on the
-topic.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C-Sharp on Danabases</title>
+    <link>localhost/tags/c-sharp/</link>
+    <description>Recent content in C-Sharp on Danabases</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 19 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="localhost/tags/c-sharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Invoking Shell Commands in C# Programs</title>
+      <link>localhost/posts/2020-1-19-shell-cmds-csharp/</link>
+      <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>localhost/posts/2020-1-19-shell-cmds-csharp/</guid>
+      <description>&lt;p&gt;After extensive wrangling and experimentation, I finally have managed to&#xA;successfully invoke external commands in C# programs, which I hope will make&#xA;me a considerably more productive C# programmer. So without further ado, let&amp;rsquo;s&#xA;dive into the nitty gritty details.&lt;/p&gt;&#xA;&lt;h3 id=&#34;purpose&#34;&gt;Purpose&lt;/h3&gt;&#xA;&lt;p&gt;First, you might ask: why would one need to do this? Ultimately, the potential&#xA;to automate all sorts of things by invoking external commands inside a program&#xA;are nearly limitless. I have already been relying heavily on &lt;code&gt;subprocess.run()&lt;/code&gt;&#xA;in Python&amp;rsquo;s standard library to do exactly that for a while now. Yet, as much&#xA;as I have been utilizing that, I recently started to explore if I could implement&#xA;the same, or at least similar, functionality in other languages. C# has long been&#xA;my designated language to fall back on, when Python isn&amp;rsquo;t ideal for the task&#xA;at hand, such as when I need to easily cross-compile binaries. Therefore, I&#xA;started looking for whatever documentation and guides I could find on the&#xA;topic.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
