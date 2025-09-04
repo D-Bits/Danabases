@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Danabases</title>
-    <link>localhost/tags/docker/</link>
+    <link>//localhost:1313/tags/docker/</link>
     <description>Recent content in Docker on Danabases</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 08 Nov 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="localhost/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unlocking the Power of Apache Airflow</title>
-      <link>localhost/posts/2020-11-08-unlocking-airflow/</link>
+      <link>//localhost:1313/posts/2020-11-08-unlocking-airflow/</link>
       <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-11-08-unlocking-airflow/</guid>
+      <guid>//localhost:1313/posts/2020-11-08-unlocking-airflow/</guid>
       <description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-airflow&#34;&gt;What is Airflow?&lt;/h2&gt;&#xA;&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adventures in Containerizing Databases</title>
-      <link>localhost/posts/2020-1-28-containerizing-databases/</link>
+      <link>//localhost:1313/posts/2020-1-28-containerizing-databases/</link>
       <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-1-28-containerizing-databases/</guid>
+      <guid>//localhost:1313/posts/2020-1-28-containerizing-databases/</guid>
       <description>&lt;p&gt;I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&amp;rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://zdnet2.cbsistatic.com/hub/i/r/2016/12/14/411ea5c5-dae7-4756-8cd3-d506a0675333/resize/770xauto/b90dbe53b50ee955f5b322262444bcea/docker-whale-1.jpg&#34; alt=&#34;docker-whale&#34;&gt;&#xA;&lt;em&gt;I was making a similar face when I got this all worked out&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>

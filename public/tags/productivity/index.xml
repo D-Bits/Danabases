@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Productivity on Danabases</title>
-    <link>localhost/tags/productivity/</link>
+    <link>//localhost:1313/tags/productivity/</link>
     <description>Recent content in Productivity on Danabases</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="localhost/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Improving Developer Productivity with VS Code Tasks</title>
-      <link>localhost/posts/2020-12-17-vscode-tasks/</link>
+      <link>//localhost:1313/posts/2020-12-17-vscode-tasks/</link>
       <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-12-17-vscode-tasks/</guid>
+      <guid>//localhost:1313/posts/2020-12-17-vscode-tasks/</guid>
       <description>&lt;p&gt;Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of &lt;em&gt;task runners&lt;/em&gt; to at least partially automate execution of these kinds of tedious and repetitive tasks.&lt;/p&gt;</description>
     </item>
   </channel>

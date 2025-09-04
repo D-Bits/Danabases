@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Physics on Danabases</title>
-    <link>localhost/tags/physics/</link>
+    <link>//localhost:1313/tags/physics/</link>
     <description>Recent content in Physics on Danabases</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="localhost/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fun with Gravitational Physics and Python</title>
-      <link>localhost/posts/2020-2-3-gravity-python/</link>
+      <link>//localhost:1313/posts/2020-2-3-gravity-python/</link>
       <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-2-3-gravity-python/</guid>
+      <guid>//localhost:1313/posts/2020-2-3-gravity-python/</guid>
       <description>&lt;p&gt;While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;</description>
     </item>
   </channel>

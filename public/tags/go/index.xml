@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on Danabases</title>
-    <link>localhost/tags/go/</link>
+    <link>//localhost:1313/tags/go/</link>
     <description>Recent content in Go on Danabases</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="localhost/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Writing an HTTP Client in Go</title>
-      <link>localhost/posts/2021-10-19-go-http-client/</link>
+      <link>//localhost:1313/posts/2021-10-19-go-http-client/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2021-10-19-go-http-client/</guid>
+      <guid>//localhost:1313/posts/2021-10-19-go-http-client/</guid>
       <description>&lt;p&gt;One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&amp;rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.&lt;/p&gt;&#xA;&lt;h2 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h2&gt;&#xA;&lt;p&gt;The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user&amp;rsquo;s choosing, and saves it as a &lt;code&gt;.json&lt;/code&gt; file to the local file system. I won&amp;rsquo;t go into how to setup a development environment for Go (&lt;em&gt;I just used Docker, and VS Code integrations&lt;/em&gt;) here. However, we do need to create some files and directories first. To begin with, we need to create a &lt;code&gt;bin/&lt;/code&gt; directory for executables, and a &lt;code&gt;data/&lt;/code&gt; directory to save our data dumps in. To implement the actual program, we need two source files: &lt;code&gt;main.go&lt;/code&gt; and &lt;code&gt;fetch.go&lt;/code&gt;, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a &lt;code&gt;Makefile&lt;/code&gt; to simplify program compilation and execution, with the following rules:&lt;/p&gt;</description>
     </item>
   </channel>

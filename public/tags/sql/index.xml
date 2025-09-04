@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on Danabases</title>
-    <link>localhost/tags/sql/</link>
+    <link>//localhost:1313/tags/sql/</link>
     <description>Recent content in Sql on Danabases</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 15 Feb 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="localhost/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Easy Postgres Installation and Setup on Windows with Chocolatey</title>
-      <link>localhost/posts/2020-2-15-postgres-chocolatey/</link>
+      <link>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</link>
       <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-2-15-postgres-chocolatey/</guid>
+      <guid>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</guid>
       <description>&lt;p&gt;This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt; package manager. Yes, you can always take the old school route by going to the &lt;a href=&#34;https://www.postgresql.org/download/&#34;&gt;official Postgres website&lt;/a&gt;, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installing-chocolatey&#34;&gt;Installing Chocolatey&lt;/h2&gt;&#xA;&lt;p&gt;To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run &lt;code&gt;Get-ExecutionPolicy&lt;/code&gt;. If it says &amp;ldquo;restricted&amp;rdquo;, then you will need to run either &lt;code&gt;Set-ExecutionPolicy AllSigned&lt;/code&gt; or &lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Integrating JSONB Data into Django Projects</title>
-      <link>localhost/posts/2020-2-13-jsonb-django/</link>
+      <link>//localhost:1313/posts/2020-2-13-jsonb-django/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-2-13-jsonb-django/</guid>
+      <guid>//localhost:1313/posts/2020-2-13-jsonb-django/</guid>
       <description>&lt;p&gt;This post follows up on my earlier post about &lt;a href=&#34;https://danabases.net/posts/2020-1-22-postgres-json/&#34;&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;&#xA;&lt;h2 id=&#34;modeling-the-data&#34;&gt;Modeling the Data&lt;/h2&gt;&#xA;&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Storing and Querying JSON Data in PostgreSQL</title>
-      <link>localhost/posts/2020-1-22-postgres-json/</link>
+      <link>//localhost:1313/posts/2020-1-22-postgres-json/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-1-22-postgres-json/</guid>
+      <guid>//localhost:1313/posts/2020-1-22-postgres-json/</guid>
       <description>&lt;p&gt;I recently started exploring how to store JSON data in a traditional relational&#xA;database management system (RDBMS), rather than a dedicated form of JSON/document&#xA;storage, like MongoDB. While I could write a lot more about the problems with&#xA;MongoDB, that&amp;rsquo;s not what I want to do here. Instead, I want to&#xA;focus primarily on how to store and query JSON in PostgreSQL. However, I&#xA;should note that PostgreSQL is not the only RDBMS that supports JSON storage.&#xA;I know that MariaDB also does, as of v10.2, and possibly other RDBMS as well. However,&#xA;since I have been mostly using and enjoying Postgres for awhile now,&#xA;I decided to focus on that, specifically.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Migrating Data to the Cloud with Python</title>
-      <link>localhost/posts/2020-1-16-migratingdatapython/</link>
+      <link>//localhost:1313/posts/2020-1-16-migratingdatapython/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>localhost/posts/2020-1-16-migratingdatapython/</guid>
+      <guid>//localhost:1313/posts/2020-1-16-migratingdatapython/</guid>
       <description>&lt;p&gt;In the past year, or so, I have been experimenting with writing my own custom&#xA;ETL programs in Python. Among the functionality that I included was extracting&#xA;data from a local Postgres database, and migrating to a Postgres database in&#xA;the cloud.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-reasoning&#34;&gt;The Reasoning&lt;/h2&gt;&#xA;&lt;p&gt;While I&amp;rsquo;m aware that platforms-as-a service (PaaS) like AWS, and&#xA;Azure provide their own services for this. Nevertheless, I opted to implement&#xA;my own solution for data migration(s). I decided on this course of action for&#xA;a couple reasons: 1) I saw it as a valuable learning experience for, and 2)&#xA;I also found it be a practical solution as well.&lt;/p&gt;</description>
     </item>
   </channel>
