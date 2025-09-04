@@ -1,43 +1,15 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on Danabases</title>
-        <link>//localhost:1313/posts/</link>
-        <description>Recent content in Posts on Danabases</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
-        <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>A Long Overdue Reboot</title>
-            <link>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</link>
-            <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</guid>
-            <description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;
-&lt;h3 id=&#34;a-quick-update&#34;&gt;A Quick Update&lt;/h3&gt;
-&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.</p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Danabases</title><link>localhost/posts/</link><description>Recent content in Posts on Danabases</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="localhost/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>A Long Overdue Reboot</title><link>localhost/posts/2025-7-17-long-overdue-reboot/</link><pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate><guid>localhost/posts/2025-7-17-long-overdue-reboot/</guid><description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;
+&lt;h3 id="a-quick-update"&gt;A Quick Update&lt;/h3&gt;
+&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description><content type="html"><![CDATA[<p>Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.</p>
 <h3 id="a-quick-update">A Quick Update</h3>
 <p>Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well</p>
 <h3 id="updating-the-site">Updating the Site</h3>
 <p>In addition to not writing any new blog posts for the past four years, I also had not updated the code base for the website itself. Furthermore, updating to a current version of the static site generator (Hugo) that was used to build this site entailed a whole bunch of backwards compatibility issues. First among these, the settings file had to be updated to be compatible with the current version of Hugo. Second, the 3rd party theme I was using had no been updated in years. Fortunately, I was able to find a fork of said theme that is compatible and regularly updated. So, the next task was to integrate that new theme into the website, as well as re-familiarize myself with a static site generator that I had not used in years.</p>
 <h3 id="the-future-and-final-thoughts">The Future and Final Thoughts</h3>
 <p>I don&rsquo;t know just how much I&rsquo;m going to be writing new blog posts in the coming months and years. However, I will try to keep at it, and in addition to coding topics, I will also occasionally be uploading recipes for food, and not just software. I also enjoy cooking, and like my source code here, the recipes are free for others to use as they please.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Writing an HTTP Client in Go</title>
-            <link>//localhost:1313/posts/2021-10-19-go-http-client/</link>
-            <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2021-10-19-go-http-client/</guid>
-            <description>&lt;p&gt;One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&amp;rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.&lt;/p&gt;
-&lt;h2 id=&#34;project-setup&#34;&gt;Project Setup&lt;/h2&gt;
-&lt;p&gt;The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user&amp;rsquo;s choosing, and saves it as a &lt;code&gt;.json&lt;/code&gt; file to the local file system. I won&amp;rsquo;t go into how to setup a development environment for Go (&lt;em&gt;I just used Docker, and VS Code integrations&lt;/em&gt;) here. However, we do need to create some files and directories first. To begin with, we need to create a &lt;code&gt;bin/&lt;/code&gt; directory for executables, and a &lt;code&gt;data/&lt;/code&gt; directory to save our data dumps in. To implement the actual program, we need two source files: &lt;code&gt;main.go&lt;/code&gt; and &lt;code&gt;fetch.go&lt;/code&gt;, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a &lt;code&gt;Makefile&lt;/code&gt; to simplify program compilation and execution, with the following rules:&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.</p>
+]]></content></item><item><title>Writing an HTTP Client in Go</title><link>localhost/posts/2021-10-19-go-http-client/</link><pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate><guid>localhost/posts/2021-10-19-go-http-client/</guid><description>&lt;p&gt;One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&amp;rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.&lt;/p&gt;
+&lt;h2 id="project-setup"&gt;Project Setup&lt;/h2&gt;
+&lt;p&gt;The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user&amp;rsquo;s choosing, and saves it as a &lt;code&gt;.json&lt;/code&gt; file to the local file system. I won&amp;rsquo;t go into how to setup a development environment for Go (&lt;em&gt;I just used Docker, and VS Code integrations&lt;/em&gt;) here. However, we do need to create some files and directories first. To begin with, we need to create a &lt;code&gt;bin/&lt;/code&gt; directory for executables, and a &lt;code&gt;data/&lt;/code&gt; directory to save our data dumps in. To implement the actual program, we need two source files: &lt;code&gt;main.go&lt;/code&gt; and &lt;code&gt;fetch.go&lt;/code&gt;, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a &lt;code&gt;Makefile&lt;/code&gt; to simplify program compilation and execution, with the following rules:&lt;/p&gt;</description><content type="html"><![CDATA[<p>One of my new years resolutions was to learn new programming languages. Consequently, I recently set out to familiarize myself with Go. I&rsquo;ve found that one of the best ways to learn a new programming language is to start with simple console programs, as well as re-implementing earlier projects. Therefore, I set out to write a console program in Go as a starting point.</p>
 <h2 id="project-setup">Project Setup</h2>
 <p>The project will a simple CLI-based HTTP client that extracts some JSON from a REST API endpoint of the user&rsquo;s choosing, and saves it as a <code>.json</code> file to the local file system. I won&rsquo;t go into how to setup a development environment for Go (<em>I just used Docker, and VS Code integrations</em>) here. However, we do need to create some files and directories first. To begin with, we need to create a <code>bin/</code> directory for executables, and a <code>data/</code> directory to save our data dumps in. To implement the actual program, we need two source files: <code>main.go</code> and <code>fetch.go</code>, where we will be writing the bulk of our logic. While it is not strictly necessary, we will also be adding a <code>Makefile</code> to simplify program compilation and execution, with the following rules:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span>SHELL <span style="color:#f92672">:=</span> /bin/bash
@@ -127,18 +99,8 @@
 <h2 id="conclusions">Conclusions</h2>
 <p>Although this is a rather simple program, it was a pleasant introduction to Go nonetheless, and has compelled me to explore the language so more. I&rsquo;m already working on a different console program in Golang. At some point in the near future, I also hope to implement something more sophisticated, like a REST API.</p>
 <p>You can find the code for the project <a href="https://github.com/D-Bits/GoSys">here</a>.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
-            <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>
-            <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
-            <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;
-&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>It has been more than a year now since I originally deployed my <a href="https://covid19-reporting.herokuapp.com/">COVID-19 Tracker</a> to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.</p>
+]]></content></item><item><title>What I've Learned from Maintaining a Web App in Production for Over a Year</title><link>localhost/posts/2021-07-10-what-i-learned-from-production/</link><pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate><guid>localhost/posts/2021-07-10-what-i-learned-from-production/</guid><description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href="https://covid19-reporting.herokuapp.com/"&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;
+&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description><content type="html"><![CDATA[<p>It has been more than a year now since I originally deployed my <a href="https://covid19-reporting.herokuapp.com/">COVID-19 Tracker</a> to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.</p>
 <p>At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&rsquo;ve learned from this experience.</p>
 <h2 id="simplify-and-automate-deployments-as-much-as-possible">Simplify and Automate Deployments as Much as Possible</h2>
 <p>This was a key objective of mine from the moment I decided to deploy this project to a live environment. Regardless of what technologies or production environment one is using, deployments should be as simple, intuitive, and easily reproducible as possible. Fortunately, Heroku makes deploying from a remote Git repository via pipeline very easy to set up. I did my very first deployment using this setup, and have stuck with it ever since.</p>
@@ -152,19 +114,9 @@
 <p>Ultimately, the process of setting up deployments was not nearly as painfully as I was originally expecting it to be. I&rsquo;m very much grateful for that. Also, it has been quite interesting, albeit frustrating at times, to see the miscellaneous problems that have popped up over the time this web app has been in production. At the moment, I am undertaking the daunting task of re-writing a lot of application logic (again) to accommodate new data sources, since both of the REST APIs that I have been depending on for data have become unreliable. The amount of code I&rsquo;m going to have to refactor as a result of this is admittedly a little bit daunting, but I will press on nonetheless.</p>
 <h4 id="sincerely">Sincerely,</h4>
 <p>Dana</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>One Year On</title>
-            <link>//localhost:1313/posts/2021-04-08-one-year-on/</link>
-            <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2021-04-08-one-year-on/</guid>
-            <description>&lt;p&gt;After recently going over some of my earliest blog &lt;a href=&#34;https://danabases.net/posts/2020-1-10-welcome-everyone/&#34;&gt;posts&lt;/a&gt;, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&amp;rsquo;s happened since, as well as what the future might entail.&lt;/p&gt;
-&lt;h2 id=&#34;in-the-beginning&#34;&gt;In the Beginning&amp;hellip;.&lt;/h2&gt;
-&lt;p&gt;The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>After recently going over some of my earliest blog <a href="https://danabases.net/posts/2020-1-10-welcome-everyone/">posts</a>, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&rsquo;s happened since, as well as what the future might entail.</p>
+]]></content></item><item><title>One Year On</title><link>localhost/posts/2021-04-08-one-year-on/</link><pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate><guid>localhost/posts/2021-04-08-one-year-on/</guid><description>&lt;p&gt;After recently going over some of my earliest blog &lt;a href="https://danabases.net/posts/2020-1-10-welcome-everyone/"&gt;posts&lt;/a&gt;, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&amp;rsquo;s happened since, as well as what the future might entail.&lt;/p&gt;
+&lt;h2 id="in-the-beginning"&gt;In the Beginning&amp;hellip;.&lt;/h2&gt;
+&lt;p&gt;The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:&lt;/p&gt;</description><content type="html"><![CDATA[<p>After recently going over some of my earliest blog <a href="https://danabases.net/posts/2020-1-10-welcome-everyone/">posts</a>, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&rsquo;s happened since, as well as what the future might entail.</p>
 <h2 id="in-the-beginning">In the Beginning&hellip;.</h2>
 <p>The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:</p>
 <p><img src="/assets/pics/posting_pics/danabases-original.jpg" alt="danabases original"></p>
@@ -172,7 +124,7 @@
 <p>At first, this setup actually worked reasonably well: I got throw together a decent enough blog, and host it on GitHub Pages for free with seemingly minimal hassle. The minimalist UI didn&rsquo;t bother me. I prefer a more basic UI to one that obsesses over purely cosmetic details,  plus it was easy enough to make minor modifications to the layout of the website. However, after about a couple months, certain serious problems began to emerge.</p>
 <p>First, is a disturbing tendency by Jekyll to try execute snippets of Jinja2 and/or Django template code that I tried to include in some of my blog posts. That kind of template code is actually very syntactically similar to the templating language that Jekyll uses. The other problem I faced was simply the fact that Jekyll is Ruby-based, which I have very little expertise in. Also, given that Ruby is rapidly becoming somewhat of a legacy language, I couldn&rsquo;t really see myself investing a lot of time and energy into learning the language, and its related technologies.</p>
 <h2 id="the-next-iteration">The Next Iteration</h2>
-<p>With these challenges in mind, I set out to overhaul Danabases. I won&rsquo;t go into a whole lot technical details about that process, as I have already done so in a <a href="/posts/2020-05-10-overhauling-this-website/">previous post</a>. The TL;DR is that I opted for re-building the blog using the Hugo static site generator, and deploying to Netlify. This setup has served me pretty well, and I continue to use it to this day. However, I didn&rsquo;t recently switch to new theme for the new year, on account of seemingly random problems in how the previous theme was rendering text to HTML.</p>
+<p>With these challenges in mind, I set out to overhaul Danabases. I won&rsquo;t go into a whole lot technical details about that process, as I have already done so in a <a href="localhost/posts/2020-05-10-overhauling-this-website/">previous post</a>. The TL;DR is that I opted for re-building the blog using the Hugo static site generator, and deploying to Netlify. This setup has served me pretty well, and I continue to use it to this day. However, I didn&rsquo;t recently switch to new theme for the new year, on account of seemingly random problems in how the previous theme was rendering text to HTML.</p>
 <h2 id="what-ive-learned-and-struggles-along-the-way">What I&rsquo;ve Learned, and Struggles Along the Way</h2>
 <blockquote>
 <p><em>Writing is easy. All you have to do is cross out the wrong words.</em></p></blockquote>
@@ -182,17 +134,7 @@
 <h2 id="going-forward-and-the-future">Going Forward and the Future</h2>
 <p>All of this brings us today. So far, I&rsquo;m pretty content with the current design and layout of the website, with no plans to extensively modify it. That said, I am looking at adding search functionality to the website, so one can easily look up past posts. As for my personal learning road map, I&rsquo;m about to do a deep dive into the realm of &ldquo;big data&rdquo; by way of Apache Spark, and related technologies. While it will certainly be a challenge, I have no doubts that it will be well worth it. Also, I&rsquo;m hoping to improve my C#/ASP.NET Core game this year, as well. Of course, I&rsquo;m also hoping to find more gainful employment as a developer this year too. Hopefully, that will also provide me with some interesting experiences to write about.</p>
 <p>As for future blog posts, I&rsquo;m hoping to keep with publishing at least one new post a month. Stay tuned ;)</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Improving Developer Productivity with VS Code Tasks</title>
-            <link>//localhost:1313/posts/2020-12-17-vscode-tasks/</link>
-            <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-12-17-vscode-tasks/</guid>
-            <description>&lt;p&gt;Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of &lt;em&gt;task runners&lt;/em&gt; to at least partially automate execution of these kinds of tedious and repetitive tasks.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of <em>task runners</em> to at least partially automate execution of these kinds of tedious and repetitive tasks.</p>
+]]></content></item><item><title>Improving Developer Productivity with VS Code Tasks</title><link>localhost/posts/2020-12-17-vscode-tasks/</link><pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-12-17-vscode-tasks/</guid><description>&lt;p&gt;Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of &lt;em&gt;task runners&lt;/em&gt; to at least partially automate execution of these kinds of tedious and repetitive tasks.&lt;/p&gt;</description><content type="html"><![CDATA[<p>Often in our developer workflows, we find ourselves running routine, or semi-routine, and monotonous tasks. This can be things like compiling code, bootstrapping dev servers, running migrations, etc. The kind of commands that you eventually get rather tired of typing into a terminal over, and over again. These days, many developers often rely on various kinds of <em>task runners</em> to at least partially automate execution of these kinds of tedious and repetitive tasks.</p>
 <p>Effectively doing so can save you a lot of time. I will be showing you how can use one such task runner to do just that.</p>
 <h2 id="tasksjson">Tasks.json</h2>
 <p>The specific task runner I will be using here is Visual Studio Code&rsquo;s built-in task runner. Why? First, because VS Code is my go to editor for almost every kind of development I do. Second, because it is a popular editor that many developers are already at least somewhat familiar with. Finally, I also wanted a task runner that entailed minimal configuration.</p>
@@ -233,19 +175,9 @@
 <h2 id="conclusions">Conclusions</h2>
 <p>Simplifying common and tedious development tasks like this can save a whole bunch of time and trouble for many different kinds of projects. Even though I have been using VS Code for close to three years now, I&rsquo;m only just starting to really appreciate how useful its task runner can be. While I have used similar set-ups via Python scripts in the past, I will probably be primarily using the VS Code task runner going forward. Also, I should note that even though this post revolved around a very specific task runner, I think using a task runner, in general, saves one a decent amount of time, be it Make, a Python script, or something else.</p>
 <p>You can read more about running tasks in VS Code <a href="https://code.visualstudio.com/docs/editor/tasks">here</a>.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Unlocking the Power of Apache Airflow</title>
-            <link>//localhost:1313/posts/2020-11-08-unlocking-airflow/</link>
-            <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-11-08-unlocking-airflow/</guid>
-            <description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;
-&lt;h2 id=&#34;what-is-airflow&#34;&gt;What is Airflow?&lt;/h2&gt;
-&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.</p>
+]]></content></item><item><title>Unlocking the Power of Apache Airflow</title><link>localhost/posts/2020-11-08-unlocking-airflow/</link><pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-11-08-unlocking-airflow/</guid><description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;
+&lt;h2 id="what-is-airflow"&gt;What is Airflow?&lt;/h2&gt;
+&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description><content type="html"><![CDATA[<p>After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.</p>
 <h2 id="what-is-airflow">What is Airflow?</h2>
 <p>Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.</p>
 <p>Since its creation in 2015, Airflow has become an industry standard tool for data engineering.</p>
@@ -353,19 +285,9 @@ AIRFLOW__CORE__FERNET_KEY=(a pseudo-random string generated for database encrypt
 <p>The green outlines of the tasks in the graph view indicate that the tasks ran without a hitch. If we were to click on one of the task icons, we could view the standard output for the tasks.</p>
 <h2 id="final-thoughts">Final Thoughts</h2>
 <p>Having an at least decent comprehension of Airflow is going to me allow to implement all sorts of interesting data engineering solutions going forward. However, the work we did here barely scratches the surface of what Airflow is capable. Airflow can, at least in principle, be used to schedule and automate almost any kind of workflow. The entire codebase for this project can be found <a href="https://github.com/D-Bits/Exchange-Rates-Pipeline">here</a>.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Visualizing COVID-19 Data</title>
-            <link>//localhost:1313/posts/2020-8-31-covid-data-visualization/</link>
-            <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-8-31-covid-data-visualization/</guid>
-            <description>&lt;p&gt;Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.&lt;/p&gt;
-&lt;h2 id=&#34;the-data&#34;&gt;The Data&lt;/h2&gt;
-&lt;p&gt;Naturally, you can&amp;rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.</p>
+]]></content></item><item><title>Visualizing COVID-19 Data</title><link>localhost/posts/2020-8-31-covid-data-visualization/</link><pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-8-31-covid-data-visualization/</guid><description>&lt;p&gt;Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.&lt;/p&gt;
+&lt;h2 id="the-data"&gt;The Data&lt;/h2&gt;
+&lt;p&gt;Naturally, you can&amp;rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:&lt;/p&gt;</description><content type="html"><![CDATA[<p>Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.</p>
 <h2 id="the-data">The Data</h2>
 <p>Naturally, you can&rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:</p>
 <p><code>https://api.covid19api.com/total/country/&lt;country_name&gt;</code></p>
@@ -478,19 +400,9 @@ AIRFLOW__CORE__FERNET_KEY=(a pseudo-random string generated for database encrypt
 </span></span><span style="display:flex;"><span>{% endblock %}
 </span></span></code></pre></div><h2 id="final-thoughts">Final Thoughts</h2>
 <p>Adding these plots to my COVID-19 Tracker has been my first serious foray into the world of data visualization, and I must say, it has been quite rewarding. Currently, I have only done some rather basic, cumulative visualizations, but I definitely look forward to doing more, in the future.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Overhauling This Website</title>
-            <link>//localhost:1313/posts/2020-05-10-overhauling-this-website/</link>
-            <pubDate>Sun, 10 May 2020 06:50:43 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-05-10-overhauling-this-website/</guid>
-            <description>&lt;p&gt;For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.&lt;/p&gt;
-&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
-&lt;p&gt;In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&amp;rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.</p>
+]]></content></item><item><title>Overhauling This Website</title><link>localhost/posts/2020-05-10-overhauling-this-website/</link><pubDate>Sun, 10 May 2020 06:50:43 +0000</pubDate><guid>localhost/posts/2020-05-10-overhauling-this-website/</guid><description>&lt;p&gt;For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.&lt;/p&gt;
+&lt;h2 id="why"&gt;Why?&lt;/h2&gt;
+&lt;p&gt;In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&amp;rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.&lt;/p&gt;</description><content type="html"><![CDATA[<p>For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.</p>
 <h2 id="why">Why?</h2>
 <p>In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.</p>
 <h2 id="choosing-a-static-site-generator">Choosing a Static Site Generator</h2>
@@ -505,17 +417,7 @@ AIRFLOW__CORE__FERNET_KEY=(a pseudo-random string generated for database encrypt
 <p>Since GitHub Pages is powered by Jekyll, which I am no longer using, I found myself in need of a new hosting service. For static websites, I found the most ideal option to be Netlify. Netlify not only allows you to host static sites for free, but also allows you to easily add a lot of functionality to them, that would normally be associated with web applications that have server-side code. Netlify also makes it very easy to automate deployments by connecting a git repository to your Netlify project, so that any commits that are pushed to a specific branch of your remote repository are automatically deployed to Netlify.</p>
 <h2 id="final-thoughts">Final Thoughts</h2>
 <p>Currently, I am quite satisfied with the new setup. Although I still have a lot to learn about Hugo, and everything I can do with it, I found it pretty easy to get started with. Furthermore, while the theme I chose was pretty nice as well, I should note that even though I used a pre-built theme for this site, I did add at least of some of my own, custom styles to it. I am also highly satisfied with Netlify thus far, as it really does enable one to push the boundaries of what can be accomplished with a simple, static website.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Generating Mock Data with Faker</title>
-            <link>//localhost:1313/posts/2020-5-03-mock-data/</link>
-            <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-5-03-mock-data/</guid>
-            <description>&lt;p&gt;Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.</p>
+]]></content></item><item><title>Generating Mock Data with Faker</title><link>localhost/posts/2020-5-03-mock-data/</link><pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-5-03-mock-data/</guid><description>&lt;p&gt;Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.&lt;/p&gt;</description><content type="html"><![CDATA[<p>Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.</p>
 <h2 id="what-is-faker">What is Faker?</h2>
 <p><em>Faker</em> is a library designed to simplify generating mock data for testing. There are actually a number of libraries across different languages called Faker, that serve this purpose. However, this post will be specifically about using the Python library. Faker comes with a variety of different types for different kinds of information, such as <code>first_name</code>, <code>country</code>, <code>ipv4</code>, etc. To install it, we simply run <code>pip install faker</code> in a <code>venv</code>.</p>
 <h2 id="generating-the-data">Generating the Data</h2>
@@ -553,19 +455,9 @@ AIRFLOW__CORE__FERNET_KEY=(a pseudo-random string generated for database encrypt
 <p>With this new tool in my toolbox, I will be able to generate arbitrarily large data sets for testing programs going forward. While I would ideally prefer something a little faster (<em>the above function took about 6.5 minutes to generate 500,000 records worth of data on my home machine</em>), it still has performed at least reasonably well so far. For more information about Faker, check out their <a href="https://faker.readthedocs.io/en/master/index.html">documentation</a>. Thank you for reading.</p>
 <p>Sincerely,</p>
 <p>Dana</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>A Primer on DataFrames</title>
-            <link>//localhost:1313/posts/2020-4-26-pandas-primer/</link>
-            <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-4-26-pandas-primer/</guid>
-            <description>&lt;p&gt;Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.&lt;/p&gt;
-&lt;h2 id=&#34;what-are-dataframes&#34;&gt;What Are DataFrames?&lt;/h2&gt;
-&lt;p&gt;A &lt;code&gt;DataFrame&lt;/code&gt; is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a &lt;code&gt;venv&lt;/code&gt; and run &lt;code&gt;pip install pandas&lt;/code&gt;. To use Pandas, we use the following universal aliasing for our import:&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.</p>
+]]></content></item><item><title>A Primer on DataFrames</title><link>localhost/posts/2020-4-26-pandas-primer/</link><pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-4-26-pandas-primer/</guid><description>&lt;p&gt;Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.&lt;/p&gt;
+&lt;h2 id="what-are-dataframes"&gt;What Are DataFrames?&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;DataFrame&lt;/code&gt; is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a &lt;code&gt;venv&lt;/code&gt; and run &lt;code&gt;pip install pandas&lt;/code&gt;. To use Pandas, we use the following universal aliasing for our import:&lt;/p&gt;</description><content type="html"><![CDATA[<p>Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.</p>
 <h2 id="what-are-dataframes">What Are DataFrames?</h2>
 <p>A <code>DataFrame</code> is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a <code>venv</code> and run <code>pip install pandas</code>. To use Pandas, we use the following universal aliasing for our import:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
@@ -616,17 +508,7 @@ AIRFLOW__CORE__FERNET_KEY=(a pseudo-random string generated for database encrypt
 <p>Remember that we are just barely scratching the surface of what one can do with Pandas here. Pandas is an incredibly robust and versatile library, that is adaptable to a variety of situations. If you want to learn more about Pandas, please refer to their <a href="https://pandas.pydata.org/pandas-docs/stable/index.html">documentation</a>.</p>
 <p>Sincerely,</p>
 <p>Dana</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Tracking COVID19</title>
-            <link>//localhost:1313/posts/2020-4-9-tracking-covid19/</link>
-            <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-4-9-tracking-covid19/</guid>
-            <description>&lt;p&gt;In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.</p>
+]]></content></item><item><title>Tracking COVID19</title><link>localhost/posts/2020-4-9-tracking-covid19/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-4-9-tracking-covid19/</guid><description>&lt;p&gt;In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.&lt;/p&gt;</description><content type="html"><![CDATA[<p>In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.</p>
 <p>Following a little research, I found out that Postman had built an <a href="https://documenter.getpostman.com/view/10808728/SzS8rjbc?version=latest">REST API</a>, in collaboration with John Hopkins, to track developments with the pandemic. All the data that I worked with for this project comes from that API.</p>
 <p>So, on that note, let the games begin.</p>
 <h2 id="obtaining-the-data">Obtaining the Data</h2>
@@ -722,18 +604,8 @@ Using the <code>unittest</code> module, that is built into the Python standard l
 <p>So far, I have found this to be a very rewarding project to work on. At a minimum, it has definitely helped improve my skills with both Flask and Pandas. This is actually the first Flask project that I have deployed to a production environment of some kind. While I did not go into the details of deployment in this article, I hope to go over that in a future post. Until then, there is always more work to be done.</p>
 <p>Sincerely,</p>
 <p>Dana</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Automating Software Updates on Windows</title>
-            <link>//localhost:1313/posts/2020-2-27-automating-win-updates/</link>
-            <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-2-27-automating-win-updates/</guid>
-            <description>&lt;p&gt;Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.&lt;/p&gt;
-&lt;p&gt;In a &lt;a href=&#34;https://danabases.net/posts/2020-2-15-postgres-chocolatey/&#34;&gt;previous post&lt;/a&gt;, I wrote about how to easily install and update a Postgres instance on Windows. This post will ultimately build on that, as it uses the same package manager, Chocolatey. There is, of course, a little bit of setup to be done to automating this, but nothing too labor-intensive, and definitely worth the amount of time it will save.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.</p>
+]]></content></item><item><title>Automating Software Updates on Windows</title><link>localhost/posts/2020-2-27-automating-win-updates/</link><pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-2-27-automating-win-updates/</guid><description>&lt;p&gt;Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.&lt;/p&gt;
+&lt;p&gt;In a &lt;a href="https://danabases.net/posts/2020-2-15-postgres-chocolatey/"&gt;previous post&lt;/a&gt;, I wrote about how to easily install and update a Postgres instance on Windows. This post will ultimately build on that, as it uses the same package manager, Chocolatey. There is, of course, a little bit of setup to be done to automating this, but nothing too labor-intensive, and definitely worth the amount of time it will save.&lt;/p&gt;</description><content type="html"><![CDATA[<p>Let us be real, for a moment: keeping software up-to-date is critically important, but also often quite a pain. The more software you have installed on your PC, the more true this is. Fortunately, it does not have to be, even on Windows. All you need is: a package manager, a little Python, the Windows Task Scheduler, and a batch file.</p>
 <p>In a <a href="https://danabases.net/posts/2020-2-15-postgres-chocolatey/">previous post</a>, I wrote about how to easily install and update a Postgres instance on Windows. This post will ultimately build on that, as it uses the same package manager, Chocolatey. There is, of course, a little bit of setup to be done to automating this, but nothing too labor-intensive, and definitely worth the amount of time it will save.</p>
 <h2 id="chocolatey">Chocolatey</h2>
 <p>First, we need to ensure Chocolatey is installed, and working properly. Open a PowerShell terminal, and run the following command:</p>
@@ -757,19 +629,9 @@ Using the <code>unittest</code> module, that is built into the Python standard l
 <p>Then, go to the &ldquo;Actions&rdquo; tab, and click new. Keep &ldquo;Start Program&rdquo; as the action, and set your batch file as the program/script to execute. By this point, you should be more-or-less ready to go. You can test whether or not it works by selecting your newly created task in the Task Scheduler, and clicking the run button.</p>
 <h2 id="final-thoughts">Final Thoughts</h2>
 <p>Even though this specific case focused entirely on automating Windows updates, a similar methodology could easily be applied to Unix-like systems via Cron, and some minor code tweaks. Either way, automating software updates will surely relieve a lot of headache, even for people who aren&rsquo;t total geeks. I know it sure will for me.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Easy Postgres Installation and Setup on Windows with Chocolatey</title>
-            <link>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</link>
-            <pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-2-15-postgres-chocolatey/</guid>
-            <description>&lt;p&gt;This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt; package manager. Yes, you can always take the old school route by going to the &lt;a href=&#34;https://www.postgresql.org/download/&#34;&gt;official Postgres website&lt;/a&gt;, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.&lt;/p&gt;
-&lt;h2 id=&#34;installing-chocolatey&#34;&gt;Installing Chocolatey&lt;/h2&gt;
-&lt;p&gt;To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run &lt;code&gt;Get-ExecutionPolicy&lt;/code&gt;. If it says &amp;ldquo;restricted&amp;rdquo;, then you will need to run either &lt;code&gt;Set-ExecutionPolicy AllSigned&lt;/code&gt; or &lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process&lt;/code&gt;.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the <a href="https://chocolatey.org/">Chocolatey</a> package manager. Yes, you can always take the old school route by going to the <a href="https://www.postgresql.org/download/">official Postgres website</a>, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.</p>
+]]></content></item><item><title>Easy Postgres Installation and Setup on Windows with Chocolatey</title><link>localhost/posts/2020-2-15-postgres-chocolatey/</link><pubDate>Sat, 15 Feb 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-2-15-postgres-chocolatey/</guid><description>&lt;p&gt;This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the &lt;a href="https://chocolatey.org/"&gt;Chocolatey&lt;/a&gt; package manager. Yes, you can always take the old school route by going to the &lt;a href="https://www.postgresql.org/download/"&gt;official Postgres website&lt;/a&gt;, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.&lt;/p&gt;
+&lt;h2 id="installing-chocolatey"&gt;Installing Chocolatey&lt;/h2&gt;
+&lt;p&gt;To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run &lt;code&gt;Get-ExecutionPolicy&lt;/code&gt;. If it says &amp;ldquo;restricted&amp;rdquo;, then you will need to run either &lt;code&gt;Set-ExecutionPolicy AllSigned&lt;/code&gt; or &lt;code&gt;Set-ExecutionPolicy Bypass -Scope Process&lt;/code&gt;.&lt;/p&gt;</description><content type="html"><![CDATA[<p>This post will be demonstrating how to easily install, configure and update a PostgreSQL instance on Windows, specifically via the <a href="https://chocolatey.org/">Chocolatey</a> package manager. Yes, you can always take the old school route by going to the <a href="https://www.postgresql.org/download/">official Postgres website</a>, and download an installer, followed by clicking through a wizard a bunch of times. However, using a package manager makes it easier to install, and much easier to update regularly.</p>
 <h2 id="installing-chocolatey">Installing Chocolatey</h2>
 <p>To install Chocolatey, you will first need to open a Powershell terminal, specifically in admin mode. Next, run <code>Get-ExecutionPolicy</code>. If it says &ldquo;restricted&rdquo;, then you will need to run either <code>Set-ExecutionPolicy AllSigned</code> or <code>Set-ExecutionPolicy Bypass -Scope Process</code>.</p>
 <p>Then, copy and paste the following into your terminal:</p>
@@ -781,19 +643,9 @@ Using the <code>unittest</code> module, that is built into the Python standard l
 <p>In addition to changing the default password, we should also add <code>psql.exe</code> to <code>$PATH</code>, so we can connect to and query databases on our server by running <code>psql</code> from Powershell, or the command prompt. <code>psql.exe</code> should be located in <code>C:\Program Files\PostgreSQL\12\bin</code>. Once you successfully add <code>psql</code> to <code>$PATH</code>, then try running <code>psql</code> from a terminal. If it doesn&rsquo;t throw any errors, then you succeeded. While there are certainly any number of other configs that you can do, that should be all that&rsquo;s needed for now. Happy querying!</p>
 <h2 id="final-thoughts">Final Thoughts</h2>
 <p>Going forward, it is going to be at lot easier to update my Postgres instance, along with other software that I have installed on my Windows machine. I don&rsquo;t think I will be able to easily go back to the whole <em>download an installer and click through wizard setup</em>. That now just seems crude and primitive. Therefore, don&rsquo;t always assume that installing and setting up a database server (or other software, for that matter) has to be super complicated.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Integrating JSONB Data into Django Projects</title>
-            <link>//localhost:1313/posts/2020-2-13-jsonb-django/</link>
-            <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-2-13-jsonb-django/</guid>
-            <description>&lt;p&gt;This post follows up on my earlier post about &lt;a href=&#34;https://danabases.net/posts/2020-1-22-postgres-json/&#34;&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;
-&lt;h2 id=&#34;modeling-the-data&#34;&gt;Modeling the Data&lt;/h2&gt;
-&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>This post follows up on my earlier post about <a href="https://danabases.net/posts/2020-1-22-postgres-json/">storing json data in Postgres</a>. In this article, I will be going over how to integrate the same <code>JSONB</code> data I used in that post with a Django web application.</p>
+]]></content></item><item><title>Integrating JSONB Data into Django Projects</title><link>localhost/posts/2020-2-13-jsonb-django/</link><pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-2-13-jsonb-django/</guid><description>&lt;p&gt;This post follows up on my earlier post about &lt;a href="https://danabases.net/posts/2020-1-22-postgres-json/"&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;
+&lt;h2 id="modeling-the-data"&gt;Modeling the Data&lt;/h2&gt;
+&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description><content type="html"><![CDATA[<p>This post follows up on my earlier post about <a href="https://danabases.net/posts/2020-1-22-postgres-json/">storing json data in Postgres</a>. In this article, I will be going over how to integrate the same <code>JSONB</code> data I used in that post with a Django web application.</p>
 <h2 id="modeling-the-data">Modeling the Data</h2>
 <p>Modeling <code>JSONB</code> data with Django&rsquo;s ORM tool is rather easy, as the framework has built in support for this in the <code>django.contrib</code> module. Therefore, we would model our data like this in our <code>models.py</code> file:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> django.db <span style="color:#f92672">import</span> models
@@ -842,17 +694,7 @@ Using the <code>unittest</code> module, that is built into the Python standard l
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
 </span></span></code></pre></div><h2 id="final-thoughts">Final Thoughts</h2>
 <p>This would certainly be considerably more difficult to implement without Django&rsquo;s built-in support for Postgres&rsquo; <code>JSONB</code> type. However, given that Django does have built in support for this, it was about as easy as working with SQL data. Going forward, I would like to implement more complete CRUD functionality. Stay tuned.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Fun with Gravitational Physics and Python</title>
-            <link>//localhost:1313/posts/2020-2-3-gravity-python/</link>
-            <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-2-3-gravity-python/</guid>
-            <description>&lt;p&gt;While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&rsquo;s get to it.</p>
+]]></content></item><item><title>Fun with Gravitational Physics and Python</title><link>localhost/posts/2020-2-3-gravity-python/</link><pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-2-3-gravity-python/</guid><description>&lt;p&gt;While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;</description><content type="html"><![CDATA[<p>While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&rsquo;s get to it.</p>
 <p>In this post, we will be exploring using Python to do calculations pertaining to both Newtonian gravitational physics, and even a little general relativity.</p>
 <p><img src="https://cdn.eso.org/images/screen/eso1907a.jpg" alt="M87-black-hole">
 <em>Python was a big part of this. Photo credit: ESO.</em></p>
@@ -900,19 +742,9 @@ Where our first parameter is Earth&rsquo;s mass, the second is the Moon&rsquo;s 
 <h2 id="summary">Summary</h2>
 <p>While the math we are doing here is ultimately pretty simple, as far as physics goes,it nonetheless shows how one can easily do at least certain physics equations with only a little bit of code. Hope you enjoyed it, and don&rsquo;t use it to cheat on your physics homework haha.</p>
 <!-- raw HTML omitted -->
-]]></content>
-        </item>
-        
-        <item>
-            <title>Adventures in Containerizing Databases</title>
-            <link>//localhost:1313/posts/2020-1-28-containerizing-databases/</link>
-            <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-1-28-containerizing-databases/</guid>
-            <description>&lt;p&gt;I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&amp;rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zdnet2.cbsistatic.com/hub/i/r/2016/12/14/411ea5c5-dae7-4756-8cd3-d506a0675333/resize/770xauto/b90dbe53b50ee955f5b322262444bcea/docker-whale-1.jpg&#34; alt=&#34;docker-whale&#34;&gt;
-&lt;em&gt;I was making a similar face when I got this all worked out&lt;/em&gt;&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.</p>
+]]></content></item><item><title>Adventures in Containerizing Databases</title><link>localhost/posts/2020-1-28-containerizing-databases/</link><pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-28-containerizing-databases/</guid><description>&lt;p&gt;I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&amp;rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://zdnet2.cbsistatic.com/hub/i/r/2016/12/14/411ea5c5-dae7-4756-8cd3-d506a0675333/resize/770xauto/b90dbe53b50ee955f5b322262444bcea/docker-whale-1.jpg" alt="docker-whale"&gt;
+&lt;em&gt;I was making a similar face when I got this all worked out&lt;/em&gt;&lt;/p&gt;</description><content type="html"><![CDATA[<p>I recently made a breakthrough by finally getting a handle on containerizing databases with Docker. If you don&rsquo;t already know, Docker is software that allows you to run software in isolated, virtual environments that contain all the necessary dependencies that said software needs to run. Therefore, Docker can considerably simplify both setting up development environments, and deploying software to production.</p>
 <p><img src="https://zdnet2.cbsistatic.com/hub/i/r/2016/12/14/411ea5c5-dae7-4756-8cd3-d506a0675333/resize/770xauto/b90dbe53b50ee955f5b322262444bcea/docker-whale-1.jpg" alt="docker-whale">
 <em>I was making a similar face when I got this all worked out</em></p>
 <p>However, I won&rsquo;t get into a whole lot of technical details about Docker. For that, I&rsquo;ve published a gist that you can read <a href="https://gist.github.com/D-Bits/275a7ce6666590717da619c43f11d8df">here</a>. Instead, I want to talk about how containerizing databases can be useful, as well as some of the challenges I encountered in my own learning process regarding the topic.</p>
@@ -930,16 +762,7 @@ My main challenge by far, was simply trying to get data stored in my containeriz
 <p>Sincerely,</p>
 <p>Dana</p>
 <!-- raw HTML omitted -->
-]]></content>
-        </item>
-        
-        <item>
-            <title>Storing and Querying JSON Data in PostgreSQL</title>
-            <link>//localhost:1313/posts/2020-1-22-postgres-json/</link>
-            <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-1-22-postgres-json/</guid>
-            <description>&lt;p&gt;I recently started exploring how to store JSON data in a traditional relational
+]]></content></item><item><title>Storing and Querying JSON Data in PostgreSQL</title><link>localhost/posts/2020-1-22-postgres-json/</link><pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-22-postgres-json/</guid><description>&lt;p&gt;I recently started exploring how to store JSON data in a traditional relational
 database management system (RDBMS), rather than a dedicated form of JSON/document
 storage, like MongoDB. While I could write a lot more about the problems with
 MongoDB, that&amp;rsquo;s not what I want to do here. Instead, I want to
@@ -947,8 +770,7 @@ focus primarily on how to store and query JSON in PostgreSQL. However, I
 should note that PostgreSQL is not the only RDBMS that supports JSON storage.
 I know that MariaDB also does, as of v10.2, and possibly other RDBMS as well. However,
 since I have been mostly using and enjoying Postgres for awhile now,
-I decided to focus on that, specifically.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>I recently started exploring how to store JSON data in a traditional relational
+I decided to focus on that, specifically.&lt;/p&gt;</description><content type="html"><![CDATA[<p>I recently started exploring how to store JSON data in a traditional relational
 database management system (RDBMS), rather than a dedicated form of JSON/document
 storage, like MongoDB. While I could write a lot more about the problems with
 MongoDB, that&rsquo;s not what I want to do here. Instead, I want to
@@ -1053,20 +875,11 @@ don&rsquo;t simply assume that you need to use a NoSQL DBMS, like MongoDB. At le
 into using Postgres, and its <code>JSONB</code> data type. I have also authored a <a href="https://gist.github.com/D-Bits/d0f5ef2f79839d6e814a235e14e9e418">gist</a>
 on the topic.</p>
 <!-- raw HTML omitted -->
-]]></content>
-        </item>
-        
-        <item>
-            <title>Invoking Shell Commands in C# Programs</title>
-            <link>//localhost:1313/posts/2020-1-19-shell-cmds-csharp/</link>
-            <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-1-19-shell-cmds-csharp/</guid>
-            <description>&lt;p&gt;After extensive wrangling and experimentation, I finally have managed to
+]]></content></item><item><title>Invoking Shell Commands in C# Programs</title><link>localhost/posts/2020-1-19-shell-cmds-csharp/</link><pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-19-shell-cmds-csharp/</guid><description>&lt;p&gt;After extensive wrangling and experimentation, I finally have managed to
 successfully invoke external commands in C# programs, which I hope will make
 me a considerably more productive C# programmer. So without further ado, let&amp;rsquo;s
 dive into the nitty gritty details.&lt;/p&gt;
-&lt;h3 id=&#34;purpose&#34;&gt;Purpose&lt;/h3&gt;
+&lt;h3 id="purpose"&gt;Purpose&lt;/h3&gt;
 &lt;p&gt;First, you might ask: why would one need to do this? Ultimately, the potential
 to automate all sorts of things by invoking external commands inside a program
 are nearly limitless. I have already been relying heavily on &lt;code&gt;subprocess.run()&lt;/code&gt;
@@ -1076,8 +889,7 @@ the same, or at least similar, functionality in other languages. C# has long bee
 my designated language to fall back on, when Python isn&amp;rsquo;t ideal for the task
 at hand, such as when I need to easily cross-compile binaries. Therefore, I
 started looking for whatever documentation and guides I could find on the
-topic.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>After extensive wrangling and experimentation, I finally have managed to
+topic.&lt;/p&gt;</description><content type="html"><![CDATA[<p>After extensive wrangling and experimentation, I finally have managed to
 successfully invoke external commands in C# programs, which I hope will make
 me a considerably more productive C# programmer. So without further ado, let&rsquo;s
 dive into the nitty gritty details.</p>
@@ -1145,26 +957,16 @@ find accurate documentation, being able to now do so effectively will be very
 helpfully in reimplementing certain past projects in C#.  In addition to that,
 I will also look into what other things I can automate with <code>Process.Start()</code>.</p>
 <!-- raw HTML omitted -->
-]]></content>
-        </item>
-        
-        <item>
-            <title>Migrating Data to the Cloud with Python</title>
-            <link>//localhost:1313/posts/2020-1-16-migratingdatapython/</link>
-            <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-1-16-migratingdatapython/</guid>
-            <description>&lt;p&gt;In the past year, or so, I have been experimenting with writing my own custom
+]]></content></item><item><title>Migrating Data to the Cloud with Python</title><link>localhost/posts/2020-1-16-migratingdatapython/</link><pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-16-migratingdatapython/</guid><description>&lt;p&gt;In the past year, or so, I have been experimenting with writing my own custom
 ETL programs in Python. Among the functionality that I included was extracting
 data from a local Postgres database, and migrating to a Postgres database in
 the cloud.&lt;/p&gt;
-&lt;h2 id=&#34;the-reasoning&#34;&gt;The Reasoning&lt;/h2&gt;
+&lt;h2 id="the-reasoning"&gt;The Reasoning&lt;/h2&gt;
 &lt;p&gt;While I&amp;rsquo;m aware that platforms-as-a service (PaaS) like AWS, and
 Azure provide their own services for this. Nevertheless, I opted to implement
 my own solution for data migration(s). I decided on this course of action for
 a couple reasons: 1) I saw it as a valuable learning experience for, and 2)
-I also found it be a practical solution as well.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>In the past year, or so, I have been experimenting with writing my own custom
+I also found it be a practical solution as well.&lt;/p&gt;</description><content type="html"><![CDATA[<p>In the past year, or so, I have been experimenting with writing my own custom
 ETL programs in Python. Among the functionality that I included was extracting
 data from a local Postgres database, and migrating to a Postgres database in
 the cloud.</p>
@@ -1252,16 +1054,7 @@ using <code>DataFrame.to_sql()</code>. After all, I have thus far only tested th
 will data sets of no more than 5,000 records so far. More information about
 the project can be found <!-- raw HTML omitted -->here<!-- raw HTML omitted -->.</p>
 <!-- raw HTML omitted -->
-]]></content>
-        </item>
-        
-        <item>
-            <title>What Makes a Good Programming Language? </title>
-            <link>//localhost:1313/posts/2020-1-12-good-programming-lang/</link>
-            <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-1-12-good-programming-lang/</guid>
-            <description>&lt;p&gt;First, I should note that the is perhaps a somewhat loaded question, as
+]]></content></item><item><title>What Makes a Good Programming Language?</title><link>localhost/posts/2020-1-12-good-programming-lang/</link><pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-12-good-programming-lang/</guid><description>&lt;p&gt;First, I should note that the is perhaps a somewhat loaded question, as
 different people will inevitably have different criteria, and priorities
 for the languages they choose to use. Therefore, you will get many different
 answers to this question, depending on who you ask. It is also equally
@@ -1272,8 +1065,7 @@ kernels. Nevertheless, I that there are some core criteria that almost all
 developers will value in a given language to at least some degree. Among
 these are: performance, simplicity, versatility, and cross-platform support.
 With that in mind, I would like to break down what each of these criteria
-entail.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>First, I should note that the is perhaps a somewhat loaded question, as
+entail.&lt;/p&gt;</description><content type="html"><![CDATA[<p>First, I should note that the is perhaps a somewhat loaded question, as
 different people will inevitably have different criteria, and priorities
 for the languages they choose to use. Therefore, you will get many different
 answers to this question, depending on who you ask. It is also equally
@@ -1339,24 +1131,14 @@ different folks.</p>
 <p>Sincerely,</p>
 <p>Dana</p>
 <!-- raw HTML omitted -->
-]]></content>
-        </item>
-        
-        <item>
-            <title>Welcome!</title>
-            <link>//localhost:1313/posts/2020-1-10-welcome-everyone/</link>
-            <pubDate>Fri, 10 Jan 2020 07:07:07 +0100</pubDate>
-            
-            <guid>//localhost:1313/posts/2020-1-10-welcome-everyone/</guid>
-            <description>&lt;p&gt;Welcome to my new new blog and website! This is a pilot post for my
+]]></content></item><item><title>Welcome!</title><link>localhost/posts/2020-1-10-welcome-everyone/</link><pubDate>Fri, 10 Jan 2020 07:07:07 +0100</pubDate><guid>localhost/posts/2020-1-10-welcome-everyone/</guid><description>&lt;p&gt;Welcome to my new new blog and website! This is a pilot post for my
 new blogging website, build with Hugo and Netlify. My posts will
 primarily revolve around technology, science, society, and the connections
 between them.&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;At any rate, I hope you enjoy my posts. Feel free to check out the &amp;ldquo;About&amp;rdquo;,
 and &amp;ldquo;Skills&amp;rdquo; pages for more information about me. Thank you again for visiting
-my blog, and feel free to contact via the email link below, if you care to.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>Welcome to my new new blog and website! This is a pilot post for my
+my blog, and feel free to contact via the email link below, if you care to.&lt;/p&gt;</description><content type="html"><![CDATA[<p>Welcome to my new new blog and website! This is a pilot post for my
 new blogging website, build with Hugo and Netlify. My posts will
 primarily revolve around technology, science, society, and the connections
 between them.</p>
@@ -1367,8 +1149,4 @@ my blog, and feel free to contact via the email link below, if you care to.</p>
 <p>Sincerely,</p>
 <p>Dana</p>
 <!-- raw HTML omitted -->
-]]></content>
-        </item>
-        
-    </channel>
-</rss>
+]]></content></item></channel></rss>

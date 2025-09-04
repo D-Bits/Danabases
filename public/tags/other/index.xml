@@ -1,48 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Other on Danabases</title>
-    <link>//localhost:1313/tags/other/</link>
-    <description>Recent content in Other on Danabases</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 02 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/other/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>A Long Overdue Reboot</title>
-      <link>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</link>
-      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2025-7-17-long-overdue-reboot/</guid>
-      <description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;&#xA;&lt;h3 id=&#34;a-quick-update&#34;&gt;A Quick Update&lt;/h3&gt;&#xA;&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
-      <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>
-      <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
-      <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;&#xA;&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>One Year On</title>
-      <link>//localhost:1313/posts/2021-04-08-one-year-on/</link>
-      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2021-04-08-one-year-on/</guid>
-      <description>&lt;p&gt;After recently going over some of my earliest blog &lt;a href=&#34;https://danabases.net/posts/2020-1-10-welcome-everyone/&#34;&gt;posts&lt;/a&gt;, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&amp;rsquo;s happened since, as well as what the future might entail.&lt;/p&gt;&#xA;&lt;h2 id=&#34;in-the-beginning&#34;&gt;In the Beginning&amp;hellip;.&lt;/h2&gt;&#xA;&lt;p&gt;The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Overhauling This Website</title>
-      <link>//localhost:1313/posts/2020-05-10-overhauling-this-website/</link>
-      <pubDate>Sun, 10 May 2020 06:50:43 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-05-10-overhauling-this-website/</guid>
-      <description>&lt;p&gt;For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;&#xA;&lt;p&gt;In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&amp;rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>What Makes a Good Programming Language? </title>
-      <link>//localhost:1313/posts/2020-1-12-good-programming-lang/</link>
-      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-1-12-good-programming-lang/</guid>
-      <description>&lt;p&gt;First, I should note that the is perhaps a somewhat loaded question, as&#xA;different people will inevitably have different criteria, and priorities&#xA;for the languages they choose to use. Therefore, you will get many different&#xA;answers to this question, depending on who you ask. It is also equally&#xA;important to ask: what makes a good programming language for a specific use&#xA;case? A language that is ideal for say, building web applications is likely&#xA;not going to be equally ideal for writing drivers and operating system&#xA;kernels. Nevertheless, I that there are some core criteria that almost all&#xA;developers will value in a given language to at least some degree. Among&#xA;these are: performance, simplicity, versatility, and cross-platform support.&#xA;With that in mind, I would like to break down what each of these criteria&#xA;entail.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Other on Danabases</title><link>localhost/tags/other/</link><description>Recent content in Other on Danabases</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><lastBuildDate>Wed, 03 Sep 2025 10:36:10 -0700</lastBuildDate><atom:link href="localhost/tags/other/index.xml" rel="self" type="application/rss+xml"/><item><title>A Long Overdue Reboot</title><link>localhost/posts/2025-7-17-long-overdue-reboot/</link><pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate><guid>localhost/posts/2025-7-17-long-overdue-reboot/</guid><description>&lt;p&gt;Hello, world. Welcome to the rebooted version of my website. You may have noticed that this is the first blog post on this website in about four years. In light of that, I figured it was high time to get back to reboot this blog, including changes to the actual website itself.&lt;/p&gt;
+&lt;h3 id="a-quick-update"&gt;A Quick Update&lt;/h3&gt;
+&lt;p&gt;Long story short, I recently lost my job of three and a half years. While this was naturally all very frustrating and disruptive to my life, it has also given me the time and opportunity to focus on personal projects, such as this website. I found myself deferring work on my own personal coding projects, because either I didn&amp;rsquo;t have the time, or I was pursuing other interests in whatever free time that I had. So, in addition to looking for a new job, this whole experience has at least given me time to work on personal projects, as well&lt;/p&gt;</description></item><item><title>What I've Learned from Maintaining a Web App in Production for Over a Year</title><link>localhost/posts/2021-07-10-what-i-learned-from-production/</link><pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate><guid>localhost/posts/2021-07-10-what-i-learned-from-production/</guid><description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href="https://covid19-reporting.herokuapp.com/"&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;
+&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description></item><item><title>One Year On</title><link>localhost/posts/2021-04-08-one-year-on/</link><pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate><guid>localhost/posts/2021-04-08-one-year-on/</guid><description>&lt;p&gt;After recently going over some of my earliest blog &lt;a href="https://danabases.net/posts/2020-1-10-welcome-everyone/"&gt;posts&lt;/a&gt;, it dawned on me that I have been maintaining this blog for a whole year now. This realization inspired me to reflect on how and where the blog started, what&amp;rsquo;s happened since, as well as what the future might entail.&lt;/p&gt;
+&lt;h2 id="in-the-beginning"&gt;In the Beginning&amp;hellip;.&lt;/h2&gt;
+&lt;p&gt;The blog was without form. Well, not quite. When this blog started out, it was rather primitive. I was using Jekyll, as I had not yet done research into other static site generators, and deploying to GitHub Pages without a custom domain. At the time, I was looking for the simplest (and cheapest setup) possible to get things started. The UI of the website looked something like this:&lt;/p&gt;</description></item><item><title>Overhauling This Website</title><link>localhost/posts/2020-05-10-overhauling-this-website/</link><pubDate>Sun, 10 May 2020 06:50:43 +0000</pubDate><guid>localhost/posts/2020-05-10-overhauling-this-website/</guid><description>&lt;p&gt;For those of who have been following this blog for a while now, you will have noticed I completely overhauled my website/blog to have an entirely new design, along with a new domain name, and a new hosting service. In this blog post, I would like to go over how I went about overhauling the website, as well as some of my reasons for doing so.&lt;/p&gt;
+&lt;h2 id="why"&gt;Why?&lt;/h2&gt;
+&lt;p&gt;In the previous iteration, this blog was built on Jekyll, and hosted on GitHub Pages, without a custom domain. While that setup worked out well enough for starting out, I found myself in the market for a different static site generator, and consequently, a new service to host my website. While Jekyll served my needs well enough for the short term, I increasingly found that my lack of Ruby knowledge was making things difficult for me. Furthermore, as this was the only Ruby project I have ever worked on, I didn&amp;rsquo;t really have much incentive to immerse myself in the language. Also, there were certain features that Jekyll required third party packages and extra configuration to implement, such as pagination, which I felt should have been included by default.&lt;/p&gt;</description></item><item><title>What Makes a Good Programming Language?</title><link>localhost/posts/2020-1-12-good-programming-lang/</link><pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-12-good-programming-lang/</guid><description>&lt;p&gt;First, I should note that the is perhaps a somewhat loaded question, as
+different people will inevitably have different criteria, and priorities
+for the languages they choose to use. Therefore, you will get many different
+answers to this question, depending on who you ask. It is also equally
+important to ask: what makes a good programming language for a specific use
+case? A language that is ideal for say, building web applications is likely
+not going to be equally ideal for writing drivers and operating system
+kernels. Nevertheless, I that there are some core criteria that almost all
+developers will value in a given language to at least some degree. Among
+these are: performance, simplicity, versatility, and cross-platform support.
+With that in mind, I would like to break down what each of these criteria
+entail.&lt;/p&gt;</description></item></channel></rss>
