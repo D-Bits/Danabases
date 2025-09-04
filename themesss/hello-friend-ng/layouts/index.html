@@ -1,0 +1,54 @@
+
+{{ define "body" }}
+    <body class="{{ if .Site.Params.backgroundImage }} background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');" {{ else }}"{{ end }}>
+{{ end }}
+
+{{ define "main" }}
+    <!-- <main>
+        <div>
+            {{ if .Site.Params.Portrait.Path }}
+               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+            {{ end }}
+
+            <h1>{{ .Site.Title }}</h1>
+
+            {{ partial "subtitle.html" . }}
+
+            {{- with .Site.Params.social }}
+                <div>
+                    {{ partial "social-icons.html" . }}
+                </div>
+            {{- end }}
+        </div>
+    </main> -->
+    <main class="post">
+        <div class="post-content">
+            <p>
+                <em>“I was born not knowing and have had only a little time to change that here and there."</em>  
+            </p>
+            <p>-Richard Feynman</p>
+
+        <div class="profile">
+            <img src="/assets/pics/me-profile.jpg" style="display: block; margin-left: auto; margin-right: auto; border: 5px solid #1586b3; border-radius: 25px;" alt="profile-pic">
+        </div>
+
+
+        <p>Hello and welcome to my website! My name is Dana Lockwood, and I am a programmer and 
+            avid technology enthusiast. While I primarily specialize in implementing a variety 
+            of elegant solutions using Python 3 and PostgreSQL, I also have a background in 
+            multiple different languages and technologies, such as C#/.NET Core, HTML, CSS, 
+            and more.
+        </p>
+        </div>
+        <div class="post-content">
+            <p>On this site, you will find a collection of my projects, blog posts, and other 
+                resources that I have found useful in my journey as a programmer. I hope you 
+                find something here that inspires you or helps you in your own programming 
+                endeavors.
+            </p>
+            <p>I also like to cook, and will be posting recipes here in the future.</p>
+            <p>Thank you for visiting, and I look forward to sharing my knowledge and experiences 
+                with you!
+            </p>
+    </main>
+{{ end }}

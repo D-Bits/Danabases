@@ -1,76 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Python on Danabases</title>
-    <link>//localhost:1313/tags/python/</link>
-    <description>Recent content in Python on Danabases</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 23 Jul 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>What I&#39;ve Learned from Maintaining a Web App in Production for Over a Year</title>
-      <link>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</link>
-      <pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2021-07-10-what-i-learned-from-production/</guid>
-      <description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href=&#34;https://covid19-reporting.herokuapp.com/&#34;&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;&#xA;&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Unlocking the Power of Apache Airflow</title>
-      <link>//localhost:1313/posts/2020-11-08-unlocking-airflow/</link>
-      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-11-08-unlocking-airflow/</guid>
-      <description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-airflow&#34;&gt;What is Airflow?&lt;/h2&gt;&#xA;&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Visualizing COVID-19 Data</title>
-      <link>//localhost:1313/posts/2020-8-31-covid-data-visualization/</link>
-      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-8-31-covid-data-visualization/</guid>
-      <description>&lt;p&gt;Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-data&#34;&gt;The Data&lt;/h2&gt;&#xA;&lt;p&gt;Naturally, you can&amp;rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Generating Mock Data with Faker</title>
-      <link>//localhost:1313/posts/2020-5-03-mock-data/</link>
-      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-5-03-mock-data/</guid>
-      <description>&lt;p&gt;Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>A Primer on DataFrames</title>
-      <link>//localhost:1313/posts/2020-4-26-pandas-primer/</link>
-      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-4-26-pandas-primer/</guid>
-      <description>&lt;p&gt;Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-dataframes&#34;&gt;What Are DataFrames?&lt;/h2&gt;&#xA;&lt;p&gt;A &lt;code&gt;DataFrame&lt;/code&gt; is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a &lt;code&gt;venv&lt;/code&gt; and run &lt;code&gt;pip install pandas&lt;/code&gt;. To use Pandas, we use the following universal aliasing for our import:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tracking COVID19</title>
-      <link>//localhost:1313/posts/2020-4-9-tracking-covid19/</link>
-      <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-4-9-tracking-covid19/</guid>
-      <description>&lt;p&gt;In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Integrating JSONB Data into Django Projects</title>
-      <link>//localhost:1313/posts/2020-2-13-jsonb-django/</link>
-      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-2-13-jsonb-django/</guid>
-      <description>&lt;p&gt;This post follows up on my earlier post about &lt;a href=&#34;https://danabases.net/posts/2020-1-22-postgres-json/&#34;&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;&#xA;&lt;h2 id=&#34;modeling-the-data&#34;&gt;Modeling the Data&lt;/h2&gt;&#xA;&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Fun with Gravitational Physics and Python</title>
-      <link>//localhost:1313/posts/2020-2-3-gravity-python/</link>
-      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-2-3-gravity-python/</guid>
-      <description>&lt;p&gt;While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Migrating Data to the Cloud with Python</title>
-      <link>//localhost:1313/posts/2020-1-16-migratingdatapython/</link>
-      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2020-1-16-migratingdatapython/</guid>
-      <description>&lt;p&gt;In the past year, or so, I have been experimenting with writing my own custom&#xA;ETL programs in Python. Among the functionality that I included was extracting&#xA;data from a local Postgres database, and migrating to a Postgres database in&#xA;the cloud.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-reasoning&#34;&gt;The Reasoning&lt;/h2&gt;&#xA;&lt;p&gt;While I&amp;rsquo;m aware that platforms-as-a service (PaaS) like AWS, and&#xA;Azure provide their own services for this. Nevertheless, I opted to implement&#xA;my own solution for data migration(s). I decided on this course of action for&#xA;a couple reasons: 1) I saw it as a valuable learning experience for, and 2)&#xA;I also found it be a practical solution as well.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Danabases</title><link>localhost/tags/python/</link><description>Recent content in Python on Danabases</description><generator>Hugo</generator><language>en</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener"&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><lastBuildDate>Wed, 02 Jul 2025 14:59:44 -0700</lastBuildDate><atom:link href="localhost/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>What I've Learned from Maintaining a Web App in Production for Over a Year</title><link>localhost/posts/2021-07-10-what-i-learned-from-production/</link><pubDate>Fri, 23 Jul 2021 00:00:00 +0000</pubDate><guid>localhost/posts/2021-07-10-what-i-learned-from-production/</guid><description>&lt;p&gt;It has been more than a year now since I originally deployed my &lt;a href="https://covid19-reporting.herokuapp.com/"&gt;COVID-19 Tracker&lt;/a&gt; to a live environment. In the time that it has been in production, I have learned a whole lot, both in terms of maintaining an app in production, and in watching the progression of the pandemic.&lt;/p&gt;
+&lt;p&gt;At the very least, I have definitely come to truly appreciate how essential having something deployed to a live environment is to the learning process of being a good developer. To summarize, here are some of the most important things I&amp;rsquo;ve learned from this experience.&lt;/p&gt;</description></item><item><title>Unlocking the Power of Apache Airflow</title><link>localhost/posts/2020-11-08-unlocking-airflow/</link><pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-11-08-unlocking-airflow/</guid><description>&lt;p&gt;After multiple previous failed attempts, I am finally starting to get the hang of Apache Airflow and, even with a relatively basic mastery, I have been able to do some pretty interesting things with it.&lt;/p&gt;
+&lt;h2 id="what-is-airflow"&gt;What is Airflow?&lt;/h2&gt;
+&lt;p&gt;Apache Airflow is a Python-based tool for scheduling and automating various workflows. It was originally created at AirBnB as an internal tool, and later open-sourced, under the Apache license. It has since become a top-level project at the Apache Foundation.&lt;/p&gt;</description></item><item><title>Visualizing COVID-19 Data</title><link>localhost/posts/2020-8-31-covid-data-visualization/</link><pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-8-31-covid-data-visualization/</guid><description>&lt;p&gt;Recently, I have been on-and-off trying to create some data visualizations for global COVID-19 data, as well as integrate it into my existing COVID tracker. I eventually settled on using Plotly, after a colleague showed me how easy it would be to integrate it into my existing Flask application.&lt;/p&gt;
+&lt;h2 id="the-data"&gt;The Data&lt;/h2&gt;
+&lt;p&gt;Naturally, you can&amp;rsquo;t create data visualizations without data. For this example, we will be getting our data from the following API endpoint:&lt;/p&gt;</description></item><item><title>Generating Mock Data with Faker</title><link>localhost/posts/2020-5-03-mock-data/</link><pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-5-03-mock-data/</guid><description>&lt;p&gt;Very frequently in software development, we find ourselves in a situation where we need to test the functionality and/or performance of a program with random data. This data needs to be: a) seemingly realistic, b) of arbitrary volume, and c) conformant to the logic of our program. How do we solve this problem? While there are a variety of services that do exactly that, those almost always cost money, and if they do have a free version, that comes with some considerable limitations. Sure, a data set of 1,000 records will be adequate to test if an ETL job works altogether, but it is still a paltry amount of data for testing the performance of the program, or how scalable it is. This is where tools like Faker come into play.&lt;/p&gt;</description></item><item><title>A Primer on DataFrames</title><link>localhost/posts/2020-4-26-pandas-primer/</link><pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-4-26-pandas-primer/</guid><description>&lt;p&gt;Today, we will be going over what Pandas DataFrames are, as well as how to use them to manipulate and dump data. They are something that I, and many others, have come to rely heavily on in variety of contexts. So, without further ado, time to get started.&lt;/p&gt;
+&lt;h2 id="what-are-dataframes"&gt;What Are DataFrames?&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;DataFrame&lt;/code&gt; is a type of data structure. That is, a way of storing values in memory. They are designed to store and organize potentially large volumes of data in a rows-and-columns format. It is essentially a two-dimensional array to store values in. While there are multiple technologies that utilize DataFrames, in this post, we will be using the DataFrames from Pandas. If you are not already aware, Pandas is a Python library, built on NumPy, that is designed to simplify data manipulation and analysis. To install it, create/activate a &lt;code&gt;venv&lt;/code&gt; and run &lt;code&gt;pip install pandas&lt;/code&gt;. To use Pandas, we use the following universal aliasing for our import:&lt;/p&gt;</description></item><item><title>Tracking COVID19</title><link>localhost/posts/2020-4-9-tracking-covid19/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-4-9-tracking-covid19/</guid><description>&lt;p&gt;In light of the recent pandemic (and partially as a result of being laid off recently, due to said pandemic), I recently took it upon myself to build a reporting service of sorts for the COVID-19 pandemic. After all, got to have something to work on during quarantine. The project consisted of the following core steps: 1) Find a REST API with comprehensive and reliable data, 2) Clean the data, and calculate aggregates, 3) Render the data into HTML templates, 4) Deploy the client to a production environment.&lt;/p&gt;</description></item><item><title>Integrating JSONB Data into Django Projects</title><link>localhost/posts/2020-2-13-jsonb-django/</link><pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-2-13-jsonb-django/</guid><description>&lt;p&gt;This post follows up on my earlier post about &lt;a href="https://danabases.net/posts/2020-1-22-postgres-json/"&gt;storing json data in Postgres&lt;/a&gt;. In this article, I will be going over how to integrate the same &lt;code&gt;JSONB&lt;/code&gt; data I used in that post with a Django web application.&lt;/p&gt;
+&lt;h2 id="modeling-the-data"&gt;Modeling the Data&lt;/h2&gt;
+&lt;p&gt;Modeling &lt;code&gt;JSONB&lt;/code&gt; data with Django&amp;rsquo;s ORM tool is rather easy, as the framework has built in support for this in the &lt;code&gt;django.contrib&lt;/code&gt; module. Therefore, we would model our data like this in our &lt;code&gt;models.py&lt;/code&gt; file:&lt;/p&gt;</description></item><item><title>Fun with Gravitational Physics and Python</title><link>localhost/posts/2020-2-3-gravity-python/</link><pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-2-3-gravity-python/</guid><description>&lt;p&gt;While reading about how my favorite programing language (Python) was used to develop the first ever image of a black hole, I felt inspired to use the language to do some gravitational physics of my own. Mind you, I am not a physicist, nor do I have an extensive mathematical background, so I certainly was not using Python to do anything that was terribly complicated. Instead, I was using it to do more simple, but still productive (not to mention fun) calculations. So, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;</description></item><item><title>Migrating Data to the Cloud with Python</title><link>localhost/posts/2020-1-16-migratingdatapython/</link><pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate><guid>localhost/posts/2020-1-16-migratingdatapython/</guid><description>&lt;p&gt;In the past year, or so, I have been experimenting with writing my own custom
+ETL programs in Python. Among the functionality that I included was extracting
+data from a local Postgres database, and migrating to a Postgres database in
+the cloud.&lt;/p&gt;
+&lt;h2 id="the-reasoning"&gt;The Reasoning&lt;/h2&gt;
+&lt;p&gt;While I&amp;rsquo;m aware that platforms-as-a service (PaaS) like AWS, and
+Azure provide their own services for this. Nevertheless, I opted to implement
+my own solution for data migration(s). I decided on this course of action for
+a couple reasons: 1) I saw it as a valuable learning experience for, and 2)
+I also found it be a practical solution as well.&lt;/p&gt;</description></item></channel></rss>
